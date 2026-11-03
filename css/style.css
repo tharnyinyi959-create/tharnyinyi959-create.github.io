@@ -833,7 +833,8 @@ code {
   flex-wrap: wrap;
 }
 
-.footer-col h5 {
+.footer-col .footer-col-title {
+  font-weight: 700;
   font-family: var(--font-alt);
   font-size: 13px;
   letter-spacing: 0.05em;

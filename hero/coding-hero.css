@@ -15,6 +15,9 @@
    ===================================================================== */
 
 .hero.ch-replaced { display: none; }
+/* until the hero is built, the empty anchor keeps the hero's height (stops the page below from jumping = layout shift) */
+.hero[hidden]:not(.ch-replaced) { display: block; height: calc(100svh - 92px); min-height: 0; padding: 0; }
+@media (max-width: 860px) { .hero[hidden]:not(.ch-replaced) { height: 575px; } }
 
 .ch {
   --ch-o: #263BAA;                         /* Nordic Indigo */

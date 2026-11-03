@@ -41,6 +41,7 @@
 /* ---------------------------------------------------------------- 5 · a paragraph that lights up as you read down the page
    (resting state = the original colour; characters start dimmed and settle to it) */
 .v2m .v2-ch { opacity: 0.22; transition: opacity 0.45s ease; }
+.v2-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }   /* read aloud, never shown */
 .v2m .v2-ch.on { opacity: 1; }
 
 /* ---------------------------------------------------------------- 6 · parallax and horizontal drift (values set by JS from scroll position) */

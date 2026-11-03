@@ -109,8 +109,8 @@
   const about = $(".about-preview .lead");
   if (about) {
     const text = about.textContent.trim();
-    about.setAttribute("aria-label", text);
     about.textContent = "";
+    const sr = document.createElement("span"); sr.className = "v2-sr"; sr.textContent = text; about.appendChild(sr);   // what screen readers read (the letters below are aria-hidden)
     const chars = [...text].map((c) => { const s = document.createElement("span"); s.className = "v2-ch"; s.setAttribute("aria-hidden", "true"); s.textContent = c; about.appendChild(s); return s; });
     let lit = 0;
     frames.push((y, vh) => {
