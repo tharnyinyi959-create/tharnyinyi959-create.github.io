@@ -172,7 +172,7 @@
   border: 1px solid var(--ch-deep);
   border-radius: 14px;
   overflow: hidden;
-  box-shadow: 14px 16px 0 -2px rgba(38, 59, 170, 0.16), 0 50px 90px -46px rgba(30, 47, 136, 0.8);
+  box-shadow: 8px 8px 0 rgba(38, 59, 170, 0.22);       /* the site's flat print shadow (lg size), pale so it doesn't merge with the indigo window */
   transition: border-color 0.35s var(--ease, ease);
 }
 .ch__win:hover { border-color: var(--ch-v); }
