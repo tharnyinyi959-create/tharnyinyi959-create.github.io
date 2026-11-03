@@ -43,7 +43,7 @@
     "説明会・体験入学 バナー":
       "Open Campus & Info Session Banners",
     "神戸電子専門学校 グラフィックデザイン学科の説明会・体験入学告知バナーを、4種類の広告サイズに合わせて展開しました。":
-      "Banners announcing the info sessions and open campus of Kobe Denshi's Graphic Design Department, adapted to four ad sizes.",
+      "Banners announcing the info sessions and open campus of Kobe Denshi College's Graphic Design Department, adapted to four ad sizes.",
     "ミャンマー料理動画":
       "Myanmar Food Video",
     "ミャンマー料理「チェーオー・シーチェッ」の作り方を紹介するYouTube動画。撮影から編集、サムネイルデザインまで手がけました。":
@@ -107,7 +107,7 @@
     "説明会・体験入学 バナー — Banner Design":
       "Open Campus & Info Session Banners — Banner Design",
     "神戸電子専門学校 説明会バナー":
-      "Kobe Denshi info session banner",
+      "Kobe Denshi College info session banner",
     "ミャンマー料理動画 — Video Editing":
       "Myanmar Food Video — Video Editing",
     "ミャンマー料理動画 サムネイル":
@@ -160,7 +160,7 @@
     "ミャンマーで育ち、子供の頃からコンピューターやテクノロジーに強い興味を持っていました。ミャンマーの大学では電気工学を3年間学びましたが、新型コロナウイルスの影響で状況が一変し、大学を続けないことを決意。新しい一歩として日本語を学び始め、日本へ来ました。":
       "I grew up in Myanmar and was strongly interested in computers and technology from childhood. I studied electrical engineering at a university in Myanmar for three years, but the COVID-19 pandemic changed everything and I decided not to continue. As a new step, I started learning Japanese and came to Japan.",
     "日本では神戸電子専門学校のグラフィックデザイン学科で学んでいますが、授業を通してデザインよりも「コードを書いて画面が実際に動く」ことに強く惹かれるようになりました。自分がつくったものがブラウザの中で実際に動き、反応する——そこに一番のやりがいを感じています。授業以外の時間は、少しずつJavaScriptに慣れながら、HTML・CSSでの実装を試しています。":
-      "In Japan I'm studying in the Graphic Design Department at Kobe Denshi, but through my classes I became more drawn to \"writing code and seeing the screen actually move\" than to design itself. Seeing something I made move and respond in the browser is what I find most rewarding. Outside class, I'm getting used to JavaScript little by little and experimenting with building in HTML and CSS.",
+      "In Japan I'm studying in the Graphic Design Department at Kobe Denshi College, but through my classes I became more drawn to \"writing code and seeing the screen actually move\" than to design itself. Seeing something I made move and respond in the browser is what I find most rewarding. Outside class, I'm getting used to JavaScript little by little and experimenting with building in HTML and CSS.",
     "目標はシンプルです。使う人にとって心地よく、しっかり動くWebサイトを、自分の手でコーディングできるフロントエンド開発者になることです。":
       "My goal is simple: to become a front-end developer who can code websites that feel good to use and work reliably — with my own hands.",
     "コンピューターやテクノロジーに強く惹かれる子供時代を過ごす。":
@@ -243,7 +243,7 @@
     "説明会・体験入学 バナー | Thar Nyi Nyi":
       "Open Campus & Info Session Banners | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけた神戸電子専門学校 説明会・体験入学バナー広告（4サイズ展開）。":
-      "Case study: web ad banners for Kobe Denshi's info sessions and open campus by Thar Nyi Nyi (adapted to 4 sizes).",
+      "Case study: web ad banners for Kobe Denshi College's info sessions and open campus by Thar Nyi Nyi (adapted to 4 sizes).",
     "← 作品一覧に戻る":
       "← Back to all works",
     "Web広告バナー（4サイズ展開）":
@@ -251,9 +251,9 @@
     "1つのビジュアルを、広告枠の規格に合わせて再構成する":
       "Re-composing one visual to fit standard ad formats",
     "神戸電子専門学校 説明会・体験入学バナー リーダーボード":
-      "Kobe Denshi info session & open campus banner — leaderboard",
+      "Kobe Denshi College info session & open campus banner — leaderboard",
     "神戸電子専門学校 グラフィックデザイン学科の「説明会・体験入学」告知のためのWeb広告バナーを制作しました。1つのビジュアル・メッセージを、実際の広告配信で使われる4種類のサイズ規格（レクタングル・スカイスクレイパー・リーダーボード・バナー）に合わせて展開しています。":
-      "I created web ad banners announcing the \"info sessions and open campus\" of Kobe Denshi's Graphic Design Department. One visual and message were adapted to the four size formats used in real ad delivery: rectangle, skyscraper, leaderboard and banner.",
+      "I created web ad banners announcing the \"info sessions and open campus\" of Kobe Denshi College's Graphic Design Department. One visual and message were adapted to the four size formats used in real ad delivery: rectangle, skyscraper, leaderboard and banner.",
     "広告バナーは掲載面によって縦長・横長・正方形に近い形など、サイズも縦横比も大きく異なります。同じ情報量（学校名・学科名・タイトル・日程・説明内容・写真）を保ちながら、それぞれの枠の中で違和感なく、かつ短時間で内容が伝わるようにレイアウトを再構成することが課題でした。":
       "Ad banners vary greatly in size and aspect ratio depending on where they appear — tall, wide or almost square. The challenge was to re-compose the layout so that it looks natural in each frame and gets the message across in a short time, while keeping the same information: school name, department, title, dates, details and photo.",
     "ベースとなる要素（ロゴ・見出し・日程・写真・説明会情報）をパーツごとに分解し、サイズごとに優先順位を変えながら再配置しました。縦長サイズでは要素を上から下へ積み重ね、横長サイズでは左にテキスト・右に写真という視線誘導を意識しています。また、同じレイアウトでもティール×ピンクの配色とブルー系の配色、2パターンのカラーバリエーションを用意し、掲載媒体によって使い分けられるようにしました。":

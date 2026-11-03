@@ -4,7 +4,7 @@
 
 ![Thar Nyi Nyi — Portfolio 2026](assets/og-image.png)
 
-Portfolio of **Thar Nyi Nyi**, a front-end development student in Kobe, Japan (Graphic Design Department, Kobe Denshi).
+Portfolio of **Thar Nyi Nyi**, a front-end development student in Kobe, Japan (Graphic Design Department, Kobe Denshi College).
 It presents 16 school projects — web design, graphic design, character design and video — each with its own case-study page.
 
 > 神戸で学ぶフロントエンド開発学生のポートフォリオサイトです。Web・グラフィック・キャラクターデザイン・動画など16作品を、作品ごとの詳細ページで紹介しています。日本語 / English 切り替え対応。
@@ -20,6 +20,7 @@ It presents 16 school projects — web design, graphic design, character design 
 - **Scroll-driven sections** — on desktop, each section stays in place while the next one slides over it; the project deck on the home page flips through cards as you scroll.
 - **Accessibility** — keyboard support, visible focus, `prefers-reduced-motion` respected (animations are skipped), alt text on every image.
 - **Performance** — images served as WebP (14.5 MB → 5.1 MB), images below the fold load lazily.
+- **Lighthouse** — Accessibility **100** · Best Practices **100** · SEO **100** · Performance 98 (desktop)
 - **Responsive** — tested at phone, tablet and desktop widths.
 
 ## Built with
