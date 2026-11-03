@@ -69,9 +69,9 @@
     "夏休み課題「地元のPRキャラを作ろう」で、ミャンマーをPRするキャラクター「Puffo」を考案。小さな願いを叶える雲の妖精として、プロフィールからグッズまで設計しました。":
       "For the summer assignment \"Create a PR character for your hometown\", I created \"Puffo\", a character promoting Myanmar. A cloud fairy who grants small wishes — designed from profile to merchandise.",
     "缶バッジデザイン — ようこそ KOBE":
-      "Can Badge Design — Welcome KOBE",
+      "Button Badge Design — Welcome KOBE",
     "「ウェルカム（ようこそ）」をテーマにした缶バッジを2種類デザイン。神戸の街並みを描いた男性向けと、海の生きものキャラクターの女性向けで展開しました。":
-      "Two can badges on the theme of \"Welcome\": one for men featuring Kobe's cityscape, and one for women featuring sea-creature characters.",
+      "Two button badges on the theme of \"Welcome\": one for men featuring Kobe's cityscape, and one for women featuring sea-creature characters.",
     "HAT神戸 — 縦型バナー":
       "HAT Kobe — Vertical Banner",
     "神戸の街「HAT神戸」をPRする縦型バナー（500×1000mm）。人と街と海を線画でつなぎ、明るく爽やかな配色で街の魅力を伝えます。":
@@ -129,9 +129,9 @@
     "PRキャラクター Puffo":
       "PR character Puffo",
     "缶バッジデザイン — ようこそ KOBE — Goods Design":
-      "Can Badge Design — Welcome KOBE — Goods Design",
+      "Button Badge Design — Welcome KOBE — Goods Design",
     "ようこそ 缶バッジ 2種類":
-      "Two \"Welcome\" can badges",
+      "Two \"Welcome\" button badges",
     "HAT神戸 — 縦型バナー — Banner Design":
       "HAT Kobe — Vertical Banner — Banner Design",
     "HAT神戸 縦型バナー":
@@ -317,17 +317,17 @@
       "Personal business card mockup with a leather case",
     // ---- work-can-badge.html
     "缶バッジデザイン — ようこそ KOBE | Thar Nyi Nyi":
-      "Can Badge Design — Welcome KOBE | Thar Nyi Nyi",
+      "Button Badge Design — Welcome KOBE | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけた「缶バッジデザイン — ようこそ KOBE」。「ウェルカム（ようこそ）」をテーマにした缶バッジを2種類デザイン。神戸の街並みを描いた男性向けと、海の生きものキャラクターの女性向けで展開しました。":
-      "Case study: \"Can Badge Design — Welcome KOBE\" by Thar Nyi Nyi. Two can badges on the theme of \"Welcome\": one for men featuring Kobe's cityscape, and one for women featuring sea-creature characters.",
+      "Case study: \"Button Badge Design — Welcome KOBE\" by Thar Nyi Nyi. Two button badges on the theme of \"Welcome\": one for men featuring Kobe's cityscape, and one for women featuring sea-creature characters.",
     "缶バッジデザイン × 2":
-      "Can badge design × 2",
+      "Button badge designs × 2",
     "ウェルカム（ようこそ）— ターゲット別の2デザイン":
       "Welcome — two designs for two audiences",
     "ようこそ 缶バッジ 神戸（男性向け）と動物（女性向け）":
-      "\"Welcome\" can badges — Kobe (for men) and animals (for women)",
+      "\"Welcome\" button badges — Kobe (for men) and animals (for women)",
     "「ウェルカム（ようこそ）」をテーマに、神戸を訪れた人を迎える缶バッジをデザインしました。同じテーマで、ターゲットの異なる2種類を制作しています。丸い小さな画面の中で、ひと目で「ようこそ」と「神戸」が伝わることを意識しました。":
-      "On the theme of \"Welcome\", I designed can badges that greet people visiting Kobe — two versions of the same theme for different audiences. I made sure \"welcome\" and \"Kobe\" come across at a glance on a small round surface.",
+      "On the theme of \"Welcome\", I designed button badges that greet people visiting Kobe — two versions of the same theme for different audiences. I made sure \"welcome\" and \"Kobe\" come across at a glance on a small round surface.",
     "神戸 — 男性向け":
       "Kobe — for men",
     "ネイビーの夜空に、ポートタワーや海洋博物館の並ぶ神戸の街並み。手前には波と緑の丘を重ね、海と山に囲まれた神戸らしさを表現しました。":
@@ -339,7 +339,7 @@
     "提出したデザインシートです。":
       "The design sheet I submitted.",
     "缶バッジのデザイン シート":
-      "Can badge design sheet",
+      "Button badge design sheet",
     // ---- work-choco-fes.html
     "チョコフェス KOBE — フライヤー | Thar Nyi Nyi":
       "Choco Fes KOBE — Flyer | Thar Nyi Nyi",
@@ -857,7 +857,7 @@
     "特にこだわったところ — ラペットゥのページ":
       "Where I put in extra care — the Lahpet (tea leaf salad) page",
     "ミャンマーでしか出会えない「食べるお茶」ラペットゥは、日本料理と無理に比較せず、ミャンマーならではの料理として紹介しました。他の料理ページとは違う見せ方にして、ラペットゥの特別さが伝わるように工夫し、ミャンマーの食文化をより深く知ってもらえるページにしています。":
-      "Lahpet, the tea leaf salad you can only find in Myanmar, is introduced as a dish unique to Myanmar rather than forced into a comparison with Japanese food. I gave it a different presentation from the other dish pages to convey how special Lahpet is, so readers can get to know Myanmar food culture more deeply.",
+      "Lahpet, Myanmar's distinctive fermented tea-leaf salad, is introduced as a dish in its own right rather than being forced into a comparison with Japanese food. I gave it a different presentation from the other dishes to highlight what makes it special and help readers learn more about Myanmar's food culture.",
     "ZINE ミャンマーの一口 08 ラペットゥのページ":
       "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea leaf salad) page",
     "制作の中で一番の挑戦は、どのミャンマー料理と日本料理を組み合わせるかを考えることでした。実際に料理を比較してみると、食べ物だけでなく、文化の違いや共通点も伝えやすくなることを発見しました。食べ物から、お互いの文化を知る — そのきっかけになるZINEを目指しました。":
