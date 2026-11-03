@@ -611,6 +611,13 @@ code,
   flex-wrap: wrap;
 }
 
+/* a work the school picked or the class voted for (detail pages) — filled, so it reads as a note, not a category */
+.tag--recognition {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-secondary);
+}
+
 /* =====================================================================
    CARDS
    ===================================================================== */
