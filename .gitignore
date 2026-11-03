@@ -1,6 +1,9 @@
 # original project files (.ai / .pdf / .pptx, 466 MB) — the site uses the exported images in assets/works/*, not these
 assets/works/Portfolio/
 
+# full-size JPG/PNG the WebP images were made from — kept on this Mac, not published
+assets/_originals/
+
 # system / editor files
 .DS_Store
 *.tmp
