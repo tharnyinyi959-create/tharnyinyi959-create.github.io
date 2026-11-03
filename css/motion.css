@@ -170,7 +170,6 @@ html.has-cursor .mo-cursor { display: grid; }
 .mo-cursor.is-label { width: 84px; height: 84px; margin: -42px 0 0 -42px; opacity: 1; }
 .mo-cursor span { opacity: 0; transition: opacity 0.2s ease; }
 .mo-cursor.is-label span { opacity: 1; transition-delay: 0.12s; }
-.mo-cursor.is-dark { background: var(--color-secondary); color: var(--color-primary); }
 
 /* ---------------------------------------------------------------------
    8 · THE DECK — "Projects & Assignments" (home page, dark band)
@@ -189,10 +188,6 @@ html.has-cursor .mo-cursor { display: grid; }
 
 /* left: counter, the project's story, controls */
 .dk__side { display: grid; gap: var(--sp-6); align-content: center; }
-.dk__count { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.03em; }
-.dk__count i { font-style: normal; font-weight: 500; color: var(--text-secondary); }
-.dk__cur { display: inline-block; min-width: 1.2ch; }
-.dk__cur.is-tick { animation: dk-tick 0.6s var(--mo-out); }
 @keyframes dk-tick { from { opacity: 0; transform: translateY(45%); } to { opacity: 1; transform: none; } }
 .dk__infos { display: grid; min-height: 330px; }
 .dk__info { grid-area: 1 / 1; visibility: hidden; align-self: start; }
@@ -262,7 +257,6 @@ html.has-cursor .mo-cursor { display: grid; }
 .hg__tag { position: relative; z-index: 2; display: block; margin: -14px auto 0; width: max-content; min-width: 72%; max-width: 100%; padding: 8px 18px; text-align: center; background: var(--color-white); border: 1.5px solid var(--color-secondary); border-radius: var(--r-full); box-shadow: 4px 4px 0 var(--secondary-a28); }
 .hg__title { display: block; font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--color-primary); }
 .hg__sub { display: block; margin-top: 2px; font-family: var(--font-mono); font-size: 10.5px; color: var(--primary-a80); letter-spacing: 0.02em; }
-.hg__no { position: absolute; top: -10px; left: -6px; z-index: 4; min-width: 32px; padding: 3px 9px; font-family: var(--font-mono); font-size: 11px; line-height: 1.4; text-align: center; color: var(--color-primary); background: var(--color-secondary); border: 1.5px solid var(--color-primary); border-radius: var(--r-full); }
 
 /* pinned scroll mode (desktop): the section is a tall track, the content sticks while you scroll through it.
    JS adds .is-pinned only on wide, tall screens without reduced motion. */
