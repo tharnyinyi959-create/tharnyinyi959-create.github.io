@@ -2522,6 +2522,15 @@ code,
   transform: none;
 }
 
+/* Side reveals start 48px off to one side, so on phones the page was briefly wider than the screen and could be
+   panned sideways. <main> is exactly screen-wide there, so clipping it sideways cuts only what is off-screen.
+   clip, not hidden: no scroll container, so position: sticky inside keeps working. */
+@media (max-width: 860px) {
+  main {
+    overflow-x: clip;
+  }
+}
+
 [data-reveal="left"] {
   transform: translateX(-48px);
 }
