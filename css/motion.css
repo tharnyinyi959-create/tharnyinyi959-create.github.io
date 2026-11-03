@@ -1,0 +1,309 @@
+/* =====================================================================
+   MOTION SYSTEM  —  loaded after style.css on every page.
+   Nothing here changes the colours, type or layout of the portfolio; it adds
+   (1) the card "deck" in Projects & Assignments on the home page and (2) one consistent
+   animation language for the whole site.
+
+   0  Motion tokens                      5  Skills (bars + counters)
+   1  Page ready · header entrance       6  Contact · footer · links
+   2  Heading mask · stagger · rules     7  Micro-interactions · cursor
+   3  About / profile                    8  The deck (Projects & Assignments)
+   4  Journey (profile)                  9  Responsive · reduced motion
+
+   Animation language (what moves, and why):
+     • arrival   — things rise 20–28px while fading in, once, when they enter the screen
+     • emphasis  — a title wipes from soft to full colour, a bar fills, a number counts
+     • direct manipulation — only the deck responds to dragging (flick a card away)
+     • feedback  — small, fast (≤ 250ms) responses on buttons, links and cursor
+   Only transform / opacity / clip-path are animated (plus the compositor-friendly `translate`/`scale`).
+   ===================================================================== */
+
+/* ---------------------------------------------------------------------
+   0 · TOKENS
+   --------------------------------------------------------------------- */
+:root {
+  --mo-fast: 0.25s;
+  --mo-base: 0.7s;
+  --mo-slow: 1.1s;
+  --mo-out: cubic-bezier(0.16, 1, 0.3, 1);          /* the portfolio's own ease */
+  --mo-inout: cubic-bezier(0.65, 0, 0.35, 1);
+  --mo-rise: 24px;
+}
+
+/* ---------------------------------------------------------------------
+   1 · PAGE READY — the header settles in once the loading screen hands over
+   (html.is-ready is added by motion.js; without JS nothing is hidden)
+   --------------------------------------------------------------------- */
+.js-motion .site-header { transition: opacity var(--mo-slow) var(--mo-out), transform var(--mo-slow) var(--mo-out); }
+.js-motion:not(.is-ready) .site-header { opacity: 0; transform: translateY(-22px); }
+
+/* ---------------------------------------------------------------------
+   1b · STUDENT ID ON A LANYARD — drops in once (style: style.css "STUDENT ID ON A LANYARD")
+   profile: as soon as the loading screen opens (html.is-ready) · home: when its panel scrolls into view (.mo-in, motion.js)
+   Three motions, all transform-only, all on the same 2.6 s clock:
+     drop  — the rig falls (accelerating), stretches the strap a little, rebounds twice, stops
+     swing — the whole lanyard sways from the neck: ↘ while falling, ↙ after the stop, settles
+     sway  — the card swings a little on its ring, lagging behind the strap
+   --------------------------------------------------------------------- */
+.idl--drop { --idl-from: calc(-100vh - 100%); }            /* profile: from above the screen */
+.idl--home { --idl-from: calc(-100% - 140px); }            /* home: from above the panel's top edge */
+
+.js-motion .idl .idl__rig { translate: 0 var(--idl-from); }
+.js-motion.is-ready .idl--drop .idl__rig,
+.js-motion .idl--home.mo-in .idl__rig {
+  animation: idl-drop 2.6s 0.25s both, idl-swing 2.6s 0.25s both;
+}
+.js-motion.is-ready .idl--drop .idl__card,
+.js-motion .idl--home.mo-in .idl__card {
+  animation: idl-sway 2.6s 0.25s both;
+}
+
+@keyframes idl-drop {
+  0%   { translate: 0 var(--idl-from); animation-timing-function: cubic-bezier(0.55, 0, 0.9, 0.45); }
+  36%  { translate: 0 16px;  animation-timing-function: cubic-bezier(0.25, 0.6, 0.4, 1); }   /* the strap takes the weight */
+  52%  { translate: 0 -6px;  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  66%  { translate: 0 2px;   animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  78%, 100% { translate: 0 0; }
+}
+@keyframes idl-swing {
+  0%   { rotate: 0deg;     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  24%  { rotate: 1.6deg;   animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }      /* ↘ */
+  46%  { rotate: -1.4deg;  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }      /* ↙ */
+  64%  { rotate: 0.7deg;   animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  80%  { rotate: -0.25deg; animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  100% { rotate: 0deg; }
+}
+@keyframes idl-sway {
+  0%, 34% { rotate: 0deg;  animation-timing-function: cubic-bezier(0.3, 0.7, 0.4, 1); }
+  44%  { rotate: -3deg;    animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }      /* the card keeps going when the strap stops */
+  58%  { rotate: 2deg;     animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  72%  { rotate: -0.9deg;  animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  86%  { rotate: 0.3deg;   animation-timing-function: cubic-bezier(0.45, 0, 0.55, 1); }
+  100% { rotate: 0deg; }
+}
+
+/* profile: the text beside the card comes in as the card lands (only that column — the rest of the page never moves) */
+.profile-hero__text { --mo-d: 1.15s; }                      /* the name's mask rise waits for the landing too */
+.js-motion .profile-hero__text { opacity: 0; translate: 32px 0; transition: opacity 0.9s var(--mo-out) 1.1s, translate 0.9s var(--mo-out) 1.1s; }
+.js-motion.is-ready .profile-hero__text { opacity: 1; translate: none; }
+
+/* ---------------------------------------------------------------------
+   2 · HEADING MASK · STAGGER · RULES
+   --------------------------------------------------------------------- */
+/* section headings: the text rises out of an invisible line (JS wraps the heading's content) */
+.mo-mask { display: block; overflow: hidden; padding-bottom: 0.12em; margin-bottom: -0.12em; }
+.mo-mask__in { display: block; }
+.js-motion .mo-mask__in { transform: translateY(108%); transition: transform var(--mo-slow) var(--mo-out); transition-delay: var(--mo-d, 0s); }
+.js-motion .mo-mask.mo-in .mo-mask__in { transform: none; }
+
+/* groups: children arrive one after another (--i is set per child by JS) */
+.js-motion .mo-stagger > * { opacity: 0; transform: translateY(16px); transition: opacity var(--mo-base) var(--mo-out), transform var(--mo-base) var(--mo-out); transition-delay: calc(var(--i, 0) * 70ms); }
+.js-motion .mo-stagger.mo-in > * { opacity: 1; transform: none; }
+
+/* a thin line that draws itself above a block of text */
+.mo-rule { display: block; height: 1.5px; margin: 0 0 var(--sp-5); background: var(--text); transform-origin: left; }
+.js-motion .mo-rule { transform: scaleX(0); transition: transform var(--mo-slow) var(--mo-inout); }
+.js-motion .mo-rule.mo-in { transform: scaleX(1); }
+
+/* eyebrow dot: pops in with its line */
+.js-motion .eyebrow::before { transform: scale(0); transition: transform 0.6s var(--mo-out) 0.1s; }
+.js-motion .mo-in .eyebrow::before, .js-motion .is-visible .eyebrow::before, .js-motion .eyebrow.mo-in::before { transform: scale(1); }
+
+/* ---------------------------------------------------------------------
+   3 · ABOUT / PROFILE — the picture is revealed, not just faded
+   --------------------------------------------------------------------- */
+.js-motion .avatar-frame.mo-clip { clip-path: inset(100% 0 0 0 round var(--r-lg)); transition: clip-path var(--mo-slow) var(--mo-inout); }
+.js-motion .avatar-frame.mo-clip.mo-in { clip-path: inset(0 0 0 0 round var(--r-lg)); }
+.js-motion .avatar-frame.mo-clip .initials { transform: scale(1.15); transition: transform 1.6s var(--mo-out); }
+.js-motion .avatar-frame.mo-clip.mo-in .initials { transform: none; }
+
+/* ---------------------------------------------------------------------
+   5 · SKILLS — bars fill with a clip (no width animation); numbers count (JS)
+   --------------------------------------------------------------------- */
+.progress-fill { width: 100%; transition: none; clip-path: inset(0 100% 0 0 round 99px); }
+.skill-card.is-visible .progress-fill { width: 100%; clip-path: inset(0 calc(100% - var(--pct)) 0 0 round 99px); transition: clip-path 1.4s var(--mo-inout) 0.15s; }
+
+/* ---------------------------------------------------------------------
+   6 · CONTACT · FOOTER · LINKS
+   --------------------------------------------------------------------- */
+.footer-col a { width: fit-content; text-decoration: none; background: linear-gradient(currentColor, currentColor) 0 100% / 0% 1px no-repeat; padding-bottom: 2px; transition: opacity var(--mo-fast) var(--mo-out), background-size 0.4s var(--mo-out); }
+.footer-col a:hover { text-decoration: none; background-size: 100% 1px; }
+.contact-cta .btn-primary::after { content: "\2192"; display: inline-block; margin-left: 2px; transition: transform var(--mo-fast) var(--mo-out); }
+.contact-cta .btn-primary:hover::after { transform: translateX(5px); }
+.footer-bottom a, .social-row a { transition: transform var(--mo-fast) var(--mo-out), opacity var(--mo-fast) var(--mo-out); }
+.social-row a:hover { transform: translateY(-3px); }
+
+/* ---------------------------------------------------------------------
+   7 · MICRO-INTERACTIONS · CURSOR
+   --------------------------------------------------------------------- */
+.btn { will-change: auto; }
+.btn svg { transition: transform var(--mo-fast) var(--mo-out); }
+.btn:hover svg { transform: translateX(4px); }
+.tag { transition: background var(--mo-fast) var(--mo-out), color var(--mo-fast) var(--mo-out), border-color var(--mo-fast) var(--mo-out), transform var(--mo-fast) var(--mo-out); }
+.skills-preview-row .tag:hover, .tag-row .tag:hover { transform: translateY(-2px); border-color: var(--text); color: var(--text); }
+:focus-visible { outline-offset: 3px; }
+
+/* cursor: a small follower that becomes a labelled disc over [data-cursor] items (fine pointers only) */
+.mo-cursor {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 400;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font: 500 11px/1 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  display: none;
+  place-items: center;
+  pointer-events: none;
+  opacity: 0;
+  transition: width 0.4s var(--mo-out), height 0.4s var(--mo-out), margin 0.4s var(--mo-out), opacity 0.25s ease, background 0.25s ease;
+  will-change: transform;
+}
+html.has-cursor .mo-cursor { display: grid; }
+.mo-cursor.is-on { opacity: 0.9; }
+.mo-cursor.is-label { width: 84px; height: 84px; margin: -42px 0 0 -42px; opacity: 1; }
+.mo-cursor span { opacity: 0; transition: opacity 0.2s ease; }
+.mo-cursor.is-label span { opacity: 1; transition-delay: 0.12s; }
+.mo-cursor.is-dark { background: var(--color-secondary); color: var(--color-primary); }
+
+/* ---------------------------------------------------------------------
+   8 · THE DECK — "Projects & Assignments" (home page, dark band)
+   Concept: the four projects are a stack of printed cards on a table. The top card is the
+   current project; its story is told on the left. Flick it away (mouse or touch) and the
+   next card slides forward while the text changes; or use the arrows / dots / ← →.
+   The card tilts in 3D under the mouse, the aquarium card scrolls its whole page while it
+   is on top, and a click opens the case study. Built with individual transform properties
+   (translate / rotate / scale) so tilt, drag and stack position never fight each other.
+   Phone: same deck, touch flick works, vertical scrolling is untouched.
+   Reduced motion: no flying — the deck just swaps instantly.
+   Logic: js/motion.js §9.
+   --------------------------------------------------------------------- */
+.dk__hint { margin: 0; font-family: var(--font-mono); font-size: 12.5px; color: var(--text-secondary); }
+.dk__body { position: relative; z-index: 1; display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 6fr); gap: var(--sp-8); align-items: center; margin-top: var(--sp-6); }
+
+/* left: counter, the project's story, controls */
+.dk__side { display: grid; gap: var(--sp-6); align-content: center; }
+.dk__count { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 3.4vw, 48px); line-height: 1; letter-spacing: -0.03em; }
+.dk__count i { font-style: normal; font-weight: 500; color: var(--text-secondary); }
+.dk__cur { display: inline-block; min-width: 1.2ch; }
+.dk__cur.is-tick { animation: dk-tick 0.6s var(--mo-out); }
+@keyframes dk-tick { from { opacity: 0; transform: translateY(45%); } to { opacity: 1; transform: none; } }
+.dk__infos { display: grid; min-height: 330px; }
+.dk__info { grid-area: 1 / 1; visibility: hidden; align-self: start; }
+.dk__info.is-on { visibility: visible; }
+.dk__info > * { opacity: 0; translate: 0 22px; transition: opacity 0.25s var(--mo-out), translate 0.25s var(--mo-out); }
+.dk__info.is-on > * { opacity: 1; translate: 0 0; transition: opacity 0.8s var(--mo-out), translate 0.9s var(--mo-out); transition-delay: calc(0.18s + var(--i, 0) * 80ms); }
+.dk__meta { display: flex; align-items: center; gap: var(--sp-3); margin: 0 0 var(--sp-4); }
+.dk__meta .work-year { margin: 0; }
+.dk__name { margin: 0 0 var(--sp-4); font-size: clamp(32px, 4.6vw, 64px); line-height: 1.02; letter-spacing: -0.04em; }
+.dk__desc { max-width: 44ch; margin: 0 0 var(--sp-4); color: var(--text-secondary); font-size: 15.5px; }
+.dk__tools { margin: 0 0 var(--sp-6); font-family: var(--font-mono); font-size: 12px; color: var(--text-secondary); }
+.dk__ctrl { display: flex; align-items: center; gap: var(--sp-5); flex-wrap: wrap; }
+.dk__arrows { display: flex; gap: var(--sp-3); }
+.dk__btn { width: 52px; height: 52px; display: grid; place-items: center; background: transparent; border: 1.5px solid var(--text); border-radius: 50%; color: var(--text); cursor: pointer; transition: background var(--mo-fast) var(--mo-out), color var(--mo-fast) var(--mo-out), transform var(--mo-fast) var(--mo-out); }
+.dk__btn svg { width: 20px; height: 20px; }
+.dk__btn:hover { background: var(--text); color: var(--inverse); }
+.dk__btn--prev:hover svg { transform: translateX(-2px); }
+.dk__btn--next:hover svg { transform: translateX(2px); }
+.dk__btn:active { transform: scale(0.94); }
+.dk__btn svg { transition: transform var(--mo-fast) var(--mo-out); }
+/* one small dot per project; the project's name stays inside the button (screen readers) and shows as a tooltip */
+.dk__dots { display: flex; flex-wrap: wrap; align-items: center; gap: 2px; max-width: 340px; margin: 0; padding: 0; list-style: none; }
+.dk__go { position: relative; width: 18px; height: 22px; padding: 0; background: none; border: 0; font-size: 0; color: transparent; cursor: pointer; transition: width 0.4s var(--mo-out); }
+.dk__go::after { content: ""; position: absolute; left: 50%; top: 50%; width: 8px; height: 8px; border: 1.5px solid var(--text-secondary); border-radius: var(--r-full); background: transparent; translate: -50% -50%; transition: width 0.4s var(--mo-out), background 0.3s var(--mo-out), border-color 0.3s var(--mo-out); }
+.dk__go:hover::after, .dk__go:focus-visible::after { border-color: var(--text); }
+.dk__go.is-active { width: 30px; }
+.dk__go.is-active::after { width: 22px; background: var(--text); border-color: var(--text); }
+
+/* right: the stack */
+.dk__stack { position: relative; width: min(100%, 340px, 44vh); aspect-ratio: 4 / 5.25; margin-inline: auto; perspective: 1100px; touch-action: pan-y; }
+.dk__cards { position: absolute; inset: 0; margin: 0; padding: 0; list-style: none; }
+.dk__card {
+  --d: 0;
+  --dv: min(var(--d), 3);                      /* only the top four cards are visibly stacked; the others wait, hidden, underneath */
+  position: absolute;
+  inset: 0 0 auto 0;
+  translate: calc(var(--dv) * 26px) calc(var(--dv) * -20px);
+  rotate: calc(var(--dv) * 2.4deg);
+  scale: calc(1 - var(--dv) * 0.055);
+  opacity: calc((1 - var(--dv) * 0.1) * clamp(0, 4 - var(--d), 1));
+  transform: rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg));
+  transform-origin: 50% 60%;
+  z-index: calc(100 - var(--d));
+  transition: translate 0.8s var(--mo-out), rotate 0.8s var(--mo-out), scale 0.8s var(--mo-out), opacity 0.6s var(--mo-out), transform 0.35s var(--mo-out);
+  will-change: translate, rotate;
+}
+.dk__card.is-top { cursor: grab; }
+.dk__card.is-drag { cursor: grabbing; transition: transform 0.35s var(--mo-out), opacity 0.6s var(--mo-out); }
+.dk__card.is-flying { transition: translate 0.65s var(--mo-inout), rotate 0.65s var(--mo-inout), opacity 0.5s ease; pointer-events: none; }
+.dk__card.is-resetting { transition: none; }
+.dk__link { display: block; user-select: none; -webkit-user-select: none; -webkit-tap-highlight-color: transparent; border-radius: var(--r-md); outline-offset: 6px; }
+.dk__card .hg__photo::after { content: ""; position: absolute; inset: 0; background: rgba(30, 47, 136, 0.5); opacity: 1; transition: opacity 0.8s var(--mo-out); pointer-events: none; }
+.dk__card.is-top .hg__photo::after { opacity: 0; }
+.dk__card.is-top .hg__photo--tall img { animation: pm-page-scroll 16s ease-in-out infinite alternate; }
+
+/* card faces */
+.hg__card { position: relative; display: block; padding: 10px; background: var(--color-secondary); border: 1.5px solid var(--color-secondary); border-radius: var(--r-md); box-shadow: 8px 10px 0 var(--secondary-a28); }
+.hg__photo { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: calc(var(--r-md) - 5px); overflow: hidden; background: var(--color-primary); }
+.hg__photo img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; }
+.hg__photo--contain { background: var(--color-white); display: grid; place-items: center; }
+.hg__photo--contain img { width: 100%; height: auto; max-height: 100%; object-fit: contain; }
+.hg__photo--tall img { position: absolute; left: 0; top: 0; height: auto; }
+.hg__photo .video-play-badge { width: 60px; height: 60px; }
+.hg__photo .video-play-badge svg { width: 22px; height: 22px; }
+.hg__tag { position: relative; z-index: 2; display: block; margin: -14px auto 0; width: max-content; min-width: 72%; max-width: 100%; padding: 8px 18px; text-align: center; background: var(--color-white); border: 1.5px solid var(--color-secondary); border-radius: var(--r-full); box-shadow: 4px 4px 0 var(--secondary-a28); }
+.hg__title { display: block; font-family: var(--font-display); font-weight: 700; font-size: 14px; color: var(--color-primary); }
+.hg__sub { display: block; margin-top: 2px; font-family: var(--font-mono); font-size: 10.5px; color: var(--primary-a80); letter-spacing: 0.02em; }
+.hg__no { position: absolute; top: -10px; left: -6px; z-index: 4; min-width: 32px; padding: 3px 9px; font-family: var(--font-mono); font-size: 11px; line-height: 1.4; text-align: center; color: var(--color-primary); background: var(--color-secondary); border: 1.5px solid var(--color-primary); border-radius: var(--r-full); }
+
+/* pinned scroll mode (desktop): the section is a tall track, the content sticks while you scroll through it.
+   JS adds .is-pinned only on wide, tall screens without reduced motion. */
+.dk.is-pinned { padding-block: 0; height: calc(100svh + var(--dk-n, 4) * 32vh); }     /* --dk-n = number of cards, set by motion.js */
+.dk.is-pinned .dk__pin { position: sticky; top: 0; height: 100svh; display: flex; flex-direction: column; justify-content: center; padding-top: 88px; padding-bottom: var(--sp-5); box-sizing: border-box; }
+.dk.is-pinned .dk__body { margin-top: var(--sp-5); }
+.dk.is-pinned .dk__infos { min-height: 0; }
+.dk__progress { display: none; }
+.dk.is-pinned .dk__progress { display: block; position: relative; height: 2px; margin-top: var(--sp-5); background: var(--border); border-radius: 2px; overflow: hidden; }
+.dk__progress i { position: absolute; inset: 0; background: var(--text); transform-origin: left; transform: scaleX(var(--p, 0)); }
+
+/* arrival */
+.js-motion .dk .dk__stack { opacity: 0; translate: 0 36px; transition: opacity 1s var(--mo-out), translate 1.1s var(--mo-out); }
+.js-motion .dk.is-live .dk__stack { opacity: 1; translate: 0 0; }
+
+/* ---------------------------------------------------------------------
+   9 · RESPONSIVE · REDUCED MOTION
+   --------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .dk__body { grid-template-columns: minmax(0, 1fr); gap: var(--sp-7); }
+  .dk__stack { order: -1; width: min(72%, 300px); margin-bottom: var(--sp-4); }
+  .dk__infos { min-height: 300px; }
+  .dk { overflow-x: clip; }
+}
+@media (max-width: 520px) {
+  .dk__stack { width: min(62%, 260px); }
+  .dk__card { translate: calc(var(--dv) * 18px) calc(var(--dv) * -16px); }
+}
+@media (max-width: 699px) { .mo-cursor { display: none !important; } }
+@media (hover: none) { .mo-cursor { display: none !important; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .js-motion .site-header { opacity: 1 !important; transform: none !important; transition: none; }
+  .js-motion .idl .idl__rig, .js-motion .idl .idl__card { translate: none; rotate: none; animation: none !important; }
+  .js-motion .profile-hero__text { opacity: 1; translate: none; transition: none; }
+  .js-motion .mo-mask__in, .js-motion .mo-stagger > *, .js-motion .mo-rule,
+  .js-motion .avatar-frame.mo-clip, .js-motion .avatar-frame.mo-clip .initials,
+
+  .js-motion .eyebrow::before { transform: none; transition: none; }
+  .progress-fill, .skill-card.is-visible .progress-fill { clip-path: inset(0 calc(100% - var(--pct)) 0 0 round 99px); transition: none; }
+  .js-motion .dk .dk__stack { opacity: 1; translate: none; transition: none; }
+  .dk__card, .dk__card.is-flying { transition: none; }
+  .dk__info > *, .dk__info.is-on > * { transition: none; }
+  .dk__card.is-top .hg__photo--tall img { animation: none; }
+  .mo-cursor { display: none !important; }
+}

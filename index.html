@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#263BAA">
+  <title>Thar Nyi Nyi — Front-end Development Student</title>
+  <meta name="description" content="Thar Nyi Nyiのポートフォリオサイト。Webコーディングに情熱を注ぐフロントエンド開発学生です。">
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&family=Poppins:wght@400;500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/motion.css">
+  <link rel="stylesheet" href="css/v2-motion.css">
+  <script>document.documentElement.classList.add("js-motion")</script>
+  <!-- OPENING (what plays before the first page):
+     loading/loading.js + loading.css = logo opening → scroll turns a HUD ring once → logo + ring shatter → the first page opens.
+     It plays on the first visit (per browser tab session), when the logo in the header is clicked, and when the home page is reloaded.
+     Any other visit to this page — e.g. the "Home" button — gets the quick page loader instead (loading/page-loader.*).
+     The FIRST PAGE is the code-window hero <section class="ch">, which hero/coding-hero.js builds and inserts in front of the
+     empty <section class="hero"> anchor in <main> below (the old text hero was removed; the anchor must stay).
+     ?intro=poster forces the opening · ?intro=off skips it · ?hero=classic shows the plain hero. -->
+  <script>
+      (function () {
+        var first = true;
+        try {
+          var q = new URLSearchParams(location.search).get("intro");
+          var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
+          var reload = nav ? nav.type === "reload" : (performance.navigation && performance.navigation.type === 1);
+          var viaLogo = sessionStorage.getItem("portfolio-poster-next") === "1";      // set by js/main.js when the header logo is clicked
+          sessionStorage.removeItem("portfolio-poster-next");
+          first = q === "poster" || reload || viaLogo || !sessionStorage.getItem("portfolio-opened");
+          sessionStorage.setItem("portfolio-opened", "1");
+        } catch (e) { }
+        document.documentElement.setAttribute("data-opening", first ? "poster" : "page");
+        var f = first ? "loading" : "page-loader";
+        document.write('<link rel="stylesheet" href="loading/' + f + '.css"><script src="loading/' + f + '.js"><\/script>');
+      })();
+  </script>
+  <link rel="stylesheet" href="hero/coding-hero.css">
+  <script src="hero/coding-hero.js" defer></script>
+  <noscript>
+    <style>
+      [data-reveal],
+      [data-reveal-group]>*,
+      .skill-card {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    </style>
+  </noscript>
+</head>
+
+<body>
+
+  <div class="loader-screen">
+    <div class="loader-mark"><span class="loader-spin"></span> loading_portfolio()</div>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html"><svg class="logo-mark" viewBox="0 0 117.4 121.18"
+            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path fill="currentColor"
+              d="M105.21,23.49l3.1-3.81-5.52.83C92.1,8.17,76.31.38,58.7.38S23.84,8.92,13.15,22.27h-7.65l4.47,4.38C3.91,35.86.38,46.86.38,58.7c0,32.21,26.12,58.32,58.32,58.32l-.03,2.88,1.9-2.91c31.34-.99,56.46-26.7,56.46-58.29,0-13.22-4.4-25.42-11.82-35.2h0ZM58.74,113.54h-.04c-30.29,0-54.85-24.56-54.85-54.85,0-10.89,3.17-21.03,8.64-29.57l3.02,2.96-.54,37.35,13.4,7.72.61-33.03,30.25,26.6-.49,42.82ZM62.9,113.39l9.38-14.42v-34.94L25.65,22.27h-7.97C27.72,10.95,42.38,3.83,58.69,3.83s29.97,6.64,39.97,17.29l-6.71,1.01-25.85,32.09,8.11,7.36,28.73-35.31c6.67,9.08,10.61,20.29,10.61,32.42,0,28.87-22.32,52.54-50.65,54.69h0Z" />
+          </svg>Thar Nyi Nyi<span class="dot">.</span></a>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" aria-current="page">Home</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li><a href="works.html">Work</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="nav-cta">
+          <a class="btn btn-outline btn-sm" href="contact.html">Let's Talk</a>
+          <button class="nav-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              width="20" height="20">
+              <line x1="3" y1="6" x2="21" y2="6"></line>
+              <line x1="3" y1="12" x2="21" y2="12"></line>
+              <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO — the FIRST PAGE ============
+         hero/coding-hero.js looks for section.hero and inserts the code-window hero (<section class="ch">) right before it.
+         Keep this (empty, hidden) anchor; delete it and the first page will not be built. -->
+    <section class="hero container" hidden></section>
+
+    <!-- ============ ABOUT PREVIEW ============ -->
+    <section class="section container section--indigo idl-host">
+      <div class="about-preview">
+        <div class="idl idl--home" role="group" aria-roledescription="IDカード" aria-label="Thar Nyi Nyi の学生証 — 写真付きのIDカードがランヤード（ネックストラップ）に下がっている">
+          <div class="idl__rig" aria-hidden="true">
+            <span class="idl__web"></span>
+            <span class="idl__straps"><img class="idl__strap idl__strap--l" src="assets/profile/lanyard-strap.jpg" alt="" width="200" height="2000"><img class="idl__strap idl__strap--r" src="assets/profile/lanyard-strap.jpg" alt="" width="200" height="2000"></span>
+            <div class="idl__hang">
+              <svg class="idl__clip" viewBox="0 0 80 96" width="80" height="96"><rect x="3" y="0" width="74" height="34" rx="8" fill="#111"/><rect x="17" y="13" width="46" height="7" rx="3.5" fill="#3a3a3a"/><path d="M16 33h48l-9 13H25z" fill="#1d1d1d"/><rect x="31" y="45" width="18" height="22" fill="#151b3d"/><rect x="31" y="51" width="18" height="3.5" fill="#ff6b35"/><rect x="32" y="65" width="16" height="9" rx="2.5" fill="#111"/><ellipse cx="40" cy="83.5" rx="9" ry="10.5" fill="none" stroke="#111" stroke-width="4"/></svg>
+              <div class="idl__card">
+                <span class="idl__slot"></span>
+                <div class="idl__head"><svg class="logo-mark" viewBox="0 0 117.4 121.18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path fill="currentColor" d="M105.21,23.49l3.1-3.81-5.52.83C92.1,8.17,76.31.38,58.7.38S23.84,8.92,13.15,22.27h-7.65l4.47,4.38C3.91,35.86.38,46.86.38,58.7c0,32.21,26.12,58.32,58.32,58.32l-.03,2.88,1.9-2.91c31.34-.99,56.46-26.7,56.46-58.29,0-13.22-4.4-25.42-11.82-35.2h0ZM58.74,113.54h-.04c-30.29,0-54.85-24.56-54.85-54.85,0-10.89,3.17-21.03,8.64-29.57l3.02,2.96-.54,37.35,13.4,7.72.61-33.03,30.25,26.6-.49,42.82ZM62.9,113.39l9.38-14.42v-34.94L25.65,22.27h-7.97C27.72,10.95,42.38,3.83,58.69,3.83s29.97,6.64,39.97,17.29l-6.71,1.01-25.85,32.09,8.11,7.36,28.73-35.31c6.67,9.08,10.61,20.29,10.61,32.42,0,28.87-22.32,52.54-50.65,54.69h0Z"/></svg><span class="idl__head-text"><b>WEB DESIGN</b><i>&lt;STUDENT /&gt; · 2026</i></span></div>
+                <div class="idl__photo"><img src="assets/profile/photo.jpg" alt="" width="350" height="420"></div>
+                <div class="idl__body">
+                  <p class="idl__name">Thar Nyi Nyi</p>
+                  <p class="idl__jp">ターニニ</p>
+                  <p class="idl__role">Web Designer · Front-end</p>
+                </div>
+                <div class="idl__foot"><span>Kobe Denshi College<br>Student · 2026</span><span class="idl__code"></span></div>
+              </div>
+            </div>
+          </div>
+          <span class="idl__hint" aria-hidden="true">&larr; drag &rarr;</span>
+        </div>
+        <div data-reveal="right">
+          <p class="eyebrow">// about-me</p>
+          <h2 class="h2" style="margin-bottom: var(--sp-4);">From Design to Development</h2>
+          <p class="lead" style="max-width:560px;">
+            出身はミャンマーで、現在は日本で学んでいます。子供の頃からコンピューターやテクノロジーに興味があり、画面の中で動くものづくりに魅力を感じてきました。今はWebコーディングを中心に学びながら、フロントエンドWeb開発者になることを目指しています。
+          </p>
+          <div class="tag-row" style="margin: var(--sp-5) 0;">
+            <span class="tag">Myanmar → Japan</span>
+            <span class="tag">Kobe Denshi College</span>
+            <span class="tag">Engineering → Code</span>
+          </div>
+          <a class="btn btn-outline" href="profile.html">Read Full Story</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS PREVIEW ============ -->
+    <section class="section container">
+      <div class="section-label-row" data-reveal="fade">
+        <div>
+          <p class="eyebrow">// tech-stack</p>
+          <h2 class="h2">Tools &amp; Technologies</h2>
+        </div>
+        <a class="btn btn-outline btn-sm" href="profile.html">Full Skills</a>
+      </div>
+      <div class="skills-preview-row" data-reveal="fade">
+        <span class="tag">HTML</span>
+        <span class="tag">CSS</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">Responsive Design</span>
+        <span class="tag">Figma</span>
+        <span class="tag">Illustrator</span>
+        <span class="tag">Photoshop</span>
+        <span class="tag">Git</span>
+        <span class="tag">GitHub</span>
+        <span class="tag">VS Code</span>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS & ASSIGNMENTS — the deck: pins while you scroll, cards flick automatically (css/motion.css §8, js/motion.js §9) ============ -->
+    <section class="section container hanging-section section--indigo dk" id="projects" aria-labelledby="dk-h">
+      <div class="bg-grid"></div>
+      <div class="dk__pin">
+        <div class="section-label-row" data-reveal="fade">
+          <div>
+            <p class="eyebrow">// showcase</p>
+            <h2 class="h2" id="dk-h">Projects &amp; Assignments</h2>
+          </div>
+          <p class="dk__hint" aria-hidden="true">Scroll — or flick the top card.</p>
+        </div>
+        <div class="dk__body">
+          <div class="dk__side">
+            <div class="dk__infos" aria-live="polite">
+              <div class="dk__info" data-i="0">
+                <p class="dk__meta" style="--i:0"><span class="tag">Website Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-website.html">Kobe Kitano Aquarium</a></h3>
+                <p class="dk__desc" style="--i:2">架空の水族館「神戸北野水族館」の公式サイトを、Figmaで企画からデザインまで一貫して制作しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Figma</p>
+                <a class="btn btn-outline" style="--i:4" href="work-website.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="1">
+                <p class="dk__meta" style="--i:0"><span class="tag">Website Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-web-collection.html">Web Design Collection — 5 Brand Sites</a></h3>
+                <p class="dk__desc" style="--i:2">ピザ店・カフェ・和の茶房・ジム・タピオカ専門店。業種もトーンも異なる5つの架空ブランドのWebサイトを、それぞれの世界観に合わせてデザインしました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Figma</p>
+                <a class="btn btn-outline" style="--i:4" href="work-web-collection.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="2">
+                <p class="dk__meta" style="--i:0"><span class="tag">Website Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-self-intro.html">自己紹介サイト — Hello, I'm Thar Nyi Nyi</a></h3>
+                <p class="dk__desc" style="--i:2">自分自身を紹介する1ページのWebサイト。ABOUT ME・好きなもの・思い出のマップを、クリーム×ブラック×ネオンの遊び心あるデザインでまとめました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Figma</p>
+                <a class="btn btn-outline" style="--i:4" href="work-self-intro.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="3">
+                <p class="dk__meta" style="--i:0"><span class="tag">Website Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-portfolio-site.html">ポートフォリオサイト デザイン</a></h3>
+                <p class="dk__desc" style="--i:2">自分の作品を紹介するポートフォリオサイトを、トップ・作品一覧・作品詳細・プロフィール・お問い合わせの全8ページでデザイン。ダークネイビー×オレンジで統一しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Figma</p>
+                <a class="btn btn-outline" style="--i:4" href="work-portfolio-site.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="4">
+                <p class="dk__meta" style="--i:0"><span class="tag">Poster Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-poster.html">アートと人 — Art and Human</a></h3>
+                <p class="dk__desc" style="--i:2">架空の展覧会のためのポスターを、5つの異なるビジュアルコンセプトで展開しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-poster.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="5">
+                <p class="dk__meta" style="--i:0"><span class="tag">Banner Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-brand.html">説明会・体験入学 バナー</a></h3>
+                <p class="dk__desc" style="--i:2">神戸電子専門学校 グラフィックデザイン学科の説明会・体験入学告知バナーを、4種類の広告サイズに合わせて展開しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-brand.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="6">
+                <p class="dk__meta" style="--i:0"><span class="tag">Video Editing</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-video.html">ミャンマー料理動画</a></h3>
+                <p class="dk__desc" style="--i:2">ミャンマー料理「チェーオー・シーチェッ」の作り方を紹介するYouTube動画。撮影から編集、サムネイルデザインまで手がけました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — CapCut · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-video.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="7">
+                <p class="dk__meta" style="--i:0"><span class="tag">Logo Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-kyudo.html">世界弓道大会 — World Kyudo Taikai</a></h3>
+                <p class="dk__desc" style="--i:2">「第5回世界弓道大会」のロゴを提案。弓と矢を大会略称「5WKYT」に融合させ、A3ポスター・名刺までビジュアルアイデンティティとして展開しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-kyudo.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="8">
+                <p class="dk__meta" style="--i:0"><span class="tag">Editorial Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-zine.html">ミャンマーの一口 — A Bite of Myanmar</a></h3>
+                <p class="dk__desc" style="--i:2">ミャンマーと日本の料理を見開きごとに比べながら紹介する、全12ページのZINE。テラコッタと藍色の2色で、ふたつの国の食文化をつなぎました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-zine.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="9">
+                <p class="dk__meta" style="--i:0"><span class="tag">Character Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-zodiac.html">12星座キャラクター — Zodiac Koalas</a></h3>
+                <p class="dk__desc" style="--i:2">コアラをベースに、12星座それぞれのモチーフを組み合わせたキャラクターシリーズ。夜空の背景と共通のフォーマットで、12枚をひとつのシリーズにまとめました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator</p>
+                <a class="btn btn-outline" style="--i:4" href="work-zodiac.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="10">
+                <p class="dk__meta" style="--i:0"><span class="tag">Character Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-puffo.html">Puffo — 地元のPRキャラクター</a></h3>
+                <p class="dk__desc" style="--i:2">夏休み課題「地元のPRキャラを作ろう」で、ミャンマーをPRするキャラクター「Puffo」を考案。小さな願いを叶える雲の妖精として、プロフィールからグッズまで設計しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator</p>
+                <a class="btn btn-outline" style="--i:4" href="work-puffo.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="11">
+                <p class="dk__meta" style="--i:0"><span class="tag">Goods Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-can-badge.html">缶バッジデザイン — ようこそ KOBE</a></h3>
+                <p class="dk__desc" style="--i:2">「ウェルカム（ようこそ）」をテーマにした缶バッジを2種類デザイン。神戸の街並みを描いた男性向けと、海の生きものキャラクターの女性向けで展開しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator</p>
+                <a class="btn btn-outline" style="--i:4" href="work-can-badge.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="12">
+                <p class="dk__meta" style="--i:0"><span class="tag">Banner Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-hat-kobe.html">HAT神戸 — 縦型バナー</a></h3>
+                <p class="dk__desc" style="--i:2">神戸の街「HAT神戸」をPRする縦型バナー（500×1000mm）。人と街と海を線画でつなぎ、明るく爽やかな配色で街の魅力を伝えます。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator</p>
+                <a class="btn btn-outline" style="--i:4" href="work-hat-kobe.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="13">
+                <p class="dk__meta" style="--i:0"><span class="tag">Flyer Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-choco-fes.html">チョコフェス KOBE — フライヤー</a></h3>
+                <p class="dk__desc" style="--i:2">神戸のチョコレートイベント「チョコフェス KOBE」のA4フライヤー。とろけるチョコレートと神戸の街のイラストで、甘くて楽しいイベントの雰囲気を表現しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator</p>
+                <a class="btn btn-outline" style="--i:4" href="work-choco-fes.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="14">
+                <p class="dk__meta" style="--i:0"><span class="tag">Poster Design</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-hanabi.html">香住ふるさとまつり 海上花火大会 — ポスター</a></h3>
+                <p class="dk__desc" style="--i:2">「第49回 香住ふるさとまつり 海上花火大会」の告知ポスター（B2）。夜空いっぱいの花火と金色の筆文字で、夏祭りの高揚感を表現しました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-hanabi.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+              <div class="dk__info" data-i="15">
+                <p class="dk__meta" style="--i:0"><span class="tag">Business Card</span><span class="work-year">2026</span></p>
+                <h3 class="dk__name" style="--i:1"><a href="work-business-card.html">パーソナル名刺デザイン</a></h3>
+                <p class="dk__desc" style="--i:2">自分のロゴマークを使ったパーソナル名刺。チャコールとクリームの2色に、細い金茶のラインを効かせ、落ち着いた大人っぽい印象にまとめました。</p>
+                <p class="dk__tools" style="--i:3">課題 · School Assignment — Illustrator · Photoshop</p>
+                <a class="btn btn-outline" style="--i:4" href="work-business-card.html">Read Case Study <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></a>
+              </div>
+            </div>
+            <div class="dk__ctrl">
+              <div class="dk__arrows">
+                <button class="dk__btn dk__btn--prev" type="button" aria-label="Previous project"><svg
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 5 5 12 12 19"></polyline>
+                  </svg></button>
+                <button class="dk__btn dk__btn--next" type="button" aria-label="Next project"><svg viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg></button>
+              </div>
+              <ul class="dk__dots" aria-label="Choose a project">
+                <li><button class="dk__go" type="button" title="Aquarium">Aquarium</button></li>
+                <li><button class="dk__go" type="button" title="Brand Sites">Brand Sites</button></li>
+                <li><button class="dk__go" type="button" title="About Me Site">About Me Site</button></li>
+                <li><button class="dk__go" type="button" title="Portfolio UI">Portfolio UI</button></li>
+                <li><button class="dk__go" type="button" title="Art and Human">Art and Human</button></li>
+                <li><button class="dk__go" type="button" title="Open Campus">Open Campus</button></li>
+                <li><button class="dk__go" type="button" title="Myanmar Food">Myanmar Food</button></li>
+                <li><button class="dk__go" type="button" title="World Kyudo">World Kyudo</button></li>
+                <li><button class="dk__go" type="button" title="A Bite of Myanmar">A Bite of Myanmar</button></li>
+                <li><button class="dk__go" type="button" title="Zodiac Koalas">Zodiac Koalas</button></li>
+                <li><button class="dk__go" type="button" title="Puffo">Puffo</button></li>
+                <li><button class="dk__go" type="button" title="Welcome Badges">Welcome Badges</button></li>
+                <li><button class="dk__go" type="button" title="HAT Kobe">HAT Kobe</button></li>
+                <li><button class="dk__go" type="button" title="Choco Fes">Choco Fes</button></li>
+                <li><button class="dk__go" type="button" title="Kasumi Fireworks">Kasumi Fireworks</button></li>
+                <li><button class="dk__go" type="button" title="Business Card">Business Card</button></li>
+              </ul>
+            </div>
+          </div>
+          <div class="dk__stack" data-deck role="group" aria-roledescription="carousel" aria-label="Projects">
+            <ol class="dk__cards">
+              <li class="dk__card" data-i="0">
+                <a class="dk__link" href="work-website.html" data-cursor="Flick" aria-label="Kobe Kitano Aquarium — Website Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--tall"><img src="assets/works/aquarium/aquarium-full.jpg" alt="神戸北野水族館 Webサイトデザイン" width="1000" height="3413" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Aquarium</span><span class="hg__sub">Website Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="1">
+                <a class="dk__link" href="work-web-collection.html" data-cursor="Flick" aria-label="Web Design Collection — 5 Brand Sites — Website Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--tall"><img src="assets/works/web-design/forno-rosso.jpg" alt="FORNO ROSSO ピザ店 Webサイトデザイン" width="1000" height="2383" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Brand Sites</span><span class="hg__sub">Website Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="2">
+                <a class="dk__link" href="work-self-intro.html" data-cursor="Flick" aria-label="自己紹介サイト — Hello, I'm Thar Nyi Nyi — Website Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--tall"><img src="assets/works/self-intro-site/self-intro.jpg" alt="自己紹介サイト Webデザイン" width="1000" height="4665" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">About Me Site</span><span class="hg__sub">Website Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="3">
+                <a class="dk__link" href="work-portfolio-site.html" data-cursor="Flick" aria-label="ポートフォリオサイト デザイン — Website Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--tall"><img src="assets/works/portfolio-site/top.jpg" alt="ポートフォリオサイト トップページ デザイン" width="1000" height="2696" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Portfolio UI</span><span class="hg__sub">Website Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="4">
+                <a class="dk__link" href="work-poster.html" data-cursor="Flick" aria-label="アートと人 — Art and Human — Poster Design">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/art-and-human/poster-03.jpg" alt="アートと人 展覧会ポスター" width="612" height="859" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Art and Human</span><span class="hg__sub">Poster Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="5">
+                <a class="dk__link" href="work-brand.html" data-cursor="Flick" aria-label="説明会・体験入学 バナー — Banner Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--contain"><img src="assets/works/banner-campaign/banner-01.png" alt="神戸電子専門学校 説明会バナー" width="300" height="279" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Open Campus</span><span class="hg__sub">Banner Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="6">
+                <a class="dk__link" href="work-video.html" data-cursor="Flick" aria-label="ミャンマー料理動画 — Video Editing">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/cooking-video/thumbnail.jpg" alt="ミャンマー料理動画 サムネイル" width="854" height="590" loading="lazy" draggable="false"><span class="video-play-badge"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg></span></span></span>
+                  <span class="hg__tag"><span class="hg__title">Myanmar Food</span><span class="hg__sub">Video Editing</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="7">
+                <a class="dk__link" href="work-kyudo.html" data-cursor="Flick" aria-label="世界弓道大会 — World Kyudo Taikai — Logo Design">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/world-kyudo/poster.jpg" alt="第5回世界弓道大会 A3ポスター" width="842" height="1191" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">World Kyudo</span><span class="hg__sub">Logo Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="8">
+                <a class="dk__link" href="work-zine.html" data-cursor="Flick" aria-label="ミャンマーの一口 — A Bite of Myanmar — Editorial Design">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/zine/page-01.jpg" alt="ZINE ミャンマーの一口 表紙" width="800" height="1119" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">A Bite of Myanmar</span><span class="hg__sub">Editorial Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="9">
+                <a class="dk__link" href="work-zodiac.html" data-cursor="Flick" aria-label="12星座キャラクター — Zodiac Koalas — Character Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--contain"><img src="assets/works/zodiac/leo.jpg" alt="12星座キャラクター しし座" width="700" height="700" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Zodiac Koalas</span><span class="hg__sub">Character Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="10">
+                <a class="dk__link" href="work-puffo.html" data-cursor="Flick" aria-label="Puffo — 地元のPRキャラクター — Character Design">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/puffo/character.jpg" alt="PRキャラクター Puffo" width="890" height="1060" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Puffo</span><span class="hg__sub">Character Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="11">
+                <a class="dk__link" href="work-can-badge.html" data-cursor="Flick" aria-label="缶バッジデザイン — ようこそ KOBE — Goods Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--contain"><img src="assets/works/can-badge/badges.jpg" alt="ようこそ 缶バッジ 2種類" width="1360" height="610" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Welcome Badges</span><span class="hg__sub">Goods Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="12">
+                <a class="dk__link" href="work-hat-kobe.html" data-cursor="Flick" aria-label="HAT神戸 — 縦型バナー — Banner Design">
+                  <span class="hg__card"><span class="hg__photo hg__photo--contain"><img src="assets/works/hat-kobe/banner.jpg" alt="HAT神戸 縦型バナー" width="900" height="1797" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">HAT Kobe</span><span class="hg__sub">Banner Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="13">
+                <a class="dk__link" href="work-choco-fes.html" data-cursor="Flick" aria-label="チョコフェス KOBE — フライヤー — Flyer Design">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/choco-fes/flyer.jpg" alt="チョコフェス KOBE フライヤー" width="1000" height="1414" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Choco Fes</span><span class="hg__sub">Flyer Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="14">
+                <a class="dk__link" href="work-hanabi.html" data-cursor="Flick" aria-label="香住ふるさとまつり 海上花火大会 — ポスター — Poster Design">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/hanabi/poster.jpg" alt="香住ふるさとまつり 海上花火大会 ポスター" width="1000" height="1414" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Kasumi Fireworks</span><span class="hg__sub">Poster Design</span></span>
+                </a>
+              </li>
+              <li class="dk__card" data-i="15">
+                <a class="dk__link" href="work-business-card.html" data-cursor="Flick" aria-label="パーソナル名刺デザイン — Business Card">
+                  <span class="hg__card"><span class="hg__photo"><img src="assets/works/business-card/mockup-01.jpg" alt="パーソナル名刺 モックアップ" width="1600" height="1067" loading="lazy" draggable="false"></span></span>
+                  <span class="hg__tag"><span class="hg__title">Business Card</span><span class="hg__sub">Business Card</span></span>
+                </a>
+              </li>
+            </ol>
+          </div>
+        </div>
+        <div class="dk__progress" aria-hidden="true"><i></i></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT CTA ============ -->
+    <section class="section container" id="contact">
+      <div class="contact-cta" data-reveal="scale">
+        <div class="glow-aura glow-blue"
+          style="width:400px;height:400px;top:-120px;left:50%;transform:translateX(-50%);"></div>
+        <p class="eyebrow" style="justify-content:center;">// get-in-touch</p>
+        <h2 class="h2">Let's Build Something Great</h2>
+        <p class="lead" style="margin:var(--sp-4) auto var(--sp-6); text-align:center;">
+          インターンシップ、共同制作、フロントエンドのお仕事など、幅広く募集中です。次のプロジェクトについて、ぜひお話ししましょう。</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="contact.html">Say Hello</a>
+          <a class="btn btn-outline" href="profile.html">View Profile</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-cta">
+          <div class="footer-brand"><svg class="logo-mark" viewBox="0 0 117.4 121.18" xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true">
+              <path fill="currentColor"
+                d="M105.21,23.49l3.1-3.81-5.52.83C92.1,8.17,76.31.38,58.7.38S23.84,8.92,13.15,22.27h-7.65l4.47,4.38C3.91,35.86.38,46.86.38,58.7c0,32.21,26.12,58.32,58.32,58.32l-.03,2.88,1.9-2.91c31.34-.99,56.46-26.7,56.46-58.29,0-13.22-4.4-25.42-11.82-35.2h0ZM58.74,113.54h-.04c-30.29,0-54.85-24.56-54.85-54.85,0-10.89,3.17-21.03,8.64-29.57l3.02,2.96-.54,37.35,13.4,7.72.61-33.03,30.25,26.6-.49,42.82ZM62.9,113.39l9.38-14.42v-34.94L25.65,22.27h-7.97C27.72,10.95,42.38,3.83,58.69,3.83s29.97,6.64,39.97,17.29l-6.71,1.01-25.85,32.09,8.11,7.36,28.73-35.31c6.67,9.08,10.61,20.29,10.61,32.42,0,28.87-22.32,52.54-50.65,54.69h0Z" />
+            </svg>
+            <h3 class="h3">Thar Nyi Nyi<span style="color:var(--accent);">.</span></h3>
+          </div>
+          <p class="text-secondary" style="max-width:360px;">フロントエンド開発学生。日本を拠点に活動中。</p>
+        </div>
+        <div class="footer-links">
+          <div class="footer-col">
+            <h5>Sitemap</h5>
+            <a href="index.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="works.html">Work</a>
+            <a href="contact.html">Contact</a>
+          </div>
+          <div class="footer-col">
+            <h5>Connect</h5>
+            <a href="mailto:hello@tharnyinyi.dev">Email</a>
+            <a href="#">GitHub</a>
+            <a href="#">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Thar Nyi Nyi — Built with HTML, CSS &amp; JavaScript.</span>
+        <div class="social-row">
+          <a href="#" aria-label="GitHub"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .5C5.73.5.98 5.24.98 11.52c0 5.02 3.26 9.28 7.77 10.78.57.1.78-.25.78-.55v-2.15c-3.16.69-3.83-1.36-3.83-1.36-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.02 1.75 2.68 1.25 3.34.95.1-.74.4-1.25.72-1.54-2.52-.29-5.17-1.26-5.17-5.6 0-1.24.44-2.25 1.17-3.04-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.14 1.16a10.9 10.9 0 0 1 5.72 0c2.18-1.47 3.14-1.16 3.14-1.16.62 1.57.23 2.73.11 3.02.73.79 1.17 1.8 1.17 3.04 0 4.35-2.65 5.31-5.18 5.59.41.35.77 1.04.77 2.11v3.13c0 .3.21.66.79.55A11.03 11.03 0 0 0 23.02 11.5C23.02 5.24 18.27.5 12 .5z" />
+            </svg></a>
+          <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.61 0 4.28 2.38 4.28 5.47v6.27zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z" />
+            </svg></a>
+          <a href="mailto:hello@tharnyinyi.dev" aria-label="Email"><svg viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+              <path d="M22 6l-10 7L2 6"></path>
+            </svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script src="js/motion.js"></script>
+  <script src="js/v2-motion.js"></script>
+</body>
+
+</html>

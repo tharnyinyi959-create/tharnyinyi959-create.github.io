@@ -1,0 +1,7 @@
+# original project files (.ai / .pdf / .pptx, 466 MB) — the site uses the exported images in assets/works/*, not these
+assets/works/Portfolio/
+
+# system / editor files
+.DS_Store
+*.tmp
+.vscode/

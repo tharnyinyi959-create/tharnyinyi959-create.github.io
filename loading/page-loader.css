@@ -1,0 +1,133 @@
+/* =====================================================================
+   Page loader — Nordic Indigo × Vanilla Mist (vanilla screen). Every class starts .lvp.
+
+   .lvp__veil   opaque vanilla layer with a circular hole that opens at the end
+                (the hole is how the page underneath is revealed)
+   .lvp__stage  the logo + its soft warm light, above the veil
+   ===================================================================== */
+
+/* cover the page from the very first paint; hide the plain "loading_portfolio()" splash behind it */
+html.lvp-pending::before { content: ""; position: fixed; inset: 0; z-index: 10000; background: #FFF4D6; }
+html.lvp-pending, html.lvp-active { overflow: hidden; }
+html.lvp-pending .loader-screen, html.lvp-active .loader-screen { display: none; }
+
+.lvp {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--li-w, 100%);
+  height: var(--li-h, 100%);
+  z-index: 10000;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  pointer-events: auto;
+}
+
+/* ---------- veil ---------- */
+.lvp__veil {
+  --hole: 0px;
+  --soft: 0px;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #FFF4D6;
+  -webkit-mask-image: radial-gradient(circle at 50% var(--hy, 48%), transparent var(--hole), #000 calc(var(--hole) + var(--soft)));
+          mask-image: radial-gradient(circle at 50% var(--hy, 48%), transparent var(--hole), #000 calc(var(--hole) + var(--soft)));
+}
+
+/* faint grid, strongest around the logo */
+.lvp__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 59, 170, 0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 59, 170, 0.10) 1px, transparent 1px);
+  background-size: 72px 72px;
+  background-position: calc(var(--dcx) - 36px) calc(var(--dcy) - 36px);
+  -webkit-mask-image: radial-gradient(circle at var(--dcx) var(--dcy), #000 0, rgba(0, 0, 0, 0.5) calc(var(--d) * 0.7), transparent calc(var(--d) * 1.5));
+          mask-image: radial-gradient(circle at var(--dcx) var(--dcy), #000 0, rgba(0, 0, 0, 0.5) calc(var(--d) * 0.7), transparent calc(var(--d) * 1.5));
+  opacity: 0;
+  transition: opacity 1.2s ease 0.1s;
+}
+
+/* thin indigo horizon line through the logo's centre (loading phase) */
+.lvp__hline { position: absolute; left: 0; right: 0; top: var(--dcy); height: 1px; }
+.lvp__hline i {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(38, 59, 170, 0), rgba(38, 59, 170, 0.7) 20%, rgba(38, 59, 170, 0.7) 80%, rgba(38, 59, 170, 0));
+  transform: scaleX(0);
+  transform-origin: 50% 50%;
+  transition: transform 0.7s cubic-bezier(0.65, 0, 0.2, 1), opacity 0.9s ease;
+}
+
+/* two crop marks + a small progress counter */
+.lvp__mark { position: absolute; width: 16px; height: 16px; border: 0 solid rgba(38, 59, 170, 0.6); opacity: 0; transition: opacity 0.6s ease 0.2s; }
+.lvp__mark--tl { top: 22px; left: 22px; border-top-width: 1px; border-left-width: 1px; }
+.lvp__mark--br { bottom: 22px; right: 22px; border-bottom-width: 1px; border-right-width: 1px; }
+.lvp__count {
+  position: absolute;
+  left: 28px;
+  bottom: 28px;
+  font: 500 11px/1 var(--font-mono, ui-monospace, Menlo, Consolas, monospace);
+  letter-spacing: 0.24em;
+  color: rgba(38, 59, 170, 0.7);
+  opacity: 0;
+  transition: opacity 0.6s ease 0.3s;
+  font-variant-numeric: tabular-nums;
+}
+.lvp__count b { color: #263BAA; font-weight: 500; }
+.lvp__count span { color: #263BAA; margin-left: 2px; }
+
+.lvp--line .lvp__grid, .lvp--line .lvp__mark, .lvp--line .lvp__count { opacity: 1; }
+.lvp--line .lvp__hline i { transform: scaleX(1); }
+.lvp--solid .lvp__hline i { opacity: 0; }
+
+/* ---------- logo + light ---------- */
+.lvp__stage { position: absolute; inset: 0; z-index: 2; pointer-events: none; }
+.lvp__logo {
+  position: absolute;
+  left: var(--dcx);
+  top: var(--dcy);
+  width: var(--d);
+  height: var(--d);
+  margin: calc(var(--d) * -0.5) 0 0 calc(var(--d) * -0.5);
+  will-change: transform, opacity;
+}
+.lvp__svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; }
+.lvp__aura {
+  position: absolute;
+  left: var(--dcx);
+  top: var(--dcy);
+  width: calc(var(--d) * 1.9);
+  height: calc(var(--d) * 1.9);
+  margin: calc(var(--d) * -0.95) 0 0 calc(var(--d) * -0.95);
+  border-radius: 50%;
+  background: radial-gradient(circle closest-side, rgba(38, 59, 170, 0.14), rgba(38, 59, 170, 0.05) 48%, rgba(38, 59, 170, 0) 100%);
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 700px) {
+  .lvp__count { left: 20px; bottom: 22px; }
+  .lvp__mark--tl { top: 16px; left: 16px; }
+  .lvp__mark--br { bottom: 16px; right: 16px; }
+}
+@media (prefers-reduced-motion: reduce) { .lvp * { transition-duration: 0.01ms !important; } }
+
+/* taut rim around the opening: the page underneath is as light as the layer, so the hole needs a visible edge */
+.lvp__lip {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% var(--hy, 48%),
+    rgba(38, 59, 170, 0) 0,
+    rgba(38, 59, 170, 0) var(--hole),
+    rgba(38, 59, 170, 0.5) calc(var(--hole) + 1px),
+    rgba(38, 59, 170, 0) calc(var(--hole) + 3px),
+    rgba(38, 59, 170, 0.12) calc(var(--hole) + 3px),
+    rgba(38, 59, 170, 0) calc(var(--hole) + 120px));
+}

@@ -1,0 +1,370 @@
+/* =====================================================================
+   Loading — Nordic Indigo #263BAA × Vanilla Mist #FFF4D6
+   Every class is prefixed .lvi so nothing here can clash with a page.
+
+   Layer stack (bottom → top), all inside .lvi:
+     1. .lvi__fabric   the vanilla sheet. It has a circular hole (CSS mask)
+                       that opens at the end to reveal the page underneath.
+     2. .lvi__poster   grid, hairlines and the big type
+     3. .lvi__stage    the logo
+     4. .lvi__hint     small "scroll" cue
+
+   loading.js drives it through inline transforms and the custom properties below.
+   ===================================================================== */
+
+:root {
+  --lvi-indigo: #263BAA;
+  --lvi-indigo-deep: #1E2F88;
+  --lvi-vanilla: #FFF4D6;
+  --lvi-ink-soft: rgba(38, 59, 170, 0.8);    /* small text on vanilla: 5.2 : 1 */
+  --lvi-line: rgba(38, 59, 170, 0.55);
+}
+
+/* Cover the page from the very first paint so nothing flashes before the loader is built. */
+html.lvi-pending::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 10000;
+  background: var(--lvi-vanilla);
+}
+/* hold the page's own entrance until the opening reveals it */
+html.lvi-pending .hero-anim, html.lvi-active .hero-anim { animation-play-state: paused; }
+/* no page scrolling until the opening has finished */
+html.lvi-pending, html.lvi-active { overflow: hidden; }
+
+.lvi {
+  --d: min(70vmin, 620px);          /* logo box */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: var(--li-w, 100%);         /* set from the visual viewport in JS */
+  height: var(--li-h, 100%);
+  z-index: 10000;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: none;
+  user-select: none;
+  -webkit-user-select: none;
+  color-scheme: light;
+}
+
+/* ---------------------------------------------------------------------
+   1. VANILLA SHEET — oversized (inset -15%); --hole is the radius of the opening
+   --------------------------------------------------------------------- */
+.lvi__fabric {
+  --hole: 0px;
+  position: absolute;
+  inset: -15%;
+  z-index: 1;
+  background: var(--lvi-vanilla);
+  -webkit-mask-image: radial-gradient(circle at var(--hx, 50%) var(--hy, 50%), transparent var(--hole), #000 calc(var(--hole) + 1.5px));
+          mask-image: radial-gradient(circle at var(--hx, 50%) var(--hy, 50%), transparent var(--hole), #000 calc(var(--hole) + 1.5px));
+  transform-origin: var(--hx, 50%) var(--hy, 50%);
+  will-change: transform;
+}
+.lvi__fabric > div { position: absolute; inset: 0; pointer-events: none; }
+
+/* a faint indigo breath behind the logo */
+.lvi__light {
+  opacity: 0;
+  background: radial-gradient(ellipse 58% 54% at var(--hx, 50%) var(--hy, 50%), rgba(38, 59, 170, 0.1), rgba(38, 59, 170, 0.04) 50%, rgba(38, 59, 170, 0) 80%);
+}
+
+/* ---------------------------------------------------------------------
+   2. STAGE + LOGO
+   --------------------------------------------------------------------- */
+.lvi__stage {
+  position: absolute;
+  inset: 0;
+  perspective: 1300px;
+  perspective-origin: var(--dcx, 50%) var(--dcy, 50%);
+  z-index: 3;
+}
+@media (max-width: 700px) { .lvi__stage { perspective: 950px; } }
+
+.lvi-disc {
+  position: absolute;
+  left: calc(50% + var(--cx, 0px));
+  top: calc(50% + var(--cy, 0px));
+  width: var(--d);
+  height: var(--d);
+  margin: calc(var(--d) * -0.5) 0 0 calc(var(--d) * -0.5);
+  transform-style: preserve-3d;
+  will-change: transform, opacity;
+}
+.lvi-disc__face { position: absolute; inset: 0; backface-visibility: hidden; }
+.lvi-disc__mark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: var(--d);
+  height: var(--d);
+  transform: translate(-50%, -50%);
+  overflow: visible;
+}
+
+/* ---------------------------------------------------------------------
+   3. SCROLL CUE
+   --------------------------------------------------------------------- */
+.lvi__hint {
+  z-index: 5;
+  position: absolute;
+  right: clamp(20px, 4vw, 56px);
+  bottom: calc(5% + env(safe-area-inset-bottom, 0px));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 8px 14px;
+  background: none;
+  border: 0;
+  color: var(--lvi-ink-soft);
+  font: 500 11px/1 "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+.lvi__hint.is-on { opacity: 0.85; }
+.lvi__hint i {
+  display: block;
+  width: 1px;
+  height: 38px;
+  background: linear-gradient(var(--lvi-indigo), rgba(38, 59, 170, 0));
+  transform-origin: top;
+  animation: lvi-line 1.7s cubic-bezier(0.6, 0, 0.3, 1) infinite;
+}
+@keyframes lvi-line {
+  0%   { transform: scaleY(0); opacity: 1; }
+  55%  { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* =====================================================================
+   POSTER LAYER — typography + a few graphic details.
+   Sits between the sheet (below) and the logo (above). Positions come from JS vars:
+   --W --H screen · --d logo box · --dcx --dcy logo centre.
+   ===================================================================== */
+.lvi__poster {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+.lvi__p { position: absolute; will-change: transform; }
+
+/* subtle grid, strongest around the logo */
+.lvi__grid {
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(38, 59, 170, 0.075) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(38, 59, 170, 0.075) 1px, transparent 1px);
+  background-size: 72px 72px;
+  background-position: calc(var(--dcx) - 36px) calc(var(--dcy) - 36px);
+  -webkit-mask-image: radial-gradient(circle at var(--dcx) var(--dcy), #000 0, rgba(0, 0, 0, 0.55) calc(var(--d) * 0.8), transparent calc(var(--d) * 1.6));
+          mask-image: radial-gradient(circle at var(--dcx) var(--dcy), #000 0, rgba(0, 0, 0, 0.55) calc(var(--d) * 0.8), transparent calc(var(--d) * 1.6));
+  opacity: 0;
+  transition: opacity 1.4s ease 0.1s;
+}
+
+/* hairline from the top edge down to the logo, with a dot and "01" */
+.lvi__vline {
+  left: var(--dcx);
+  top: 0;
+  width: 1px;
+  height: calc(var(--dcy) - var(--d) * 0.6 - 3px);
+}
+.lvi__vline i { position: absolute; inset: 0; background: var(--lvi-line); transform: scaleY(0); transform-origin: top; transition: transform 0.9s cubic-bezier(0.65, 0, 0.2, 1) 0.15s; }
+.lvi__vline u { position: absolute; left: -2.5px; bottom: -3px; width: 6px; height: 6px; border-radius: 50%; background: var(--lvi-indigo); opacity: 0; transition: opacity 0.4s ease 0.95s; }
+.lvi__vline em { position: absolute; left: 12px; top: 56px; font: 500 10.5px/1 var(--font-mono, ui-monospace, Menlo, monospace); font-style: normal; letter-spacing: 0.2em; color: var(--lvi-ink-soft); opacity: 0; transition: opacity 0.8s ease 0.3s; }
+
+/* crop marks (two corners only) */
+.lvi__mark { position: absolute; width: 16px; height: 16px; border: 0 solid var(--lvi-line); opacity: 0; transition: opacity 0.6s ease 0.1s; }
+.lvi__mark--tl { top: 22px; left: 22px; border-top-width: 1px; border-left-width: 1px; }
+.lvi__mark--br { bottom: 22px; right: 22px; border-bottom-width: 1px; border-right-width: 1px; }
+
+/* small texts */
+.lvi__small, .lvi__jp, .lvi__cap {
+  font: 500 10.5px/1.5 var(--font-mono, ui-monospace, Menlo, monospace);
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--lvi-ink-soft);
+  opacity: 0;
+  transition: opacity 0.9s ease;
+}
+.lvi__small { position: absolute; left: 28px; top: 52px; white-space: nowrap; }
+.lvi__small b { color: var(--lvi-indigo); font-weight: 600; }
+.lvi__jp {
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  translate: 0 -50%;
+  writing-mode: vertical-rl;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5em;
+  text-transform: none;
+}
+.lvi__jp::before { content: ""; display: block; width: 1px; height: 40px; margin: 0 auto 16px; background: var(--lvi-line); }
+
+/* the main message: BUILDING / FOR THE / WEB, small supporting line */
+.lvi__type {
+  --F1: min(calc(var(--W) * 0.075), calc(var(--H) * 0.15));
+  --tx: calc(var(--dcx) + var(--d) * 0.6);
+  --ty: calc(var(--dcy) - var(--F1) * 1.55);
+  position: absolute;
+  inset: 0;
+}
+.lvi__tl {
+  overflow: hidden;
+  padding: 0.05em 0.08em 0.12em 0;
+  font-family: var(--font-display, "Space Grotesk", "Noto Sans JP", sans-serif);
+  font-weight: 700;
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--lvi-indigo);
+}
+.lvi__tl span { display: block; transform: translateY(118%); transition: transform 1.1s cubic-bezier(0.16, 1, 0.3, 1) var(--t, 0s); }
+.lvi__tl--1 { font-size: var(--F1); }
+.lvi__tl--x { font-size: calc(var(--F1) * 0.24); font-weight: 500; letter-spacing: 0.34em; }
+.lvi__tl--x span::before { content: ""; display: inline-block; width: calc(var(--F1) * 0.5); height: 1px; margin-right: 0.9em; vertical-align: middle; background: var(--lvi-indigo); }
+.lvi__tl--2 { font-size: calc(var(--F1) * 1.55); letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1.5px var(--lvi-indigo); }
+
+.lvi__cap { position: absolute; font: 500 11px/1.5 var(--font-mono, ui-monospace, Menlo, monospace); letter-spacing: 0.24em; text-transform: uppercase; color: var(--lvi-ink-soft); }
+.lvi__cap::before { content: ""; display: block; width: 30px; height: 1px; background: var(--lvi-indigo); margin-bottom: 10px; }
+
+/* landscape: the message hangs off the logo's right side */
+.lvi[data-layout="land"] .lvi__tl { position: absolute; }
+.lvi[data-layout="land"] .lvi__tl--1 { left: var(--tx); top: var(--ty); }
+.lvi[data-layout="land"] .lvi__tl--x { left: calc(var(--tx) + var(--F1) * 0.05); top: calc(var(--ty) + var(--F1) * 1.0); }
+.lvi[data-layout="land"] .lvi__tl--2 { left: calc(var(--tx) - var(--F1) * 0.04); top: calc(var(--ty) + var(--F1) * 1.36); }
+.lvi[data-layout="land"] .lvi__cap { left: var(--tx); top: calc(var(--ty) + var(--F1) * 2.86); }
+
+/* portrait / phone: logo on top, message stacked underneath */
+.lvi[data-layout="port"] .lvi__type {
+  --F1: calc(var(--W) * 0.16);
+  inset: auto;
+  left: calc(var(--W) * 0.07);
+  right: calc(var(--W) * 0.04);
+  top: calc(var(--dcy) + var(--d) * 0.52 + var(--H) * 0.03);
+}
+.lvi[data-layout="port"] .lvi__tl { position: relative; }
+.lvi[data-layout="port"] .lvi__tl--x { margin: 0.4em 0 0.5em; }
+.lvi[data-layout="port"] .lvi__cap { position: relative; margin-top: 14px; }
+.lvi[data-layout="port"] .lvi__jp { display: none; }
+
+/* horizon line through the logo's centre (loading phase only) */
+.lvi__hline { left: 0; right: 0; top: var(--dcy); height: 1px; }
+.lvi__hline i {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(38, 59, 170, 0), rgba(38, 59, 170, 0.6) 18%, rgba(38, 59, 170, 0.6) 82%, rgba(38, 59, 170, 0));
+  transform: scaleX(0);
+  transform-origin: var(--dcx) 50%;
+  transition: transform 0.85s cubic-bezier(0.65, 0, 0.2, 1), opacity 1s ease;
+}
+.lvi.is-hline .lvi__hline i { transform: scaleX(1); }
+.lvi.is-solid .lvi__hline i { opacity: 0; }
+
+/* reveal states */
+.lvi.is-lines .lvi__grid { opacity: 1; }
+.lvi.is-lines .lvi__vline i { transform: scaleY(1); }
+.lvi.is-lines .lvi__vline u, .lvi.is-lines .lvi__vline em, .lvi.is-lines .lvi__mark { opacity: 1; }
+
+.lvi.is-poster .lvi__tl span { transform: none; }
+.lvi.is-poster .lvi__small { opacity: 1; transition-delay: 0.5s; }
+.lvi.is-poster .lvi__jp { opacity: 1; transition-delay: 0.8s; }
+.lvi.is-poster .lvi__cap { opacity: 1; transition-delay: 0.7s; }
+
+@media (prefers-reduced-motion: reduce) { .lvi * { transition-duration: 0.01ms !important; } }
+
+/* taut edge of the vanilla sheet around the opening: the page underneath is as light as the sheet,
+   so the hole needs a visible rim and a little shade falling onto the sheet */
+.lvi__lip {
+  background: radial-gradient(circle at var(--hx, 50%) var(--hy, 50%),
+    rgba(38, 59, 170, 0) 0,
+    rgba(38, 59, 170, 0) var(--hole),
+    rgba(38, 59, 170, 0.5) calc(var(--hole) + 1px),
+    rgba(38, 59, 170, 0) calc(var(--hole) + 3px),
+    rgba(38, 59, 170, 0.12) calc(var(--hole) + 3px),
+    rgba(38, 59, 170, 0) calc(var(--hole) + 120px));
+}
+
+/* =====================================================================
+   GRID HOVER — the cell under the mouse lifts off the grid (see bindGridHover in loading.js).
+   The grid itself is untouched; .lvi__tile elements are positioned over one cell at a time.
+   Same deep blue as the logo (--lvi-indigo). Tweak: lift (translateY / scale), shadow, speed.
+   ===================================================================== */
+.lvi__tiles {
+  inset: 0;
+  pointer-events: none;
+  /* its own, wider fade than the grid's, so a lifted cell stays readable a little further from the logo */
+  -webkit-mask-image: radial-gradient(circle at var(--dcx) var(--dcy), #000 0, rgba(0, 0, 0, 0.85) calc(var(--d) * 0.9), transparent calc(var(--d) * 2.2));
+          mask-image: radial-gradient(circle at var(--dcx) var(--dcy), #000 0, rgba(0, 0, 0, 0.85) calc(var(--d) * 0.9), transparent calc(var(--d) * 2.2));
+  opacity: 0;
+  transition: opacity 1.4s ease 0.1s;           /* appears together with the grid */
+}
+.lvi.is-lines .lvi__tiles { opacity: 1; }
+.lvi__tile {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 72px;                                  /* = the grid's background-size */
+  height: 72px;
+  box-sizing: border-box;
+  pointer-events: none;
+  opacity: 0;
+  background: var(--lvi-vanilla);               /* the cell reads as a tile of the same paper */
+  border: 1px solid rgba(38, 59, 170, 0.14);
+  border: 1px solid color-mix(in srgb, var(--lvi-indigo) 16%, transparent);
+  border-radius: 2px;
+  box-shadow: 0 0 0 0 rgba(38, 59, 170, 0);
+  transform: translateY(0) scale(1);
+  transition:
+    transform 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    box-shadow 220ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 180ms ease;
+  will-change: transform, opacity;
+}
+.lvi__tile.is-up {
+  opacity: 1;
+  transform: translateY(-5px) scale(1.05);
+  box-shadow:
+    0 14px 22px -8px rgba(38, 59, 170, 0.38),
+    0 3px 6px -2px rgba(38, 59, 170, 0.24);
+  box-shadow:
+    0 14px 22px -8px color-mix(in srgb, var(--lvi-indigo) 38%, transparent),
+    0 3px 6px -2px color-mix(in srgb, var(--lvi-indigo) 24%, transparent);
+}
+@media (hover: none), (pointer: coarse) { .lvi__tiles { display: none; } }
+@media (prefers-reduced-motion: reduce) { .lvi__tiles { display: none; } }
+
+/* ---------------------------------------------------------------------
+   HUD RING — built by loading.js around the logo (400 logo-units wide; the logo's own svg is 123.4 wide)
+   --------------------------------------------------------------------- */
+.lvi-hud {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: calc(var(--d) * 3.2415);
+  height: calc(var(--d) * 3.2415);
+  max-width: none;
+  max-height: none;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+  pointer-events: none;
+}
+
+/* ---------------------------------------------------------------------
+   SHATTER — clones of the logo, each clipped to one shard (built by loading.js)
+   --------------------------------------------------------------------- */
+.lvi-shards { position: absolute; inset: -20%; pointer-events: none; transform-style: preserve-3d; }
+.lvi-shards__box { position: absolute; inset: 0; transform-style: preserve-3d; }
+.lvi-shard { position: absolute; inset: 0; will-change: transform, opacity; backface-visibility: visible; }
+.lvi-cracks { position: absolute; inset: 0; width: 100%; height: 100%; max-width: none; max-height: none; overflow: visible; opacity: 0; clip-path: circle(49% at 50% 50%); }
