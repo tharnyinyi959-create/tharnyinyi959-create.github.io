@@ -2185,7 +2185,7 @@ code,
 /* =====================================================================
    STUDENT ID ON A LANYARD (profile hero + home "about")
    One rig = the two straps + the clip + the card, so they always move together.
-   The straps are the real print artwork (assets/profile/lanyard-strap.jpg, 1:10); they hang
+   The straps are the real print artwork (assets/profile/lanyard-strap.webp, 1:10); they hang
    from above the rig and run up past the top of the screen (or the section edge on home).
    Sizes all come from --sw (strap width) and --cw (card width). The entrance lives in motion.css.
    ===================================================================== */
@@ -2229,7 +2229,7 @@ code,
   left: 0;
   top: 0;
   width: var(--sw);
-  background: url("../assets/profile/lanyard-strap.jpg") 0 0 / var(--sw) var(--art, 320px) repeat-y;
+  background: url("../assets/profile/lanyard-strap.webp") 0 0 / var(--sw) var(--art, 320px) repeat-y;
 }
 
 .idl--js .idl__straps { display: none; }
