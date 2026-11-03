@@ -3278,13 +3278,10 @@ code,
   line-height: 1.6;
 }
 
-/* spam trap: people never see or fill it, bots do (FormSubmit drops those messages) */
+/* spam trap: people never see or fill it, bots do (FormSubmit drops those messages).
+   display:none on purpose — a field that is only moved off-screen gets filled by the browser's autofill */
 .form-honey {
-  position: absolute;
-  left: -9999px;
-  width: 1px;
-  height: 1px;
-  opacity: 0;
+  display: none;
 }
 
 /* sending / sent / failed message under the button (text set by main.js) */

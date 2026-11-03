@@ -423,8 +423,7 @@ document.addEventListener("DOMContentLoaded", () => {
     status.classList.toggle("is-error", kind === "error");
   };
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();
-    if (form.elements._honey.value) return;                          // a bot filled the hidden field
+    e.preventDefault();                                               // the hidden _honey field is checked by FormSubmit, not here
     btn.disabled = true;
     btn.textContent = "Sending…";
     say("送信中です…");
