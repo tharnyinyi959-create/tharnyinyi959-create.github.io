@@ -253,6 +253,8 @@ html.has-cursor .mo-cursor { display: grid; }
 .hg__photo { position: relative; display: block; aspect-ratio: 4 / 5; border-radius: calc(var(--r-md) - 5px); overflow: hidden; background: var(--color-primary); }
 .hg__photo img { display: block; width: 100%; height: 100%; object-fit: cover; -webkit-user-drag: none; }
 .hg__photo--contain { background: var(--color-white); display: grid; place-items: center; }
+.hg__photo--paper { background: #F7F4EB; }      /* the poster's own paper colour, so the bars beside a whole A-size poster read as the sheet */
+.hg__photo--paper img { position: absolute; inset: 0; width: 100%; height: 100%; max-height: none; }    /* portrait sheet: fit by height, never cropped */
 .hg__photo--contain img { width: 100%; height: auto; max-height: 100%; object-fit: contain; }
 .hg__photo--tall img { position: absolute; left: 0; top: 0; height: auto; }
 .hg__photo .video-play-badge { width: 60px; height: 60px; }

@@ -1805,6 +1805,18 @@ code,
   object-fit: contain;
 }
 
+/* Portrait poster variant: the whole sheet, larger, with room around it so no edge is ever
+   cut off — not even by the hover zoom (e.g. the World Kyudo A3 poster) */
+.detail-hero-visual.fit-contain.is-poster {
+  max-height: none;
+  padding: clamp(20px, 4vw, 56px);
+}
+
+.detail-hero-visual.fit-contain.is-poster img {
+  height: auto;
+  max-height: min(78vh, 780px);
+}
+
 /* Full-page variant: for very tall full-scroll screenshots (e.g. a long
    one-page website design) — shows the entire page at full width, no
    height cap, no cropping. The container grows as tall as the image needs. */
