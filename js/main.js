@@ -405,3 +405,45 @@ document.addEventListener("DOMContentLoaded", () => {
   addEventListener("resize", update);
   update();
 });
+
+/* =====================================================================
+   Contact form (contact.html): sent in the background through FormSubmit's AJAX endpoint,
+   so the visitor stays on the page and sees the result under the button.
+   The very first message only arrives after the "Activate Form" mail from FormSubmit has been confirmed.
+   ===================================================================== */
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.querySelector(".contact-form");
+  if (!form || !window.fetch) return;
+  const status = form.querySelector(".form-status");
+  const btn = form.querySelector('button[type="submit"]');
+  const label = btn.textContent;
+  const say = (text, kind) => {
+    status.textContent = text;
+    status.classList.toggle("is-ok", kind === "ok");
+    status.classList.toggle("is-error", kind === "error");
+  };
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    if (form.elements._honey.value) return;                          // a bot filled the hidden field
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    say("送信中です…");
+    try {
+      const res = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || String(data.success) !== "true") throw new Error(data.message || res.status);
+      form.reset();
+      say("送信しました。お問い合わせありがとうございます！内容を確認して、ご返信いたします。", "ok");
+    } catch (err) {
+      console.warn("Contact form:", err.message);
+      say("送信できませんでした。お手数ですが tharnyinyi959@gmail.com まで直接メールでご連絡ください。", "error");
+    } finally {
+      btn.disabled = false;
+      btn.textContent = label;
+    }
+  });
+});

@@ -3278,6 +3278,36 @@ code,
   line-height: 1.6;
 }
 
+/* spam trap: people never see or fill it, bots do (FormSubmit drops those messages) */
+.form-honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+/* sending / sent / failed message under the button (text set by main.js) */
+.form-status {
+  margin: var(--sp-4) 0 0;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.form-status:empty {
+  display: none;
+}
+
+.form-status.is-ok {
+  color: var(--color-primary);
+}
+
+.form-status.is-error {
+  color: #B3261E;
+}
+
 .contact-info-card {
   background: var(--card);
   border: 1.5px solid var(--color-primary);
