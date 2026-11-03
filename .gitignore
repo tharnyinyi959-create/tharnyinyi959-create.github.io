@@ -8,3 +8,7 @@ assets/_originals/
 .DS_Store
 *.tmp
 .vscode/
+
+# Lighthouse reports (npx lighthouse … --view saves them here) — for me, not for the website
+*.report.html
+*.report.json
