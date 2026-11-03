@@ -1859,8 +1859,8 @@ code,
   transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
 }
 
-.concept-gallery a:hover,
-.concept-gallery .concept-item:hover {
+/* only links lift on hover — a plain gallery item must not look clickable */
+.concept-gallery a:hover {
   transform: translate(-3px, -3px);
   box-shadow: var(--shadow-md);
 }
@@ -3329,7 +3329,6 @@ code,
   border: 1.5px solid var(--color-primary);
   border-radius: var(--r-lg);
   padding: var(--sp-6);
-  box-shadow: var(--shadow-md);
 }
 
 .contact-info-item {
@@ -3400,7 +3399,6 @@ code,
   overflow: hidden;
   border: 1.5px solid var(--color-primary);
   margin-bottom: var(--sp-9);
-  box-shadow: var(--shadow-lg);
 }
 
 .browser-bar {
