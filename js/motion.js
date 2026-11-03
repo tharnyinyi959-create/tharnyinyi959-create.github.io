@@ -257,7 +257,7 @@
       idl.classList.add("idl--ready");
       idl.tabIndex = 0;
       hang.setAttribute("data-cursor", "Drag");
-      idl.setAttribute("aria-label", idl.getAttribute("aria-label") + "（ドラッグ、または矢印キーで動かせます）");
+      idl.setAttribute("aria-label", idl.getAttribute("aria-label") + (window.I18N ? window.I18N.t("（ドラッグ、または矢印キーで動かせます）") : "（ドラッグ、または矢印キーで動かせます）"));
     };
     if (reduced) ready();
     else {

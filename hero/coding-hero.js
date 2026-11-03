@@ -239,7 +239,10 @@
       "</div>" +
       "</div>" +
       '<div class="ch__foot">' +
-      '<h1 class="ch__title"><span class="ch__nb">デザインの目で、</span><span class="ch__nb"><em>コード</em>を書く。</span><small>A designer learning to build the web — HTML / CSS / JavaScript</small></h1>' +
+      '<h1 class="ch__title">' + (window.I18N && window.I18N.lang === "en"      // EN / JP (js/i18n.js): the word order differs, so the whole line is swapped
+        ? '<span class="ch__nb">With a designer\'s eye,</span> <span class="ch__nb">I write <em>code</em>.</span>'
+        : '<span class="ch__nb">デザインの目で、</span><span class="ch__nb"><em>コード</em>を書く。</span>') +
+      '<small>A designer learning to build the web — HTML / CSS / JavaScript</small></h1>' +
       '<div class="cta-row"><a class="btn btn-primary" href="works.html">View My Work</a><a class="btn btn-outline" href="profile.html">About Me</a></div>' +
       "</div>"
     );

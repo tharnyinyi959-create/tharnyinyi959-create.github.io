@@ -417,8 +417,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const status = form.querySelector(".form-status");
   const btn = form.querySelector('button[type="submit"]');
   const label = btn.textContent;
+  const t = (s) => (window.I18N ? window.I18N.t(s) : s);           // English when EN is on (js/i18n.js)
   const say = (text, kind) => {
-    status.textContent = text;
+    status.textContent = t(text);
     status.classList.toggle("is-ok", kind === "ok");
     status.classList.toggle("is-error", kind === "error");
   };
