@@ -52,6 +52,8 @@
     sweep: 1000,          // 3b the right-hand stroke is filled indigo
     reveal: 950,          // 4  poster text + details arrive; then everything stops
     scrollDistance: 650,  // px of wheel travel for the whole opening (turn + shatter + reveal)
+    autoPlay: 2600,       // when the poster is up and nobody scrolls for this long, the opening plays on by itself (0 = wait for a scroll)
+    autoDuration: 2800,   // how long that self-play takes (ring turn + shatter + page reveal)
     maxWaitForLoad: 4000  // never wait longer than this for window "load"
   };
   var userCfg = window.LOGO_LOADING_INDIGO_CONFIG || {};
@@ -279,7 +281,8 @@
           '</div>' +
         '</div>' +
       '</div>' +
-      '<button class="lvi__hint" type="button" tabindex="-1"><span>Scroll</span><i></i></button>';
+      '<button class="lvi__hint" type="button" tabindex="-1"><span>Scroll</span><i></i></button>' +
+      '<button class="lvi__skip" type="button" aria-label="Skip intro (Esc)">Skip</button>';
 
     fabric = overlay.querySelector(".lvi__fabric");
     light = overlay.querySelector(".lvi__light");
@@ -291,6 +294,7 @@
     armStops = [].slice.call(overlay.querySelectorAll("#lvi-arm stop"));
     armPoly.setAttribute("points", PIECES[2].map(function (q) { return q[0] + "," + q[1]; }).join(" "));
     hint = overlay.querySelector(".lvi__hint");
+    overlay.querySelector(".lvi__skip").addEventListener("click", function () { skip(); });
     poster = overlay.querySelector(".lvi__poster");
     parEls = [].slice.call(overlay.querySelectorAll("[data-depth]"));
     markSvg = overlay.querySelector(".lvi-disc__mark");
@@ -825,11 +829,27 @@
 
   function nudge(delta) {
     if (S.phase !== "ready") return;
+    S.auto = false;                                  // the visitor took over: stop playing by itself
     S.target = clamp(S.target + delta);
     startLoop();
   }
 
   // sp eases toward the scroll target, so the ring feels like a weighted dial rather than a jump
+  // Nobody scrolled: play the rest of the opening by itself, so a visitor who doesn't know to scroll still gets in.
+  // Any wheel / touch / key (nudge) stops it and hands control back.
+  function autoPlay() {
+    if (!(CFG.autoPlay > 0)) return;
+    S.auto = true;
+    setTimeout(function () {
+      if (dead || !S.auto || S.target > 0) return;   // already scrolling on their own
+      var from = S.target;
+      tween(CFG.autoDuration, function (t) {
+        if (!S.auto || dead) return;
+        S.target = Math.max(S.target, from + (1 - from) * (t * t * (3 - 2 * t)));   // smoothstep: soft start and end
+        startLoop();
+      });
+    }, CFG.autoPlay / CFG.speed);
+  }
   function startLoop() {
     if (S.loop) return;
     S.loop = true;
@@ -969,6 +989,7 @@
           HUD.render(1, 1); buildShards(); HUD.render(0, 0);
           clearTimeout(failsafe);                // the safety timeout only guards the animation, not the wait for a scroll
           hint.classList.add("is-on");
+          autoPlay();
         })
         .catch(abort);
 

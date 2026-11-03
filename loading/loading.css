@@ -129,6 +129,27 @@ html.lvi-pending, html.lvi-active { overflow: hidden; }
   -webkit-tap-highlight-color: transparent;
 }
 .lvi__hint.is-on { opacity: 0.85; }
+
+/* Skip — always available during the opening (Esc does the same) */
+.lvi__skip {
+  z-index: 6;
+  position: absolute;
+  top: calc(clamp(16px, 3vw, 32px) + env(safe-area-inset-top, 0px));
+  right: clamp(20px, 4vw, 56px);
+  padding: 9px 16px;
+  border: 1px solid var(--lvi-line);
+  border-radius: 999px;
+  background: none;
+  color: var(--lvi-ink-soft);
+  font: 500 11px/1 "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.25s ease, background 0.25s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.lvi__skip:hover, .lvi__skip:focus-visible { opacity: 1; background: rgba(38, 59, 170, 0.08); outline: none; }
 .lvi__hint i {
   display: block;
   width: 1px;
