@@ -47,7 +47,7 @@
     "ミャンマー料理動画":
       "Myanmar Food Video",
     "ミャンマー料理「チェーオー・シーチェッ」の作り方を紹介するYouTube動画。撮影から編集、サムネイルデザインまで手がけました。":
-      "A YouTube video showing how to make the Myanmar dish \"Kyay Oh Si Chet\". I handled everything from filming and editing to the thumbnail design.",
+      "A YouTube video showing how to make the Myanmar dish \"Kyay Oh Si Chat\". I handled everything from filming and editing to the thumbnail design.",
     "課題 · School Assignment — CapCut · Photoshop":
       "School Assignment — CapCut · Photoshop",
     "世界弓道大会 — World Kyudo Taikai":
@@ -203,7 +203,7 @@
     "バナー ブルーバリエーション":
       "Banner — blue variation",
     "ミャンマー料理「チェーオー・シーチェッ」の作り方を紹介するYouTube動画。撮影映像の編集からサムネイルデザインまで手がけました。":
-      "A YouTube video showing how to make the Myanmar dish \"Kyay Oh Si Chet\". I handled everything from editing the footage to the thumbnail design.",
+      "A YouTube video showing how to make the Myanmar dish \"Kyay Oh Si Chat\". I handled everything from editing the footage to the thumbnail design.",
     "5WKYT 名刺 表面":
       "5WKYT business card — front",
     "5WKYT 名刺 裏面":
@@ -650,15 +650,15 @@
     "ミャンマー料理動画 | Thar Nyi Nyi":
       "Myanmar Food Video | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけたミャンマー料理「チェーオー・シーチェッ」の紹介動画・サムネイルデザイン。":
-      "Case study: a video introducing the Myanmar dish \"Kyay Oh Si Chet\" and its thumbnail design, by Thar Nyi Nyi.",
+      "Case study: a video introducing the Myanmar dish \"Kyay Oh Si Chat\" and its thumbnail design, by Thar Nyi Nyi.",
     "「チェーオー・シーチェッ」":
-      "\"Kyay Oh Si Chet\"",
+      "\"Kyay Oh Si Chat\"",
     "YouTube動画（5:13）＋サムネイルデザイン":
       "YouTube video (5:13) + thumbnail design",
     "ミャンマーの家庭料理を、日本の視聴者にもわかりやすく紹介する":
       "Introducing Myanmar home cooking in a way Japanese viewers can easily follow",
     "「【2026動画1】おうちで作れる！ミャンマー料理『チェーオー・シーチェッ』」というテーマで、ミャンマーの混ぜ麺料理「チェー・オー」の作り方を紹介するYouTube動画を制作しました。撮影した調理映像の編集に加えて、視聴者の目に留まるサムネイルデザインまで一貫して手がけています。":
-      "On the theme \"[2026 Video 1] Make it at home! The Myanmar dish 'Kyay Oh Si Chet'\", I created a YouTube video showing how to make Kyay Oh, a Myanmar mixed-noodle dish. Beyond editing the cooking footage I filmed, I also designed an eye-catching thumbnail.",
+      "On the theme \"[2026 Video 1] Make it at home! The Myanmar dish 'Kyay Oh Si Chat'\", I created a YouTube video showing how to make Kyay Oh, a Myanmar mixed-noodle dish. Beyond editing the cooking footage I filmed, I also designed an eye-catching thumbnail.",
     "日本ではまだあまり知られていないミャンマー料理を、初めて見る人にも「作ってみたい」と思ってもらえるように伝えることが課題でした。調理工程を分かりやすいテンポで見せつつ、料理名や手順が伝わるテロップを入れ、最後まで飽きずに見てもらえる編集を意識しました。":
       "The challenge was to present Myanmar food — still not well known in Japan — so that people seeing it for the first time would want to try making it. I showed the cooking steps at an easy-to-follow pace, added captions for the dish name and steps, and edited it so viewers would stay engaged to the end.",
     "撮影":
@@ -791,7 +791,7 @@
     "Myanmar — テラコッタ":
       "Myanmar — Terracotta",
     "モヒンガー、シャンヌードル、モンリンマヤー、ラペットゥ。パゴダや伝統文様のモチーフを添えて。":
-      "Mohinga, Shan noodles, Mont Lin Ma Yar and Lahpet — with motifs of pagodas and traditional patterns.",
+      "Mohinga, Shan noodles, Mont Lin Ma Yar and Lahpet (tea leaf salad) — with motifs of pagodas and traditional patterns.",
     "Japan — 藍色":
       "Japan — Indigo",
     "ラーメン、まぜそば、たこ焼き。富士山や青海波のモチーフで日本らしさを表現。":
@@ -841,9 +841,9 @@
     "07 たこ焼き":
       "07 Takoyaki",
     "ZINE ミャンマーの一口 08 ラペットゥ":
-      "ZINE \"A Bite of Myanmar\" — 08 Lahpet",
+      "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea leaf salad)",
     "08 ラペットゥ":
-      "08 Lahpet",
+      "08 Lahpet — Tea Leaf Salad",
     "ZINE ミャンマーの一口 ミャンマー × 日本":
       "ZINE \"A Bite of Myanmar\" — Myanmar × Japan",
     "ミャンマー × 日本":
@@ -855,11 +855,11 @@
     "ページの片側を大きくうねる色面で区切り、写真と文字の余白を広くとることで、情報量が多くても落ち着いて読める誌面にしました。表紙と裏表紙ではパゴダ・富士山・青海波などのイラストを組み合わせ、「食べ物は、記憶をつなぐ、やさしい橋。」というメッセージで全体を締めくくっています。":
       "One side of each page is divided by a large, flowing colour field, and generous space around photos and text keeps the pages calm to read even with a lot of information. The front and back covers combine illustrations of pagodas, Mt. Fuji and seigaiha waves, and the whole ZINE closes with the message \"Food is a gentle bridge that connects memories.\"",
     "特にこだわったところ — ラペットゥのページ":
-      "Where I put in extra care — the Lahpet page",
+      "Where I put in extra care — the Lahpet (tea leaf salad) page",
     "ミャンマーでしか出会えない「食べるお茶」ラペットゥは、日本料理と無理に比較せず、ミャンマーならではの料理として紹介しました。他の料理ページとは違う見せ方にして、ラペットゥの特別さが伝わるように工夫し、ミャンマーの食文化をより深く知ってもらえるページにしています。":
-      "Lahpet, the \"eaten tea\" you can only find in Myanmar, is introduced as a dish unique to Myanmar rather than forced into a comparison with Japanese food. I gave it a different presentation from the other dish pages to convey how special Lahpet is, so readers can get to know Myanmar food culture more deeply.",
+      "Lahpet, the tea leaf salad you can only find in Myanmar, is introduced as a dish unique to Myanmar rather than forced into a comparison with Japanese food. I gave it a different presentation from the other dish pages to convey how special Lahpet is, so readers can get to know Myanmar food culture more deeply.",
     "ZINE ミャンマーの一口 08 ラペットゥのページ":
-      "ZINE \"A Bite of Myanmar\" — 08 Lahpet page",
+      "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea leaf salad) page",
     "制作の中で一番の挑戦は、どのミャンマー料理と日本料理を組み合わせるかを考えることでした。実際に料理を比較してみると、食べ物だけでなく、文化の違いや共通点も伝えやすくなることを発見しました。食べ物から、お互いの文化を知る — そのきっかけになるZINEを目指しました。":
       "The biggest challenge was deciding which Myanmar and Japanese dishes to pair. When I actually compared the dishes, I found it became easier to convey not just the food but also cultural differences and similarities. Getting to know each other's culture through food — I aimed for a ZINE that sparks exactly that.",
     // ---- work-zodiac.html
