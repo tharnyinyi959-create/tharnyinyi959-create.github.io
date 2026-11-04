@@ -293,6 +293,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
   next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
+
+  // the arrows show only when there is something to scroll to
+  new ResizeObserver(() => {
+    prev.hidden = next.hidden = track.scrollWidth <= track.clientWidth + 1;
+  }).observe(track);
 });
 
 /* =====================================================================
