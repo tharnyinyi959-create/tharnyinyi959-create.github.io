@@ -41,7 +41,7 @@ Colours: Nordic Indigo `#263BAA` × Vanilla Mist `#FFF4D6` (design tokens at the
 | `profile.html` | Background and journey (Myanmar → Japan) |
 | `works.html` | All 16 projects, filterable (Web / Graphic / Video) |
 | `work-*.html` | One case study per project |
-| `contact.html` | Contact form (sent through FormSubmit) |
+| `contact.html` | Contact form (sent through Formspree) |
 
 ## Project structure
 

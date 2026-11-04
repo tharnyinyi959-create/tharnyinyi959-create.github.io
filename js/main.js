@@ -393,9 +393,8 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =====================================================================
-   Contact form (contact.html): sent in the background through FormSubmit's AJAX endpoint,
+   Contact form (contact.html): sent in the background to Formspree,
    so the visitor stays on the page and sees the result under the button.
-   The very first message only arrives after the "Activate Form" mail from FormSubmit has been confirmed.
    ===================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.querySelector(".contact-form");
@@ -410,19 +409,19 @@ document.addEventListener("DOMContentLoaded", () => {
     status.classList.toggle("is-error", kind === "error");
   };
   form.addEventListener("submit", async (e) => {
-    e.preventDefault();                                               // the hidden _honey field is checked by FormSubmit, not here
+    e.preventDefault();                                               // the hidden _gotcha field is checked by Formspree, not here
     btn.disabled = true;
     btn.textContent = "Sending…";
     say("送信中です…");
     try {
-      const res = await fetch(form.action.replace("formsubmit.co/", "formsubmit.co/ajax/"), {
+      const res = await fetch(form.action, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(form))),
         signal: AbortSignal.timeout(15000),                           // don't leave the visitor waiting if the service is down
       });
       const data = await res.json().catch(() => ({}));
-      if (!res.ok || String(data.success) !== "true") throw new Error(data.message || res.status);
+      if (!res.ok) throw new Error(data.error || res.status);
       form.reset();
       say("送信しました。お問い合わせありがとうございます！内容を確認して、ご返信いたします。", "ok");
     } catch (err) {
@@ -431,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // the service failed: offer the visitor's own mail app, with what they typed already filled in
       const f = new FormData(form);
       const mail = document.createElement("a");
-      mail.href = `mailto:${form.action.split("/").pop()}?subject=${encodeURIComponent(f.get("Subject") || f.get("_subject"))}`
+      mail.href = `mailto:tharnyinyi959@gmail.com?subject=${encodeURIComponent(f.get("Subject") || f.get("_subject"))}`
         + `&body=${encodeURIComponent(`${f.get("Message")}\n\n${f.get("Name")}\n${f.get("email")}`)}`;
       mail.textContent = t("メールアプリで送る");
       status.append(" ", mail);
