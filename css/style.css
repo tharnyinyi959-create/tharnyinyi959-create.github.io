@@ -2838,7 +2838,7 @@ code {
   --bg: var(--color-primary);
   position: sticky;
   top: 112px;
-  height: min(70vh, 580px);
+  height: min(100vh - 136px, 760px);   /* fills the screen under the header, leaving room for the print shadow */
   overflow: hidden;
   background: var(--color-primary);
   border: 1.5px solid var(--color-primary);
@@ -3202,7 +3202,7 @@ code {
 }
 
 /* short screens: the stage is lower, so the banners shrink to stay clear of the caption */
-@media (max-height: 760px) {
+@media (max-height: 680px) {
   .proj-stage .pm-board {
     padding: 0 18%;
   }
@@ -3213,7 +3213,12 @@ code {
   margin: 0;
 }
 
-/* poster fan, sized by height: three whole posters well inside the stage, however wide it is */
+/* poster fan, sized by height: three whole posters well inside the stage, however wide it is.
+   The cap keeps tall stages from growing the posters past the stage's width */
+.proj-stage .pm-fan {
+  max-height: 470px;
+}
+
 .proj-stage .pm-fan img:nth-child(1) {
   width: auto;
   height: 66%;
