@@ -31,8 +31,7 @@
   <script>document.documentElement.classList.add("js-motion")</script>
   <!-- OPENING (what plays before the first page):
      loading/loading.js + loading.css = logo opening → scroll turns a HUD ring once → logo + ring shatter → the first page opens.
-     It plays on the first visit (per browser tab session), when the logo in the header is clicked, and when the home page is reloaded.
-     Any other visit to this page — e.g. the "Home" button — gets the quick page loader instead (loading/page-loader.*).
+     It plays only when the visitor enters the site here (once per browser tab session); any later visit to this page opens straight away.
      The FIRST PAGE is the code-window hero <section class="ch">, which hero/coding-hero.js builds and inserts in front of the
      empty <section class="hero"> anchor in <main> below (the old text hero was removed; the anchor must stay).
      ?intro=poster forces the opening · ?intro=off skips it · ?hero=classic shows the plain hero. -->
@@ -41,16 +40,10 @@
         var first = true;
         try {
           var q = new URLSearchParams(location.search).get("intro");
-          var nav = performance.getEntriesByType && performance.getEntriesByType("navigation")[0];
-          var reload = nav ? nav.type === "reload" : (performance.navigation && performance.navigation.type === 1);
-          var viaLogo = sessionStorage.getItem("portfolio-poster-next") === "1";      // set by js/main.js when the header logo is clicked
-          sessionStorage.removeItem("portfolio-poster-next");
-          first = q === "poster" || reload || viaLogo || !sessionStorage.getItem("portfolio-opened");
+          first = q === "poster" || !sessionStorage.getItem("portfolio-opened");
           sessionStorage.setItem("portfolio-opened", "1");
         } catch (e) { }
-        document.documentElement.setAttribute("data-opening", first ? "poster" : "page");
-        var f = first ? "loading" : "page-loader";
-        document.write('<link rel="stylesheet" href="loading/' + f + '.css"><script src="loading/' + f + '.js"><\/script>');
+        if (first) document.write('<link rel="stylesheet" href="loading/loading.css"><script src="loading/loading.js"><\/script>');
       })();
   </script>
   <link rel="stylesheet" href="hero/coding-hero.css">
@@ -68,10 +61,6 @@
 </head>
 
 <body>
-
-  <div class="loader-screen">
-    <div class="loader-mark"><span class="loader-spin"></span> loading_portfolio()</div>
-  </div>
 
   <header class="site-header">
     <div class="container">

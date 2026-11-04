@@ -15,7 +15,7 @@ It presents 16 school projects — web design, graphic design, character design 
 
 - **No frameworks, no libraries** — plain HTML, CSS and JavaScript.
 - **Two languages (JP / EN)** — a switch in the header; the choice is remembered across pages. All English text lives in one file, [`js/i18n.js`](js/i18n.js).
-- **Opening animation** — the logo is built from three bars, a ring turns, and the logo breaks into shards as the page opens. It plays on by itself, can be scrolled, and can be skipped (button or `Esc`).
+- **Opening animation** — the logo is built from three bars, a ring turns, and the logo breaks into shards as the page opens. It plays once, when a visitor enters the site; moving between pages shows no loading screen. It plays on by itself, can be scrolled, and can be skipped (button or `Esc`).
 - **Interactive ID card** — the student-ID card on the home page hangs from a lanyard and can be dragged (mouse, touch or arrow keys); it swings back with simple spring physics.
 - **Scroll-driven sections** — on desktop, each section stays in place while the next one slides over it; the project deck on the home page flips through cards as you scroll.
 - **Accessibility** — keyboard support, visible focus, `prefers-reduced-motion` respected (animations are skipped), alt text on every image.
@@ -50,7 +50,7 @@ index.html, profile.html, works.html, contact.html, work-*.html
 css/       style.css (layout, components) · motion.css (reveals, deck, ID card) · v2-motion.css (scroll layers)
 js/        i18n.js (EN/JP) · main.js (menu, contact form, works list) · motion.js · v2-motion.js
 hero/      the code-window hero on the home page
-loading/   loading.js/.css (opening animation) · page-loader.js/.css (quick loader on other pages)
+loading/   loading.js/.css (opening animation) · page-loader.js/.css (quick loader when a visitor enters on another page)
 assets/    images (WebP), icons, link-preview image
 ```
 

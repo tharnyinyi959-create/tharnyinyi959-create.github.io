@@ -1,8 +1,9 @@
 /* =====================================================================
    Page loader — NORDIC INDIGO × VANILLA MIST.
    The same loading screen as ../indigo-loading-vanilla/ (vanilla screen, bars → logo,
-   vanilla N with indigo outline, indigo ring and top-right stroke, "000 %" counter), used on
-   every inner page (profile, works, contact, work-*). It does not stay on screen:
+   vanilla N with indigo outline, indigo ring and top-right stroke, "000 %" counter), used only
+   when the visitor enters the site on an inner page (profile, works, contact, work-*), e.g. from a
+   shared link. Moving between pages shows no loader. It does not stay on screen:
    when the logo has finished, the page opens from the centre of the circle.
 
    Skip:  ?intro=off  ·  reduced-motion.   Speed:  window.PAGE_LOADING_CONFIG = { speed: 2.5 }  ·  ?speed=0.3
@@ -13,7 +14,12 @@
   var root = document.documentElement;
   var params = new URLSearchParams(location.search);
   var reduced = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (params.get("intro") === "off" || reduced) return;      // the page's own plain splash stays as the fallback
+  var entered = true;                                         // same flag as the opening in index.html (once per browser tab session)
+  try {
+    entered = !!sessionStorage.getItem("portfolio-opened");
+    sessionStorage.setItem("portfolio-opened", "1");
+  } catch (e) { }
+  if (entered || params.get("intro") === "off" || reduced) return;
   root.classList.add("lvp-pending", "lvp-hold");              // covers the page from the first paint; "hold" keeps the home hero waiting until the circle opens
 
   /* all times in ms (÷ speed). Default schedule ≈ 3.7 s from the indigo screen to the finished logo. */

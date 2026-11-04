@@ -6,10 +6,9 @@
    .lvp__stage  the logo + its soft warm light, above the veil
    ===================================================================== */
 
-/* cover the page from the very first paint; hide the plain "loading_portfolio()" splash behind it */
+/* cover the page from the very first paint */
 html.lvp-pending::before { content: ""; position: fixed; inset: 0; z-index: 10000; background: #FFF4D6; }
 html.lvp-pending, html.lvp-active { overflow: hidden; }
-html.lvp-pending .loader-screen, html.lvp-active .loader-screen { display: none; }
 
 .lvp {
   position: fixed;

@@ -1,23 +1,4 @@
 /* =====================================================================
-   Loader
-   ===================================================================== */
-window.addEventListener("load", () => {
-  const loader = document.querySelector(".loader-screen");
-  if (loader) {
-    setTimeout(() => loader.classList.add("done"), 350);
-  }
-});
-
-/* =====================================================================
-   Header logo → the home page plays its full poster opening (index.html reads this flag once).
-   The "Home" button does not set it, so it gets the quick page loader instead.
-   ===================================================================== */
-document.addEventListener("click", (e) => {
-  const a = e.target.closest && e.target.closest(".site-header .logo");
-  if (a) { try { sessionStorage.setItem("portfolio-poster-next", "1"); } catch (_) {} }
-});
-
-/* =====================================================================
    Mobile nav toggle
    ===================================================================== */
 document.addEventListener("DOMContentLoaded", () => {
