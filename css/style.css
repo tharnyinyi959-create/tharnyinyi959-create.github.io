@@ -1304,6 +1304,12 @@ code {
   max-width: 700px;
 }
 
+.detail-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-3);
+}
+
 /* =====================================================================
    DETAIL INFO LIST — vertical label:value rows (case study meta)
    ===================================================================== */

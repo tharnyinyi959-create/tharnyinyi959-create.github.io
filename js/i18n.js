@@ -628,8 +628,8 @@
       "Self-Introduction Site — Hello, I'm Thar Nyi Nyi | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけた「自己紹介サイト — Hello, I'm Thar Nyi Nyi」。自分自身を紹介する1ページのWebサイト。ABOUT ME・好きなもの・思い出のマップを、クリーム×ブラック×ネオンの遊び心あるデザインでまとめました。":
       "Case study: \"Self-Introduction Site — Hello, I'm Thar Nyi Nyi\" by Thar Nyi Nyi. A one-page website that introduces me — About Me, my favourite things and a map of memories — in a playful cream × black × neon design.",
-    "Website UI Design（1ページ）":
-      "Website UI Design (1 page)",
+    "Webサイト（Figma → HTML / CSS・1ページ）":
+      "Website (Figma → HTML / CSS, 1 page)",
     "「わたし」を4つの章で伝える、自己紹介のための1ページサイト":
       "A one-page site that introduces \"me\" in four chapters",
     "自己紹介サイト Webデザイン フルページ":
