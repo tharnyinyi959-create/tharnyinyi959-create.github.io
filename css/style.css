@@ -3742,3 +3742,26 @@ h1, h2, h3,
     margin-bottom: var(--sp-3);
   }
 }
+
+/* =====================================================================
+   SKIP LINK — first thing the Tab key reaches
+   ===================================================================== */
+.skip-link {
+  position: fixed;
+  left: var(--sp-4);
+  top: var(--sp-4);
+  z-index: 10001;
+  padding: var(--sp-2) var(--sp-4);
+  border-radius: var(--r-full);
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: none;
+}
+
+main:focus {
+  outline: none;
+}

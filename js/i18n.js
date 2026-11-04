@@ -948,6 +948,8 @@
       "Sent! Thank you for your message — I'll read it and get back to you.",
     "送信できませんでした。お手数ですが tharnyinyi959@gmail.com まで直接メールでご連絡ください。":
       "Your message couldn't be sent. Sorry for the trouble — please email me directly at tharnyinyi959@gmail.com.",
+    "本文へスキップ":
+      "Skip to content",
     "メールアプリで送る":
       "Send with my email app",
     // hero/coding-hero.js, loading/loading.js — decorative lines
