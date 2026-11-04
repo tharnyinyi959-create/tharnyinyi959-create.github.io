@@ -190,6 +190,7 @@
   (() => {
     const main = $("main");
     if (!main) return;
+    if ($(".detail-hero")) return;                                    // case studies are for reading: no sections sliding over each other
     const items = [...main.children].filter((el) => !/^(SCRIPT|STYLE|LINK)$/.test(el.tagName));
     if (items.length < 2) return;
     const bodyBg = getComputedStyle(document.body).backgroundColor;

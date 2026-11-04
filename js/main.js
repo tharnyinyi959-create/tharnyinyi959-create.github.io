@@ -303,7 +303,7 @@ document.addEventListener("DOMContentLoaded", () => {
 /* =====================================================================
    Project showcase (home page + works.html)
    - pointing at / focusing a row puts that project on the sticky stage
-   - on touch / narrow screens (no hover) the row crossing the middle of the screen is the active one
+   - when the pointer is not on the list, the row crossing the middle of the screen is the active one
    - works.html: after a filter click the active row moves to the first project that is still shown
    - mouse: a "View" disc follows the cursor over the rows
    One scroll listener (rAF-throttled), two small listeners per row, no libraries.
@@ -364,7 +364,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const spy = () => {
     ticking = false;
-    if (hovering || !touchLike.matches) return;
+    if (hovering) return;
     const mark = innerHeight * 0.5;                                    // the reading line
     const vis = shown();
     if (!vis.length) return;

@@ -3702,3 +3702,43 @@ h1, h2, h3,
 .format-label {
   font-size: 13px;
 }
+
+/* =====================================================================
+   PAGE CHANGES — a short cross-fade with the header staying put (browsers without it just change page)
+   ===================================================================== */
+@media (prefers-reduced-motion: no-preference) {
+  @view-transition {
+    navigation: auto;
+  }
+
+  .site-header {
+    view-transition-name: site-header;
+  }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 0.22s;
+  }
+}
+
+/* =====================================================================
+   WORKS LIST — compact rows on wide screens, so the stage does the showing
+   ===================================================================== */
+@media (min-width: 1001px) {
+  .proj-row {
+    padding: var(--sp-5) var(--sp-6);
+  }
+
+  .proj-row__title {
+    font-size: clamp(26px, 2.4vw, 34px);
+    margin-bottom: var(--sp-2);
+  }
+
+  .proj-row__desc {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    margin-bottom: var(--sp-3);
+  }
+}

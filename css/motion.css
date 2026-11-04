@@ -35,7 +35,7 @@
    (html.is-ready is added by motion.js; without JS nothing is hidden)
    --------------------------------------------------------------------- */
 .js-motion .site-header { transition: opacity var(--mo-slow) var(--mo-out), transform var(--mo-slow) var(--mo-out); }
-.js-motion:not(.is-ready) .site-header { opacity: 0; transform: translateY(-22px); }
+.js-motion:not(.is-ready):is(.lvi-pending, .lvi-active, .lvp-pending, .lvp-hold) .site-header { opacity: 0; transform: translateY(-22px); }   /* only after a loading screen, not on every page change */
 
 /* ---------------------------------------------------------------------
    1b · STUDENT ID ON A LANYARD — drops in once (style: style.css "STUDENT ID ON A LANYARD")
