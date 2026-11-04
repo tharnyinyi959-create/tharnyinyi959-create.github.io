@@ -2669,9 +2669,16 @@ code {
    ===================================================================== */
 .showcase__body {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: var(--sp-8);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--sp-6);
   align-items: start;
+}
+
+/* room to spare: the stage gets the wider column, so the pictures can be larger */
+@media (min-width: 1200px) {
+  .showcase__body {
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  }
 }
 
 /* ---- the index: one outlined card, four rows, with a route line down its left edge ---- */
@@ -3191,7 +3198,14 @@ code {
 }
 
 .proj-stage .pm-board {
-  padding: 0;
+  padding: 0 8%;
+}
+
+/* short screens: the stage is lower, so the banners shrink to stay clear of the caption */
+@media (max-height: 760px) {
+  .proj-stage .pm-board {
+    padding: 0 18%;
+  }
 }
 
 .proj-stage .pm-shot {
@@ -3199,23 +3213,26 @@ code {
   margin: 0;
 }
 
-/* poster fan, smaller: three whole posters well inside the stage */
+/* poster fan, sized by height: three whole posters well inside the stage, however wide it is */
 .proj-stage .pm-fan img:nth-child(1) {
-  width: 40%;
-  left: 0%;
-  top: 36%;
+  width: auto;
+  height: 66%;
+  left: 3%;
+  top: 26%;
 }
 
 .proj-stage .pm-fan img:nth-child(2) {
-  width: 44%;
-  left: 28%;
-  top: 16%;
+  width: auto;
+  height: 82%;
+  left: 27%;
+  top: 4%;
 }
 
 .proj-stage .pm-fan img:nth-child(3) {
-  width: 40%;
-  right: 0%;
-  top: 40%;
+  width: auto;
+  height: 66%;
+  right: 3%;
+  top: 28%;
 }
 
 .proj-stage .pm-kit img:nth-child(3) {
