@@ -1993,6 +1993,38 @@ code {
   margin-bottom: var(--sp-5);
 }
 
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--sp-5);
+}
+
+.skill-group {
+  padding: var(--sp-5);
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--r-lg);
+}
+
+.skill-group__title {
+  margin: 0 0 var(--sp-4);
+  font-size: 20px;
+}
+
+.skill-group__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sp-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 760px) {
+  .skill-groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
 .skills-section-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
