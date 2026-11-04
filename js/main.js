@@ -317,12 +317,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const touchLike = matchMedia("(hover: none), (max-width: 1000px)");
   let current = -1, hovering = false, ticking = false;
 
+  /* the video on the stage plays in place, and YouTube only loads on click.
+     While it is open the stage stays on it: pointing at other rows must not stop the video. */
+  const videoShot = document.querySelector(".proj-stage .pm-shot--video");
+  const videoBtn = videoShot && videoShot.querySelector(".pm-video");
+  const videoClose = videoShot && videoShot.closest(".proj-stage__item").querySelector(".proj-stage__close");
+  let videoFrame = null;
+  const stopVideo = () => {
+    if (!videoFrame) return;
+    videoFrame.remove();
+    videoFrame = null;
+    videoShot.classList.remove("is-playing");
+    videoBtn.hidden = false;
+    videoClose.hidden = true;
+  };
+  if (videoBtn) {
+    videoBtn.addEventListener("click", () => {
+      videoFrame = document.createElement("iframe");
+      videoFrame.src = `https://www.youtube-nocookie.com/embed/${videoBtn.dataset.video}?autoplay=1`;
+      videoFrame.title = videoBtn.title;
+      videoFrame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      videoFrame.referrerPolicy = "strict-origin-when-cross-origin";
+      videoFrame.allowFullscreen = true;
+      videoShot.append(videoFrame);
+      videoShot.classList.add("is-playing");
+      videoBtn.hidden = true;
+      videoClose.hidden = false;
+    });
+    videoClose.addEventListener("click", () => {
+      stopVideo();
+      videoBtn.focus();
+    });
+    touchLike.addEventListener("change", stopVideo);                   // the stage is hidden on narrow screens
+  }
+
   const shown = () => rows.filter((r) => r.parentElement.style.display !== "none" && !r.parentElement.classList.contains("card-out"));
   const activate = (i) => {
-    if (i === current) return;
+    if (i === current || videoFrame) return;
     current = i;
     rows.forEach((r, n) => r.classList.toggle("is-active", n === i));
-    items.forEach((s, n) => s.classList.toggle("is-on", n === i));
+    items.forEach((s, n) => {
+      s.classList.toggle("is-on", n === i);
+      s.inert = n !== i;                                               // a stage that is wiped away can't be reached with Tab
+    });
   };
 
   const spy = () => {
@@ -351,7 +388,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".filter-tab").forEach((tab) => {
     tab.addEventListener("click", () => setTimeout(() => {
       const vis = shown();
-      if (vis.length && !vis.includes(rows[current])) { current = -1; activate(rows.indexOf(vis[0])); }
+      if (vis.length && !vis.includes(rows[current])) { stopVideo(); current = -1; activate(rows.indexOf(vis[0])); }
     }, 400));
   });
 

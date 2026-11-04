@@ -651,6 +651,8 @@
     // ---- work-video.html
     "ミャンマー料理動画（YouTube）":
       "Myanmar food video (YouTube)",
+    "ミャンマー料理動画を再生":
+      "Play the Myanmar food video",
     "ミャンマー料理動画 | Thar Nyi Nyi":
       "Myanmar Food Video | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけたミャンマー料理「チェーオー・シーチェッ」の紹介動画・サムネイルデザイン。":
