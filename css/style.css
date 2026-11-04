@@ -2002,12 +2002,20 @@ code {
 
 .related-track {
   display: flex;
+  justify-content: safe center;   /* "safe": when the cards overflow they start at the left edge, so the first one can still be scrolled to */
   gap: var(--sp-6);
   overflow-x: auto;
   scroll-behavior: smooth;
-  padding-bottom: var(--sp-2);
+  padding: var(--sp-2) 0;         /* overflow-x also clips vertically: the top padding leaves room for the hover lift */
   scrollbar-width: none;
   -ms-overflow-style: none;
+}
+
+/* the wider gap only from where all three cards still fit with it */
+@media (min-width: 1150px) {
+  .related-track {
+    gap: var(--sp-8);
+  }
 }
 
 .related-track::-webkit-scrollbar {
@@ -2029,11 +2037,12 @@ code {
   align-items: center;
   justify-content: center;
   margin-bottom: var(--sp-3);
-  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease);
+  transition: border-color 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
 }
 
+/* the lift is on the thumb, not the card: the card's transform and transition delay belong to the scroll reveal */
 .related-card:hover .related-thumb {
-  transform: translate(-3px, -3px);
+  transform: translateY(-8px);
   box-shadow: var(--shadow-md);
 }
 
@@ -2047,6 +2056,16 @@ code {
   height: 100%;
   object-fit: cover;
   display: block;
+  transition: transform 0.5s var(--ease);
+}
+
+.related-card:hover .related-thumb img {
+  transform: scale(1.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .related-card:hover .related-thumb { transform: none; }
+  .related-card:hover .related-thumb img { transform: none; }
 }
 
 .related-card-title {
