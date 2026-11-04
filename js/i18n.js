@@ -24,6 +24,8 @@
       "An official website for the fictional \"Kobe Kitano Aquarium\", which I planned and designed from start to finish in Figma.",
     "課題 · School Assignment — Figma":
       "School Assignment — Figma",
+    "課題 · School Assignment — Figma → HTML / CSS":
+      "School Assignment — Figma → HTML / CSS",
     "ピザ店・カフェ・和の茶房・ジム・タピオカ専門店。業種もトーンも異なる5つの架空ブランドのWebサイトを、それぞれの世界観に合わせてデザインしました。":
       "A pizzeria, a café, a Japanese tea house, a gym and a tapioca shop — websites for five fictional brands with different industries and tones, each designed to fit its own world.",
     "自己紹介サイト — Hello, I'm Thar Nyi Nyi":
