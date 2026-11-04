@@ -791,7 +791,7 @@
     "Myanmar — テラコッタ":
       "Myanmar — Terracotta",
     "モヒンガー、シャンヌードル、モンリンマヤー、ラペットゥ。パゴダや伝統文様のモチーフを添えて。":
-      "Mohinga, Shan noodles, Mont Lin Ma Yar and Lahpet (tea leaf salad) — with motifs of pagodas and traditional patterns.",
+      "Mohinga, Shan noodles, Mont Lin Ma Yar and Lahpet (tea-leaf salad) — with motifs of pagodas and traditional patterns.",
     "Japan — 藍色":
       "Japan — Indigo",
     "ラーメン、まぜそば、たこ焼き。富士山や青海波のモチーフで日本らしさを表現。":
@@ -841,9 +841,9 @@
     "07 たこ焼き":
       "07 Takoyaki",
     "ZINE ミャンマーの一口 08 ラペットゥ":
-      "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea leaf salad)",
+      "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea-leaf salad)",
     "08 ラペットゥ":
-      "08 Lahpet — Tea Leaf Salad",
+      "08 Lahpet — Tea-Leaf Salad",
     "ZINE ミャンマーの一口 ミャンマー × 日本":
       "ZINE \"A Bite of Myanmar\" — Myanmar × Japan",
     "ミャンマー × 日本":
@@ -855,11 +855,11 @@
     "ページの片側を大きくうねる色面で区切り、写真と文字の余白を広くとることで、情報量が多くても落ち着いて読める誌面にしました。表紙と裏表紙ではパゴダ・富士山・青海波などのイラストを組み合わせ、「食べ物は、記憶をつなぐ、やさしい橋。」というメッセージで全体を締めくくっています。":
       "One side of each page is divided by a large, flowing colour field, and generous space around photos and text keeps the pages calm to read even with a lot of information. The front and back covers combine illustrations of pagodas, Mt. Fuji and seigaiha waves, and the whole ZINE closes with the message \"Food is a gentle bridge that connects memories.\"",
     "特にこだわったところ — ラペットゥのページ":
-      "Where I put in extra care — the Lahpet (tea leaf salad) page",
+      "Where I put in extra care — the Lahpet (tea-leaf salad) page",
     "ミャンマーでしか出会えない「食べるお茶」ラペットゥは、日本料理と無理に比較せず、ミャンマーならではの料理として紹介しました。他の料理ページとは違う見せ方にして、ラペットゥの特別さが伝わるように工夫し、ミャンマーの食文化をより深く知ってもらえるページにしています。":
       "Lahpet, Myanmar's distinctive fermented tea-leaf salad, is introduced as a dish in its own right rather than being forced into a comparison with Japanese food. I gave it a different presentation from the other dishes to highlight what makes it special and help readers learn more about Myanmar's food culture.",
     "ZINE ミャンマーの一口 08 ラペットゥのページ":
-      "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea leaf salad) page",
+      "ZINE \"A Bite of Myanmar\" — 08 Lahpet (tea-leaf salad) page",
     "制作の中で一番の挑戦は、どのミャンマー料理と日本料理を組み合わせるかを考えることでした。実際に料理を比較してみると、食べ物だけでなく、文化の違いや共通点も伝えやすくなることを発見しました。食べ物から、お互いの文化を知る — そのきっかけになるZINEを目指しました。":
       "The biggest challenge was deciding which Myanmar and Japanese dishes to pair. When I actually compared the dishes, I found it became easier to convey not just the food but also cultural differences and similarities. Getting to know each other's culture through food — I aimed for a ZINE that sparks exactly that.",
     // ---- work-zodiac.html
