@@ -636,14 +636,14 @@
       "Self-introduction website design — full page",
     "自分自身をテーマにした自己紹介サイトのデザインです。プロフィールを並べるだけでなく、好きなものや、ミャンマーから日本へと続いてきた道のりを「章」に分けて見せることで、スクロールしながら人柄が伝わる構成を目指しました。":
       "A self-introduction website with myself as the theme. Rather than just listing my profile, it divides my favourite things and my journey from Myanmar to Japan into \"chapters\", so my personality comes across as you scroll.",
-    "大きな名前のタイポグラフィと写真、SNSアイコンで第一印象をつくるヒーロー。":
-      "A hero with big name typography, a photo and social icons to make the first impression.",
+    "大きな名前のタイポグラフィと写真、メールアイコンで第一印象をつくるヒーロー。":
+      "A hero with big name typography, a photo and an email icon to make the first impression.",
     "名前・出身・学校などの基本情報と、自己紹介文をノート風のカードで。":
       "Basic information — name, hometown, school — and a short introduction on notebook-style cards.",
     "旅行・アニメ・ゲーム・ラーメンなど、好きなものを写真タイルで紹介。":
       "Favourite things — travel, anime, games, ramen — shown as photo tiles.",
-    "01 Myanmar → 02 Japan → 03 Travel Memories → 04 Future。点線のルートでつないだ、思い出と未来の地図。":
-      "01 Myanmar → 02 Japan → 03 Travel Memories → 04 Future. A map of memories and the future, connected by a dotted route.",
+    "01 Myanmar → 02 Japan → 03 Travel Memories → 04 Future。カードを順にたどる、思い出と未来の地図。":
+      "01 Myanmar → 02 Japan → 03 Travel Memories → 04 Future. A map of memories and the future, followed card by card.",
     "クリーム色の紙のような背景に、黒の太いタイポグラフィとネオングリーン・パープルのアクセントを組み合わせ、スクラップブックのような手づくり感と元気さを表現しました。写真はポラロイド風に少し傾けて配置し、セクションごとに背景色を切り替えて章の区切りをはっきりさせています。":
       "A cream, paper-like background combined with bold black typography and neon green and purple accents gives it the handmade, cheerful feel of a scrapbook. Photos are tilted slightly like Polaroids, and the background colour changes per section to mark each chapter clearly.",
     // ---- work-video.html
