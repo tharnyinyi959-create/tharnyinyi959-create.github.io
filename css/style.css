@@ -3677,3 +3677,28 @@ code {
   opacity: 0;
   transform: translateY(10px);
 }
+/* =====================================================================
+   TYPE — titles keep together, Japanese lines break at phrases (not before a long-vowel mark),
+   and the smallest labels stay readable
+   ===================================================================== */
+h1, h2, h3,
+.dk__name,
+.detail-title,
+.proj-row__title {
+  line-break: strict;
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+
+.detail-title {
+  line-height: 1.15;
+}
+
+.di-label,
+.proj-row__tools,
+.dk__tools,
+.related-card-cat,
+.concept-cap,
+.format-label {
+  font-size: 13px;
+}
