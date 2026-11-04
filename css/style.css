@@ -3691,6 +3691,7 @@ h1, h2, h3,
 }
 
 .detail-title {
+  margin-top: var(--sp-3);
   line-height: 1.15;
 }
 
