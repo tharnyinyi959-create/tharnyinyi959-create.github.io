@@ -1362,6 +1362,22 @@ code {
   object-fit: contain;
 }
 
+/* YouTube player: always 16:9, so the whole video shows at every screen size */
+.detail-hero-video {
+  display: block;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  max-height: none;
+  background: var(--surface);
+}
+
+.detail-hero-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
 /* Portrait poster variant: the whole sheet, larger, with room around it so no edge is ever
    cut off — not even by the hover zoom (e.g. the World Kyudo A3 poster) */
 .detail-hero-visual.fit-contain.is-poster {
@@ -2372,22 +2388,9 @@ code {
   margin-left: 3px;
 }
 
-.detail-hero-visual:hover .video-play-badge,
 .related-card:hover .video-play-badge {
   transform: translate(-50%, -50%) scale(1.1);
   background: var(--color-primary);
-}
-
-.video-duration-chip {
-  position: absolute;
-  bottom: var(--sp-3);
-  right: var(--sp-3);
-  background: var(--color-primary);
-  color: var(--color-secondary);
-  font-family: var(--font-mono);
-  font-size: 11.5px;
-  padding: 3px 8px;
-  border-radius: var(--r-sm);
 }
 
 /* =====================================================================
@@ -2478,6 +2481,10 @@ code {
 
 .form-status.is-error {
   color: #B3261E;
+}
+
+.form-status a {
+  text-decoration: underline;
 }
 
 .contact-info-card {
@@ -2900,7 +2907,7 @@ code {
 
 .pm-browser {
   position: relative;
-  width: 70%;
+  width: 88%;
   height: 80%;
   margin-top: 28px;
   background: var(--color-secondary);
@@ -3178,7 +3185,7 @@ code {
 }
 
 .proj-stage .pm-browser {
-  width: 64%;
+  width: 100%;
   height: 100%;
   margin: 0;
 }

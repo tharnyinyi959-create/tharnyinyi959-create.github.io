@@ -17,7 +17,7 @@
 .hero.ch-replaced { display: none; }
 /* until the hero is built, the empty anchor keeps the hero's height (stops the page below from jumping = layout shift) */
 .hero[hidden]:not(.ch-replaced) { display: block; height: calc(100svh - 92px); min-height: 0; padding: 0; }
-@media (max-width: 860px) { .hero[hidden]:not(.ch-replaced) { height: 575px; } }
+@media (max-width: 860px) { .hero[hidden]:not(.ch-replaced) { height: 805px; } }
 
 .ch {
   --ch-o: #263BAA;                         /* Nordic Indigo */
@@ -435,7 +435,8 @@
   .ch__meta--tl { display: none; }
   .ch__meta--br { display: none; }
   .ch__body { grid-template-columns: 1fr; }
-  .ch__prev { display: none; }               /* keep the code, drop the preview */
+  .ch__prev { border-left: 0; border-top: 1px solid rgba(255, 244, 214, 0.2); }   /* the preview sits under the code */
+  .ch__canvas { min-height: 170px; padding: 16px; }
   .ch__code { min-height: calc(7 * 1.78em + 40px); font-size: clamp(12.5px, 3.3vw, 17px); padding: 18px 16px 20px; }
   .ch__ln { gap: 12px; }
   .ch__status { display: none; }

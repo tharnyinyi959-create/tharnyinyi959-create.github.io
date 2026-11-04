@@ -647,6 +647,8 @@
     "クリーム色の紙のような背景に、黒の太いタイポグラフィとネオングリーン・パープルのアクセントを組み合わせ、スクラップブックのような手づくり感と元気さを表現しました。写真はポラロイド風に少し傾けて配置し、セクションごとに背景色を切り替えて章の区切りをはっきりさせています。":
       "A cream, paper-like background combined with bold black typography and neon green and purple accents gives it the handmade, cheerful feel of a scrapbook. Photos are tilted slightly like Polaroids, and the background colour changes per section to mark each chapter clearly.",
     // ---- work-video.html
+    "ミャンマー料理動画（YouTube）":
+      "Myanmar food video (YouTube)",
     "ミャンマー料理動画 | Thar Nyi Nyi":
       "Myanmar Food Video | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけたミャンマー料理「チェーオー・シーチェッ」の紹介動画・サムネイルデザイン。":
@@ -942,6 +944,8 @@
       "Sent! Thank you for your message — I'll read it and get back to you.",
     "送信できませんでした。お手数ですが tharnyinyi959@gmail.com まで直接メールでご連絡ください。":
       "Your message couldn't be sent. Sorry for the trouble — please email me directly at tharnyinyi959@gmail.com.",
+    "メールアプリで送る":
+      "Send with my email app",
     // hero/coding-hero.js, loading/loading.js — decorative lines
     "コードで、つくる。":
       "Made with code.",

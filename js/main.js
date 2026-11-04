@@ -419,6 +419,7 @@ document.addEventListener("DOMContentLoaded", () => {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(Object.fromEntries(new FormData(form))),
+        signal: AbortSignal.timeout(15000),                           // don't leave the visitor waiting if the service is down
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok || String(data.success) !== "true") throw new Error(data.message || res.status);
@@ -427,6 +428,13 @@ document.addEventListener("DOMContentLoaded", () => {
     } catch (err) {
       console.warn("Contact form:", err.message);
       say("送信できませんでした。お手数ですが tharnyinyi959@gmail.com まで直接メールでご連絡ください。", "error");
+      // the service failed: offer the visitor's own mail app, with what they typed already filled in
+      const f = new FormData(form);
+      const mail = document.createElement("a");
+      mail.href = `mailto:${form.action.split("/").pop()}?subject=${encodeURIComponent(f.get("Subject") || f.get("_subject"))}`
+        + `&body=${encodeURIComponent(`${f.get("Message")}\n\n${f.get("Name")}\n${f.get("email")}`)}`;
+      mail.textContent = t("メールアプリで送る");
+      status.append(" ", mail);
     } finally {
       btn.disabled = false;
       btn.textContent = label;
