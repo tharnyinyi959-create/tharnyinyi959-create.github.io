@@ -256,7 +256,7 @@
       live = true;
       idl.classList.add("idl--ready");
       idl.tabIndex = 0;
-      hang.setAttribute("data-cursor", "Drag");
+      hang.setAttribute("data-cursor", "ドラッグ");
       idl.setAttribute("aria-label", idl.getAttribute("aria-label") + (window.I18N ? window.I18N.t("（ドラッグ、または矢印キーで動かせます）") : "（ドラッグ、または矢印キーで動かせます）"));
     };
     if (reduced) ready();
@@ -333,7 +333,7 @@
       if (!shown) { cx = mx; cy = my; shown = true; dot.classList.add("is-on"); }
       const t = e.target.closest && e.target.closest("[data-cursor]");
       dot.classList.toggle("is-label", !!t);
-      if (t) label.textContent = t.getAttribute("data-cursor");
+      if (t) label.textContent = window.I18N ? window.I18N.t(t.getAttribute("data-cursor")) : t.getAttribute("data-cursor");
       if (!running) { running = true; requestAnimationFrame(tick); }
     }, { passive: true });
     document.addEventListener("pointerleave", () => { shown = false; dot.classList.remove("is-on", "is-label"); });

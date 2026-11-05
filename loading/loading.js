@@ -246,7 +246,7 @@
         '<div class="lvi__p lvi__hline" data-depth="0.5"><i></i></div>' +
         '<div class="lvi__p lvi__vline" data-depth="0.8"><i></i><u></u><em>01</em></div>' +
         '<span class="lvi__mark lvi__mark--tl"></span><span class="lvi__mark lvi__mark--br"></span>' +
-        '<div class="lvi__small">Portfolio <b>2026</b></div>' +
+        '<div class="lvi__small">ポートフォリオ <b>2026</b></div>' +
         '<div class="lvi__jp">ウェブを、つくる。</div>' +
         '<div class="lvi__type">' +
           '<div class="lvi__p lvi__tl lvi__tl--1" data-depth="1.5"><span style="--t:0s">Building</span></div>' +
@@ -281,8 +281,8 @@
           '</div>' +
         '</div>' +
       '</div>' +
-      '<button class="lvi__hint" type="button" tabindex="-1"><span>Scroll</span><i></i></button>' +
-      '<button class="lvi__skip" type="button" aria-label="Skip intro (Esc)">Skip</button>';
+      '<button class="lvi__hint" type="button" tabindex="-1"><span>スクロール</span><i></i></button>' +
+      '<button class="lvi__skip" type="button" aria-label="オープニングをスキップ（Esc）">スキップ</button>';
 
     fabric = overlay.querySelector(".lvi__fabric");
     light = overlay.querySelector(".lvi__light");

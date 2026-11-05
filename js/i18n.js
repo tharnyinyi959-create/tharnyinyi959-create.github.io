@@ -22,25 +22,25 @@
       "I'm from Myanmar and currently studying in Japan. Ever since I was a child I've been fascinated by computers and technology, and drawn to making things that move on a screen. I'm now focusing on web coding, aiming to become a front-end web developer.",
     "架空の水族館「神戸北野水族館」の公式サイトを、Figmaで企画からデザインまで一貫して制作しました。":
       "An official website for the fictional \"Kobe Kitano Aquarium\", which I planned and designed from start to finish in Figma.",
-    "課題 · School Assignment — Figma":
+    "学校課題 · Figma":
       "School Assignment — Figma",
-    "課題 · School Assignment — Figma → HTML / CSS":
+    "学校課題 · Figma → HTML / CSS":
       "School Assignment — Figma → HTML / CSS",
     "ピザ店・カフェ・和の茶房・ジム・タピオカ専門店。業種もトーンも異なる5つの架空ブランドのWebサイトを、それぞれの世界観に合わせてデザインしました。":
       "A pizzeria, a café, a Japanese tea house, a gym and a tapioca shop — websites for five fictional brands with different industries and tones, each designed to fit its own world.",
-    "自己紹介サイト — Hello, I'm Thar Nyi Nyi":
-      "Self-Introduction Site — Hello, I'm Thar Nyi Nyi",
+    "自己紹介サイト":
+      "Self-Introduction Site",
     "自分自身を紹介する1ページのWebサイト。ABOUT ME・好きなもの・思い出のマップを、クリーム×ブラック×ネオンの遊び心あるデザインでまとめました。":
       "A one-page website that introduces me — About Me, my favourite things and a map of memories — in a playful cream × black × neon design.",
     "ポートフォリオサイト デザイン":
       "Portfolio Site Design",
     "自分の作品を紹介するポートフォリオサイトを、トップ・作品一覧・作品詳細・プロフィール・お問い合わせの全8ページでデザイン。ダークネイビー×オレンジで統一しました。":
       "A portfolio site to present my work, designed across 8 pages: top, works list, work details, profile and contact — unified in dark navy × orange.",
-    "アートと人 — Art and Human":
+    "アートと人":
       "Art and Human",
     "架空の展覧会のためのポスターを、5つの異なるビジュアルコンセプトで展開しました。":
       "Posters for a fictional exhibition, developed in five different visual concepts.",
-    "課題 · School Assignment — Illustrator · Photoshop":
+    "学校課題 · Illustrator · Photoshop":
       "School Assignment — Illustrator · Photoshop",
     "説明会・体験入学 バナー":
       "Open Campus & Info Session Banners",
@@ -50,21 +50,21 @@
       "Myanmar Food Video",
     "ミャンマー料理「チェーオー・シーチェッ」の作り方を紹介するYouTube動画。撮影から編集、サムネイルデザインまで手がけました。":
       "A YouTube video showing how to make the Myanmar dish \"Kyay Oh Si Chat\". I handled everything from filming and editing to the thumbnail design.",
-    "課題 · School Assignment — CapCut · Photoshop":
+    "学校課題 · CapCut · Photoshop":
       "School Assignment — CapCut · Photoshop",
-    "世界弓道大会 — World Kyudo Taikai":
+    "世界弓道大会":
       "World Kyudo Taikai",
     "「第5回世界弓道大会」のロゴを提案。弓と矢を大会略称「5WKYT」に融合させ、A3ポスター・名刺までビジュアルアイデンティティとして展開しました。":
       "A logo proposal for the \"5th World Kyudo Taikai\". The bow and arrow are merged into the event abbreviation \"5WKYT\", extended into a visual identity including an A3 poster and business cards.",
-    "ミャンマーの一口 — A Bite of Myanmar":
+    "ミャンマーの一口":
       "A Bite of Myanmar",
     "ミャンマーと日本の料理を見開きごとに比べながら紹介する、全12ページのZINE。テラコッタと藍色の2色で、ふたつの国の食文化をつなぎました。":
       "A 12-page ZINE that introduces Myanmar and Japanese dishes side by side on each spread. Two colours, terracotta and indigo, connect the food cultures of the two countries.",
-    "12星座キャラクター — Zodiac Koalas":
-      "Zodiac Koalas — 12 Zodiac Characters",
+    "12星座キャラクター":
+      "Zodiac Koalas",
     "コアラをベースに、12星座それぞれのモチーフを組み合わせたキャラクターシリーズ。夜空の背景と共通のフォーマットで、12枚をひとつのシリーズにまとめました。":
       "A character series based on a koala, combined with a motif for each of the 12 zodiac signs. A night-sky background and a shared format bring all 12 together as one series.",
-    "課題 · School Assignment — Illustrator":
+    "学校課題 · Illustrator":
       "School Assignment — Illustrator",
     "Puffo — 地元のPRキャラクター":
       "Puffo — A Local PR Character",
@@ -94,15 +94,15 @@
       "Kobe Kitano Aquarium website design",
     "FORNO ROSSO ピザ店 Webサイトデザイン":
       "FORNO ROSSO pizzeria website design",
-    "自己紹介サイト — Hello, I'm Thar Nyi Nyi — Website Design":
+    "自己紹介サイト — Webサイトデザイン":
       "Self-Introduction Site — Hello, I'm Thar Nyi Nyi — Website Design",
     "自己紹介サイト Webデザイン":
       "Self-introduction website design",
-    "ポートフォリオサイト デザイン — Website Design":
+    "ポートフォリオサイト デザイン — Webサイトデザイン":
       "Portfolio Site Design — Website Design",
     "ポートフォリオサイト トップページ デザイン":
       "Portfolio site top page design",
-    "アートと人 — Art and Human — Poster Design":
+    "アートと人 — ポスターデザイン":
       "Art and Human — Poster Design",
     "アートと人 展覧会ポスター":
       "Art and Human exhibition poster",
@@ -110,23 +110,23 @@
       "Open Campus & Info Session Banners — Banner Design",
     "神戸電子専門学校 説明会バナー":
       "Kobe Denshi College info session banner",
-    "ミャンマー料理動画 — Video Editing":
+    "ミャンマー料理動画 — 動画編集":
       "Myanmar Food Video — Video Editing",
     "ミャンマー料理動画 サムネイル":
       "Myanmar food video thumbnail",
-    "世界弓道大会 — World Kyudo Taikai — Logo Design":
+    "世界弓道大会 — ロゴデザイン":
       "World Kyudo Taikai — Logo Design",
     "第5回世界弓道大会 A3ポスター":
       "5th World Kyudo Taikai A3 poster",
-    "ミャンマーの一口 — A Bite of Myanmar — Editorial Design":
+    "ミャンマーの一口 — Editorial Design":
       "A Bite of Myanmar — Editorial Design",
     "ZINE ミャンマーの一口 表紙":
       "ZINE \"A Bite of Myanmar\" cover",
-    "12星座キャラクター — Zodiac Koalas — Character Design":
+    "12星座キャラクター — キャラクターデザイン":
       "Zodiac Koalas — 12 Zodiac Characters — Character Design",
     "12星座キャラクター しし座":
       "Zodiac character — Leo",
-    "Puffo — 地元のPRキャラクター — Character Design":
+    "Puffo — 地元のPRキャラクター — キャラクターデザイン":
       "Puffo — A Local PR Character — Character Design",
     "PRキャラクター Puffo":
       "PR character Puffo",
@@ -142,7 +142,7 @@
       "Choco Fes KOBE — Flyer — Flyer Design",
     "チョコフェス KOBE フライヤー":
       "Choco Fes KOBE flyer",
-    "香住ふるさとまつり 海上花火大会 — ポスター — Poster Design":
+    "香住ふるさとまつり 海上花火大会 — ポスター — ポスターデザイン":
       "Kasumi Hometown Festival Fireworks — Poster — Poster Design",
     "香住ふるさとまつり 海上花火大会 ポスター":
       "Kasumi Hometown Festival Fireworks poster",
@@ -214,17 +214,17 @@
       "ZINE — Mohinga page",
     "ZINE ミャンマー×日本のページ":
       "ZINE — Myanmar × Japan page",
-    "12星座キャラクター おひつじ座 — Aries":
+    "12星座キャラクター おひつじ座":
       "Zodiac character — Aries",
-    "12星座キャラクター おうし座 — Taurus":
+    "12星座キャラクター おうし座":
       "Zodiac character — Taurus",
-    "12星座キャラクター ふたご座 — Gemini":
+    "12星座キャラクター ふたご座":
       "Zodiac character — Gemini",
-    "12星座キャラクター かに座 — Cancer":
+    "12星座キャラクター かに座":
       "Zodiac character — Cancer",
-    "12星座キャラクター しし座 — Leo":
+    "12星座キャラクター しし座":
       "Zodiac character — Leo",
-    "12星座キャラクター おとめ座 — Virgo":
+    "12星座キャラクター おとめ座":
       "Zodiac character — Virgo",
     "Puffo キャラクターデザインシート":
       "Puffo character design sheet",
@@ -235,7 +235,7 @@
       "I'm open to internships, collaborations and front-end work. Feel free to reach out using the form below, or by email or social media.",
     "山田 太郎":
       "Taro Yamada",
-    "インターンシップのご相談 / Job Inquiry / Collaboration など":
+    "インターンシップのご相談 / お仕事のご依頼 / 共同制作 など":
       "Internship inquiry / Job Inquiry / Collaboration, etc.",
     "お問い合わせ内容をご記入ください。":
       "Please write your message.",
@@ -270,7 +270,7 @@
       "Leaderboard banner 728x90",
     "バナー 468x60（ブルーカラーバリエーション）":
       "Banner 468x60 (blue colour variation)",
-    "Banner · 468×60（Blue Variant）":
+    "Banner · 468×60 (Blue Variant)":
       "Banner · 468×60 (Blue Variant)",
     "1つのデザインを複数サイズに展開する作業を通して、「レイアウトの骨組み」と「装飾」を分けて考えることの大切さを学びました。特にスカイスクレイパーのような極端に縦長のサイズでは、通常のレイアウト発想がそのまま通用せず、情報を積み木のように組み替える発想が必要でした。実務の広告制作に近い、規格に合わせるデザインの難しさと面白さを体験できたプロジェクトです。":
       "Adapting one design to several sizes taught me how important it is to think about the \"layout skeleton\" and the \"decoration\" separately. Extremely tall sizes like the skyscraper in particular don't work with ordinary layout thinking — I had to rearrange the information like building blocks. This project let me experience both the difficulty and the fun of designing to a format, close to real ad production.",
@@ -295,11 +295,11 @@
       "The front is split into charcoal and cream; the back places diagonal lines around the logo on a charcoal ground.",
     "パーソナル名刺 表面":
       "Personal business card — front",
-    "Front — 名前・連絡先":
+    "表面 — 名前・連絡先":
       "Front — Name & contact",
     "パーソナル名刺 裏面":
       "Personal business card — back",
-    "Back — ロゴマーク":
+    "裏面 — ロゴマーク":
       "Back — Logo mark",
     "2色＋ライン":
       "Two colours + a line",
@@ -418,7 +418,7 @@
     "下半分には波と緑の丘を重ね、海に面した街の立地をひと目で分かるように。":
       "Waves and green hills layered in the lower half show at a glance that the town faces the sea.",
     // ---- work-kyudo.html
-    "世界弓道大会 — World Kyudo Taikai | Thar Nyi Nyi":
+    "世界弓道大会 | Thar Nyi Nyi":
       "World Kyudo Taikai | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけた「第5回世界弓道大会」ロゴデザイン提案。ロゴ・A3ポスター・名刺までのビジュアルアイデンティティ展開。":
       "Case study: a logo design proposal for the \"5th World Kyudo Taikai\" by Thar Nyi Nyi — a visual identity extended to an A3 poster and business cards.",
@@ -428,13 +428,13 @@
       "Capturing the moment of the shot in the letters — a logo that merges bow and arrow into the abbreviation \"5WKYT\"",
     "第5回世界弓道大会 A3ポスター メインビジュアル":
       "5th World Kyudo Taikai A3 poster — main visual",
-    "「第5回世界弓道大会（5th World Kyudo Taikai）」のロゴデザインを提案した課題です。大会略称「5WKYT」をもとにロゴマークを制作し、A3ポスター・名刺へと展開。コンセプトからカラー、ロゴバリエーション、使用イメージまでを1枚の提案資料にまとめました。":
+    "「第5回世界弓道大会」のロゴデザインを提案した課題です。大会略称「5WKYT」をもとにロゴマークを制作し、A3ポスター・名刺へと展開。コンセプトからカラー、ロゴバリエーション、使用イメージまでを1枚の提案資料にまとめました。":
       "An assignment to propose a logo for the \"5th World Kyudo Taikai\". I created a logo mark based on the abbreviation \"5WKYT\" and extended it to an A3 poster and business cards, summarising everything from the concept to colours, logo variations and usage images on a single proposal sheet.",
     "射の一瞬を、文字に宿す。":
       "Capturing the moment of the shot in the letters.",
     "弓道の「弓」と「矢」を、大会略称「5WKYT」の文字そのものに融合させました。Kの縦画を弓に見立て、番えた矢が文字列を貫く構成です。伝統的な競技らしさと現代的なすっきりした印象を両立させ、1色でも崩れない汎用性を意識しています。":
       "The \"bow\" and \"arrow\" of kyudo are merged into the letters of the abbreviation \"5WKYT\" themselves. The vertical stroke of the K becomes the bow, and the nocked arrow pierces through the letters. It balances the feel of a traditional sport with a clean, modern impression, and stays versatile even in a single colour.",
-    "5WKYT ロゴマーク — 第5回世界弓道大会 WORLD KYUDO TAIKAI":
+    "5WKYT ロゴマーク — 第5回世界弓道大会":
       "5WKYT logo mark — 5th World Kyudo Taikai",
     "3つのデザイン要素":
       "Three design elements",
@@ -452,13 +452,13 @@
       "A vermilion stroke sweeping through the \"5\" expresses the spirit put into a single shot.",
     "和の伝統色を思わせる朱と墨を軸に、白と生成りを組み合わせた4色で構成しました。":
       "A four-colour palette built around vermilion and ink black, reminiscent of traditional Japanese colours, combined with white and unbleached off-white.",
-    "朱 Shu":
+    "朱":
       "Shu — Vermilion",
-    "墨 Sumi":
+    "墨":
       "Sumi — Ink black",
-    "白 Shiro":
+    "白":
       "Shiro — White",
-    "生成り Kinari":
+    "生成り":
       "Kinari — Off-white",
     "ロゴをA3ポスターと名刺に展開しました。ポスターでは弓を引く射手と朱の日の丸、桜と富士山を組み合わせ、国際大会としての「日本らしさ」を一目で伝える構成にしています。":
       "The logo was extended to an A3 poster and business cards. The poster combines an archer drawing the bow, a vermilion rising sun, cherry blossoms and Mt. Fuji, conveying the \"Japanese character\" of an international tournament at a glance.",
@@ -477,7 +477,7 @@
       "Portfolio Site Design | Thar Nyi Nyi",
     "制作事例：Thar Nyi Nyiが手がけた「ポートフォリオサイト デザイン」。自分の作品を紹介するポートフォリオサイトを、トップ・作品一覧・作品詳細・プロフィール・お問い合わせの全8ページでデザイン。ダークネイビー×オレンジで統一しました。":
       "Case study: \"Portfolio Site Design\" by Thar Nyi Nyi. A portfolio site to present my work, designed across 8 pages: top, works list, work details, profile and contact — unified in dark navy × orange.",
-    "Website UI Design（全8ページ）":
+    "WebサイトUIデザイン（全8ページ）":
       "Website UI Design (8 pages)",
     "作品が主役になる、ダークトーンのポートフォリオサイト":
       "A dark-toned portfolio site where the work takes centre stage",
@@ -492,7 +492,7 @@
     "名前とキャッチコピー、コードエディタ風のビジュアル、代表作のカードで第一印象をつくる入口。":
       "The entrance: name and tagline, a code-editor-style visual and cards of key works make the first impression.",
     "作品一覧":
-      "Works list",
+      "Selected Work",
     "カテゴリで絞り込めるタブと、サムネイル付きの作品リスト。":
       "Category filter tabs and a list of works with thumbnails.",
     "作品詳細 × 4":
@@ -536,9 +536,9 @@
     "FORNO ROSSO Webサイトデザイン":
       "FORNO ROSSO website design",
     // ---- work-poster.html
-    "アートと人 — Art and Human | Thar Nyi Nyi":
+    "アートと人 | Thar Nyi Nyi":
       "Art and Human | Thar Nyi Nyi",
-    "制作事例：Thar Nyi Nyiが手がけた展覧会ポスター「アートと人 / Art and Human」5つのコンセプト展開。":
+    "制作事例：Thar Nyi Nyiが手がけた展覧会ポスター「アートと人」5つのコンセプト展開。":
       "Case study: the exhibition poster \"Art and Human\" by Thar Nyi Nyi, developed in five concepts.",
     "展覧会ポスター（5コンセプト展開）":
       "Exhibition posters (5 concepts)",
@@ -546,7 +546,7 @@
       "A visual exploration for an exhibition that asks what \"art\" really is",
     "アートと人 ポスターデザイン メインビジュアル":
       "Art and Human poster design — main visual",
-    "神戸電子美術館で開催される架空の展覧会「アートと人 / Art and Human」のためのポスターを制作しました。同じテキスト・同じ日程情報を使いながら、5つのまったく異なるビジュアルコンセプトを展開し、1つのメッセージが表現次第でどれほど違う印象を持ちうるかを検証した課題です。":
+    "神戸電子美術館で開催される架空の展覧会「アートと人」のためのポスターを制作しました。同じテキスト・同じ日程情報を使いながら、5つのまったく異なるビジュアルコンセプトを展開し、1つのメッセージが表現次第でどれほど違う印象を持ちうるかを検証した課題です。":
       "I created posters for \"Art and Human\", a fictional exhibition held at the Kobe Denshi Museum of Art. Using the same text and schedule, I developed five completely different visual concepts — an assignment that tested how differently one message can come across depending on its expression.",
     "「アートとは何か」を問い直すという、抽象的で挑戦的なテーマをポスター1枚で伝えることが課題でした。単に美しいだけでなく、見る人に「立ち止まって考えさせる」強さを持たせつつ、日程・会場・主催情報といった実務的な要素も破綻なく収める必要がありました。":
       "The challenge was to convey an abstract, ambitious theme — asking \"what is art?\" — in a single poster. It had to be strong enough to make people \"stop and think\", not just beautiful, while fitting practical elements such as dates, venue and organiser without breaking the design.",
@@ -554,37 +554,37 @@
       "Five concepts",
     "同じ課題文に対して、まったく異なる5つの表現アプローチを試作しました。":
       "For the same brief, I prototyped five completely different approaches.",
-    "Portrait — 人物の絵画的表現":
+    "ポートレート — 人物の絵画的表現":
       "Portrait — A painterly figure",
     "暖色と寒色を対比させたデジタルペインティングの人物像で、感情的な深みを表現。":
       "A digitally painted figure contrasting warm and cool colours expresses emotional depth.",
-    "Steampunk — 質感で魅せるタイポグラフィ":
+    "スチームパンク — 質感で魅せるタイポグラフィ":
       "Steampunk — Typography told through texture",
     "歯車や機械部品のテクスチャーを文字の中に閉じ込め、「人がつくるもの」としてのアートを暗示。":
       "Textures of gears and machine parts locked inside the letters hint at art as \"something people make\".",
-    "Motion — 高コントラストな写真表現":
+    "モーション — 高コントラストな写真表現":
       "Motion — High-contrast photography",
     "粉塵をまとって踊るダンサーを黒背景×赤文字で切り取った、最もエディトリアルで力強いバージョン。":
       "A dancer wrapped in dust, framed in red type on black — the most editorial and powerful version.",
-    "Fluid — 抽象的な質感表現":
+    "フルイド — 抽象的な質感表現":
       "Fluid — Abstract texture",
     "絵の具が流れるような抽象テクスチャーと縦組みタイポグラフィで、アートそのものの手触りを表現。":
       "Abstract textures like flowing paint and vertical typography express the very feel of art.",
-    "Collage — グリッドとピクセルロゴ":
+    "コラージュ — グリッドとピクセルロゴ":
       "Collage — A grid and a pixel logo",
     "ピクセルアート風のロゴタイプと、彫刻・風船・壁画の3枚コラージュで、多様なアート表現を象徴。":
       "A pixel-art-style logotype and a three-image collage of sculpture, balloons and a mural symbolise the many forms of art.",
     "最終的に完成した5パターンのポスターです。同じ情報でも表現次第でまったく異なる印象になることが、並べてみるとよく分かります。":
       "The five finished posters. Placed side by side, it's clear how the same information can make a completely different impression depending on the expression.",
-    "コンセプト01 — Portrait":
+    "コンセプト01 — ポートレート":
       "Concept 01 — Portrait",
-    "コンセプト02 — Steampunk":
+    "コンセプト02 — スチームパンク":
       "Concept 02 — Steampunk",
-    "コンセプト03 — Motion":
+    "コンセプト03 — モーション":
       "Concept 03 — Motion",
-    "コンセプト04 — Fluid":
+    "コンセプト04 — フルイド":
       "Concept 04 — Fluid",
-    "コンセプト05 — Collage":
+    "コンセプト05 — コラージュ":
       "Concept 05 — Collage",
     "1つの課題文に対して5通りの答えを出す経験を通して、デザインは「正解が1つではない」ことを強く実感しました。特に03のダンサーのビジュアルは、写真の力とタイポグラフィの組み方だけでここまで印象が変わるのかと、自分でも驚いた仕上がりです。次はこの中から1つを選び、ポスターだけでなくSNS用のバナーやチラシまで展開したビジュアルアイデンティティとして仕上げてみたいです。":
       "Giving five answers to one brief made me truly feel that design has \"no single right answer\". The dancer visual in 03 in particular surprised even me — how much the impression could change through the power of a photo and the way the type is set. Next, I'd like to pick one of them and finish it as a visual identity, extended beyond the poster to social media banners and flyers.",
@@ -626,9 +626,9 @@
     "課題として提出したキャラクターデザインシートです。ビジュアル・グッズデザインとプロフィールを1枚にまとめています。":
       "The character design sheet submitted for the assignment, combining the visuals, merchandise design and profile on one sheet.",
     // ---- work-self-intro.html
-    "自己紹介サイト — Hello, I'm Thar Nyi Nyi | Thar Nyi Nyi":
+    "自己紹介サイト | Thar Nyi Nyi":
       "Self-Introduction Site — Hello, I'm Thar Nyi Nyi | Thar Nyi Nyi",
-    "制作事例：Thar Nyi Nyiが手がけた「自己紹介サイト — Hello, I'm Thar Nyi Nyi」。自分自身を紹介する1ページのWebサイト。ABOUT ME・好きなもの・思い出のマップを、クリーム×ブラック×ネオンの遊び心あるデザインでまとめました。":
+    "制作事例：Thar Nyi Nyiが手がけた「自己紹介サイト」。自分自身を紹介する1ページのWebサイト。ABOUT ME・好きなもの・思い出のマップを、クリーム×ブラック×ネオンの遊び心あるデザインでまとめました。":
       "Case study: \"Self-Introduction Site — Hello, I'm Thar Nyi Nyi\" by Thar Nyi Nyi. A one-page website that introduces me — About Me, my favourite things and a map of memories — in a playful cream × black × neon design.",
     "Webサイト（Figma → HTML / CSS・1ページ）":
       "Website (Figma → HTML / CSS, 1 page)",
@@ -644,7 +644,7 @@
       "Basic information — name, hometown, school — and a short introduction on notebook-style cards.",
     "旅行・アニメ・ゲーム・ラーメンなど、好きなものを写真タイルで紹介。":
       "Favourite things — travel, anime, games, ramen — shown as photo tiles.",
-    "01 Myanmar → 02 Japan → 03 Travel Memories → 04 Future。カードを順にたどる、思い出と未来の地図。":
+    "01 ミャンマー → 02 日本 → 03 旅の思い出 → 04 未来。カードを順にたどる、思い出と未来の地図。":
       "01 Myanmar → 02 Japan → 03 Travel Memories → 04 Future. A map of memories and the future, followed card by card.",
     "クリーム色の紙のような背景に、黒の太いタイポグラフィとネオングリーン・パープルのアクセントを組み合わせ、スクラップブックのような手づくり感と元気さを表現しました。写真はポラロイド風に少し傾けて配置し、セクションごとに背景色を切り替えて章の区切りをはっきりさせています。":
       "A cream, paper-like background combined with bold black typography and neon green and purple accents gives it the handmade, cheerful feel of a scrapbook. Photos are tilted slightly like Polaroids, and the background colour changes per section to mark each chapter clearly.",
@@ -690,9 +690,9 @@
     "静止画のデザインと違い、動画編集は「時間」という軸をデザインする作業だと実感しました。テンポの良し悪しだけで、同じ映像でも伝わりやすさが大きく変わることを学びました。サムネイルは動画の「顔」として、静止画デザインのスキルがそのまま活きる部分でもあり、グラフィックデザインと動画編集をつなぐ良い経験になりました。":
       "Unlike still design, I realised that video editing is about designing along the axis of \"time\". I learned that the pace alone can greatly change how well the same footage communicates. The thumbnail, as the \"face\" of the video, is where still-design skills apply directly — a good experience connecting graphic design and video editing.",
     // ---- work-web-collection.html
-    "制作事例：Thar Nyi Nyiが手がけた「Web Design Collection — 5 Brand Sites」。ピザ店・カフェ・和の茶房・ジム・タピオカ専門店。業種もトーンも異なる5つの架空ブランドのWebサイトを、それぞれの世界観に合わせてデザインしました。":
+    "制作事例：Thar Nyi Nyiが手がけた「Webデザイン集 — 5つのブランドサイト」。ピザ店・カフェ・和の茶房・ジム・タピオカ専門店。業種もトーンも異なる5つの架空ブランドのWebサイトを、それぞれの世界観に合わせてデザインしました。":
       "Case study: \"Web Design Collection — 5 Brand Sites\" by Thar Nyi Nyi. A pizzeria, a café, a Japanese tea house, a gym and a tapioca shop — websites for five fictional brands with different industries and tones, each designed to fit its own world.",
-    "Website UI Design × 5（トップページ）":
+    "WebサイトUIデザイン × 5（トップページ）":
       "Website UI Design × 5 (top pages)",
     "業種ごとに異なる「らしさ」を、配色・写真・タイポグラフィで描き分ける":
       "Expressing what makes each industry distinct through colour, photography and typography",
@@ -741,7 +741,7 @@
     // ---- work-website.html
     "制作事例：Thar Nyi Nyiがデザインした水族館サイト「神戸北野水族館」のWebデザイン。":
       "Case study: web design for the aquarium site \"Kobe Kitano Aquarium\" by Thar Nyi Nyi.",
-    "Website UI Design（Figmaモックアップ）":
+    "WebサイトUIデザイン（Figmaモックアップ）":
       "Website UI Design (Figma mockup)",
     "幻想的な海中体験を伝える、水族館の公式サイト":
       "An official aquarium website that conveys a dreamy underwater experience",
@@ -753,7 +753,7 @@
       "An aquarium website needs dreamy, immersive visuals, but visitors also want to check practical information — ticket prices, opening hours, access — before they come. The biggest challenge was balancing these opposing elements, \"atmosphere\" and \"function\", within one long page.",
     "ページは「ヒーロー（訴求）→最新情報→チケット購入→展示エリア紹介→営業時間・アクセス」という、来館検討者の意思決定の流れに沿った順番で構成しました。各セクションは半透明のガラス風カード（グラスモーフィズム）で統一し、写真の上に情報を重ねても文字が読みやすいように設計しています。":
       "The page follows the decision-making flow of a potential visitor: \"Hero (appeal) → Latest news → Ticket purchase → Exhibit areas → Opening hours & access\". Every section uses the same semi-transparent glass-like cards (glassmorphism), designed so that text stays readable even when layered over photos.",
-    "Hero — 海の神秘を探索しよう":
+    "ヒーロー — 海の神秘を探索しよう":
       "Hero — Explore the mysteries of the sea",
     "大型のサメ・魚群の写真を背景に、キャッチコピーと2つのCTAボタン、営業時間・アクセス・入館料の3つの情報チップを配置。":
       "A large photo of sharks and schools of fish in the background, with a tagline, two CTA buttons and three info chips: opening hours, access and admission.",
@@ -776,9 +776,9 @@
     "1枚の縦長ページの中に多くの情報を詰め込みながらも、セクションごとの役割をはっきり分けることの大切さを学びました。特にグラスモーフィズムのカードは、写真の上に文字を重ねても読みやすさを保てる有効な手法だと実感しています。次はこのデザインを実際にHTML・CSSでコーディングし、レスポンシブ対応のライブサイトとして仕上げてみたいです。":
       "I learned how important it is to give each section a clear role, even while fitting a lot of information into one long page. I found glassmorphism cards especially effective for keeping text readable over photos. Next, I'd like to code this design in HTML and CSS and finish it as a responsive live site.",
     // ---- work-zine.html
-    "ミャンマーの一口 — A Bite of Myanmar | Thar Nyi Nyi":
+    "ミャンマーの一口 | Thar Nyi Nyi":
       "A Bite of Myanmar | Thar Nyi Nyi",
-    "制作事例：Thar Nyi Nyiが手がけた「ミャンマーの一口 — A Bite of Myanmar」。ミャンマーと日本の料理を見開きごとに比べながら紹介する、全12ページのZINE。テラコッタと藍色の2色で、ふたつの国の食文化をつなぎました。":
+    "制作事例：Thar Nyi Nyiが手がけた「ミャンマーの一口」。ミャンマーと日本の料理を見開きごとに比べながら紹介する、全12ページのZINE。テラコッタと藍色の2色で、ふたつの国の食文化をつなぎました。":
       "Case study: \"A Bite of Myanmar\" by Thar Nyi Nyi. A 12-page ZINE that introduces Myanmar and Japanese dishes side by side on each spread. Two colours, terracotta and indigo, connect the food cultures of the two countries.",
     "ZINE（B5・全12ページ）／ プレゼンテーション資料":
       "ZINE (B5, 12 pages) / presentation slides",
@@ -786,19 +786,19 @@
       "Different flavours, connected cultures — getting to know Myanmar and Japan through food",
     "学内作品展の展示作品に選出":
       "Selected for the school exhibition",
-    "ZINE ミャンマーの一口 A Bite of Myanmar 表紙":
+    "ZINE ミャンマーの一口 表紙":
       "ZINE \"A Bite of Myanmar\" cover",
-    "ミャンマーの代表的な料理と、日本の料理を比べながら紹介するZINE「ミャンマーの一口 — A Bite of Myanmar」を企画・デザインしました。食を通して、ふたつの国の共通点や違いを知り、ミャンマーの文化に興味を持ってもらうことを目的にしています。":
+    "ミャンマーの代表的な料理と、日本の料理を比べながら紹介するZINE「ミャンマーの一口」を企画・デザインしました。食を通して、ふたつの国の共通点や違いを知り、ミャンマーの文化に興味を持ってもらうことを目的にしています。":
       "I planned and designed \"A Bite of Myanmar\", a ZINE that introduces signature Myanmar dishes alongside Japanese dishes. The aim is to discover what the two countries share and how they differ through food, and to spark interest in Myanmar culture.",
     "ターゲットは、ミャンマーの料理や文化をあまり知らない日本人と、日本に住んでいるミャンマー人。食べ物を通して、お互いの文化を知るきっかけをつくることを目指しました。ZINEとあわせて、企画意図を伝えるプレゼンテーション資料も制作しています。":
       "The audience is Japanese people who don't know much about Myanmar food and culture, and Myanmar people living in Japan. I aimed to create an opportunity to learn about each other's culture through food. Alongside the ZINE, I also made presentation slides explaining the concept.",
     "ミャンマーの料理と日本の料理が交互に登場する構成です。ミャンマーのページはテラコッタ、日本のページは藍色と、国ごとに色を分けることで、めくるたびに2つの国を行き来する感覚をつくりました。":
       "Myanmar and Japanese dishes appear in turn. Myanmar pages are terracotta and Japanese pages are indigo — separating the countries by colour creates the feeling of travelling between them with every page turn.",
-    "Myanmar — テラコッタ":
+    "ミャンマー — テラコッタ":
       "Myanmar — Terracotta",
     "モヒンガー、シャンヌードル、モンリンマヤー、ラペットゥ。パゴダや伝統文様のモチーフを添えて。":
       "Mohinga, Shan noodles, Mont Lin Ma Yar and Lahpet (tea-leaf salad) — with motifs of pagodas and traditional patterns.",
-    "Japan — 藍色":
+    "日本 — 藍色":
       "Japan — Indigo",
     "ラーメン、まぜそば、たこ焼き。富士山や青海波のモチーフで日本らしさを表現。":
       "Ramen, mazesoba and takoyaki — with motifs such as Mt. Fuji and seigaiha waves to express Japan.",
@@ -869,9 +869,9 @@
     "制作の中で一番の挑戦は、どのミャンマー料理と日本料理を組み合わせるかを考えることでした。実際に料理を比較してみると、食べ物だけでなく、文化の違いや共通点も伝えやすくなることを発見しました。食べ物から、お互いの文化を知る — そのきっかけになるZINEを目指しました。":
       "The biggest challenge was deciding which Myanmar and Japanese dishes to pair. When I actually compared the dishes, I found it became easier to convey not just the food but also cultural differences and similarities. Getting to know each other's culture through food — I aimed for a ZINE that sparks exactly that.",
     // ---- work-zodiac.html
-    "12星座キャラクター — Zodiac Koalas | Thar Nyi Nyi":
+    "12星座キャラクター | Thar Nyi Nyi":
       "Zodiac Koalas — 12 Zodiac Characters | Thar Nyi Nyi",
-    "制作事例：Thar Nyi Nyiが手がけた「12星座キャラクター — Zodiac Koalas」。コアラをベースに、12星座それぞれのモチーフを組み合わせたキャラクターシリーズ。夜空の背景と共通のフォーマットで、12枚をひとつのシリーズにまとめました。":
+    "制作事例：Thar Nyi Nyiが手がけた「12星座キャラクター」。コアラをベースに、12星座それぞれのモチーフを組み合わせたキャラクターシリーズ。夜空の背景と共通のフォーマットで、12枚をひとつのシリーズにまとめました。":
       "Case study: \"Zodiac Koalas — 12 Zodiac Characters\" by Thar Nyi Nyi. A character series based on a koala, combined with a motif for each of the 12 zodiac signs. A night-sky background and a shared format bring all 12 together as one series.",
     "キャラクターイラスト × 12（56mm角）・パッケージ（表・裏）・ポスター":
       "Character illustrations × 12 (56 mm square), package (front & back), poster",
@@ -893,41 +893,41 @@
       "Drawn with rounded shapes and few colours so they're recognisable even at small sizes.",
     "おひつじ座からうお座まで、12星座すべてのキャラクターです。":
       "All 12 zodiac characters, from Aries to Pisces.",
-    "おひつじ座 — Aries":
+    "おひつじ座":
       "Aries",
-    "おうし座 — Taurus":
+    "おうし座":
       "Taurus",
-    "ふたご座 — Gemini":
+    "ふたご座":
       "Gemini",
-    "かに座 — Cancer":
+    "かに座":
       "Cancer",
-    "しし座 — Leo":
+    "しし座":
       "Leo",
-    "おとめ座 — Virgo":
+    "おとめ座":
       "Virgo",
-    "12星座キャラクター てんびん座 — Libra":
+    "12星座キャラクター てんびん座":
       "Zodiac character — Libra",
-    "てんびん座 — Libra":
+    "てんびん座":
       "Libra",
-    "12星座キャラクター さそり座 — Scorpio":
+    "12星座キャラクター さそり座":
       "Zodiac character — Scorpio",
-    "さそり座 — Scorpio":
+    "さそり座":
       "Scorpio",
-    "12星座キャラクター いて座 — Sagittarius":
+    "12星座キャラクター いて座":
       "Zodiac character — Sagittarius",
-    "いて座 — Sagittarius":
+    "いて座":
       "Sagittarius",
-    "12星座キャラクター やぎ座 — Capricorn":
+    "12星座キャラクター やぎ座":
       "Zodiac character — Capricorn",
-    "やぎ座 — Capricorn":
+    "やぎ座":
       "Capricorn",
-    "12星座キャラクター みずがめ座 — Aquarius":
+    "12星座キャラクター みずがめ座":
       "Zodiac character — Aquarius",
-    "みずがめ座 — Aquarius":
+    "みずがめ座":
       "Aquarius",
-    "12星座キャラクター うお座 — Pisces":
+    "12星座キャラクター うお座":
       "Zodiac character — Pisces",
-    "うお座 — Pisces":
+    "うお座":
       "Pisces",
     "キャラクターシリーズを「星座シールコレクション（全12種・シール1枚入り）」という商品として展開し、パッケージの表・裏とポスターをデザインしました。パッケージはキャラクターと同じ夜空の世界観でまとめ、裏面には全12種を一覧で並べています。ポスターは「12の星が、ひとつの世界になる。」をコピーに、12星座が星の軌道に沿ってつながる構成にしました。":
       "I developed the character series into a product, a \"Zodiac Sticker Collection (12 types, 1 sticker per pack)\", and designed the front and back of the package and a poster. The package shares the characters' night-sky world, and the back lists all 12 types. The poster uses the copy \"12 stars become one world.\", with the 12 signs connected along a starry orbit.",
@@ -957,6 +957,461 @@
       "Made with code.",
     "ウェブを、つくる。":
       "Building the web.",
+    // ---- labels, buttons and headings that are Japanese in the HTML
+    "お問い合わせ — Thar Nyi Nyi":
+      "Contact — Thar Nyi Nyi",
+    "ホーム":
+      "Home",
+    "作品":
+      "Work",
+    "// お問い合わせ":
+      "// contact",
+    "お気軽にご連絡ください":
+      "Let's Work Together",
+    "メニューを開閉":
+      "Toggle menu",
+    "お名前":
+      "Name",
+    "メール":
+      "Email",
+    "件名":
+      "Subject",
+    "メッセージ":
+      "Message",
+    "送信する":
+      "Send Message",
+    "所在地":
+      "Location",
+    "日本・神戸":
+      "Kobe, Japan",
+    "サイトマップ":
+      "Sitemap",
+    "連絡先":
+      "Connect",
+    "© 2026 Thar Nyi Nyi — HTML・CSS・JavaScriptで制作":
+      "© 2026 Thar Nyi Nyi — Built with HTML, CSS & JavaScript.",
+    "Thar Nyi Nyi — フロントエンド開発を学ぶ学生":
+      "Thar Nyi Nyi — Front-end Development Student",
+    "フロントエンド":
+      "Front-end",
+    "フロントエンド学生":
+      "Front-end Student",
+    "神戸電子専門学校":
+      "Kobe Denshi College",
+    "学生 · 2026":
+      "Student · 2026",
+    "← ドラッグ →":
+      "← drag →",
+    "// わたしについて":
+      "// about-me",
+    "デザインから開発へ":
+      "From Design to Development",
+    "ミャンマー → 日本":
+      "Myanmar → Japan",
+    "エンジニアリング → コード":
+      "Engineering → Code",
+    "詳しく読む":
+      "Read Full Story",
+    "// 使用技術":
+      "// tech-stack",
+    "ツール・技術":
+      "Tools & Technologies",
+    "スキル一覧":
+      "Full Skills",
+    "レスポンシブデザイン":
+      "Responsive Design",
+    "// 作品紹介":
+      "// showcase",
+    "作品・課題":
+      "Projects & Assignments",
+    "全16作品を見る":
+      "All 16 Works",
+    "Webサイトデザイン":
+      "Website Design",
+    "事例を読む":
+      "Read Case Study",
+    "神戸北野水族館サイト":
+      "Kobe Kitano Aquarium",
+    "ポスターデザイン":
+      "Poster Design",
+    "ロゴデザイン":
+      "Logo Design",
+    "キャラクターデザイン":
+      "Character Design",
+    "動画編集":
+      "Video Editing",
+    "神戸北野水族館":
+      "Aquarium",
+    "前の作品":
+      "Previous Project",
+    "次の作品":
+      "Next Project",
+    "作品を選ぶ":
+      "Choose a project",
+    "カルーセル":
+      "carousel",
+    "めくる":
+      "Flick",
+    "// ご連絡":
+      "// get-in-touch",
+    "一緒につくりましょう":
+      "Let's Build Something Great",
+    "ご連絡はこちら":
+      "Say Hello",
+    "プロフィールを見る":
+      "View Profile",
+    "プロフィール — Thar Nyi Nyi":
+      "Profile — Thar Nyi Nyi",
+    "// プロフィール":
+      "// profile",
+    "> フロントエンド開発を学ぶ学生":
+      "> Front-end Development Student",
+    "作品を見る":
+      "View My Work",
+    "連絡する":
+      "Contact Me",
+    "// 自己紹介":
+      "// self-intro",
+    "わたしについて":
+      "A Little About Me",
+    "// 歩み":
+      "// journey",
+    "これまでの歩み":
+      "My Journey",
+    "原点":
+      "ORIGIN",
+    "大学":
+      "UNIVERSITY",
+    "電気工学":
+      "Electrical Engineering",
+    "転機":
+      "TURNING POINT",
+    "コロナ禍":
+      "COVID-19",
+    "新しい方向へ":
+      "NEW DIRECTION",
+    "日本語を学ぶ":
+      "Learning Japanese",
+    "来日":
+      "RELOCATION",
+    "日本へ":
+      "Japan",
+    "学び":
+      "EDUCATION",
+    "グラフィックデザインの学生":
+      "Graphic Design Student",
+    "スキルを広げる":
+      "EXPANDING SKILLS",
+    "UI/UXを学ぶ":
+      "Learning UI/UX",
+    "さらに深く":
+      "GOING DEEPER",
+    "フロントエンド開発を学ぶ":
+      "Learning Front-end Development",
+    "これから":
+      "WHAT'S NEXT",
+    "未来のWeb開発者":
+      "Future Web Developer",
+    "// スキル":
+      "// skills",
+    "スキル・ツール":
+      "Skills & Tools",
+    "コード":
+      "Code",
+    "JavaScript（学習中）":
+      "JavaScript — Learning",
+    "ワークフロー":
+      "Workflow",
+    "Git（学習を始めたばかり）":
+      "Git — Just started",
+    "デザイン":
+      "Design",
+    "バナーデザイン":
+      "Banner Design",
+    "使用ソフト":
+      "Software Used",
+    "制作時期":
+      "Duration",
+    "成果物":
+      "Deliverable",
+    "担当":
+      "Role",
+    "グラフィックデザイナー":
+      "Graphic Designer",
+    "テーマ":
+      "Theme",
+    "// 概要":
+      "// overview",
+    "プロジェクト概要":
+      "Project Overview",
+    "// 課題":
+      "// challenge",
+    "課題":
+      "The Challenge",
+    "// アプローチ":
+      "// approach",
+    "アプローチ":
+      "Approach",
+    "// サイズ展開":
+      "// formats",
+    "4種類の広告サイズ":
+      "4 Ad Formats",
+    "レクタングル · 300×279":
+      "Rectangle · 300×279",
+    "スカイスクレイパー · 160×600":
+      "Skyscraper · 160×600",
+    "リーダーボード · 728×90":
+      "Leaderboard · 728×90",
+    "バナー · 468×60（ブルー版）":
+      "Banner · 468×60 (Blue Variant)",
+    "// ふりかえり":
+      "// reflection",
+    "ふりかえり":
+      "Reflection",
+    "関連作品":
+      "Related Works",
+    "作品一覧へ":
+      "All Works",
+    "前へ":
+      "Previous",
+    "次へ":
+      "Next",
+    "名刺":
+      "Business Card",
+    "// 表裏":
+      "// front & back",
+    "表面・裏面":
+      "Front & Back",
+    "// デザイン":
+      "// design",
+    "デザインのポイント":
+      "Design Point",
+    "// モックアップ":
+      "// mockup",
+    "モックアップ":
+      "Mockup",
+    "グッズデザイン":
+      "Goods Design",
+    "// デザイン一覧":
+      "// designs",
+    "2種類のデザイン":
+      "2 Designs",
+    "// デザインシート":
+      "// design sheet",
+    "デザインシート":
+      "Design Sheet",
+    "フライヤーデザイン":
+      "Flyer Design",
+    "// コンセプト":
+      "// concept",
+    "// デザイン要素":
+      "// design elements",
+    "// カラー":
+      "// color",
+    "カラーパレット":
+      "Color Palette",
+    "// 展開":
+      "// applications",
+    "展開 — ポスター・名刺":
+      "Applications — Poster & Business Card",
+    "名刺 · 表面":
+      "Business Card · Front",
+    "名刺 · 裏面":
+      "Business Card · Back",
+    "// 提案":
+      "// proposal",
+    "ロゴデザイン提案":
+      "Logo Design Proposal",
+    "UI / UXデザイナー":
+      "UI / UX Designer",
+    "// 構成":
+      "// structure",
+    "サイト構成":
+      "Site Structure",
+    "// ページ":
+      "// pages",
+    "全8ページ":
+      "All 8 Pages",
+    "// コンセプト一覧":
+      "// concepts",
+    "// 完成デザイン":
+      "// final design",
+    "完成デザイン — 5種類":
+      "Final Design — 5 Variations",
+    "★ クラス投票 2位":
+      "★ Class Vote · 2nd",
+    "キャラクターデザイナー":
+      "Character Designer",
+    "評価":
+      "Recognition",
+    "キャラクタープロフィール":
+      "Character Profile",
+    "PRエリア":
+      "PR Area",
+    "好きなこと":
+      "Likes",
+    "コンセプト":
+      "Concept",
+    "エディトリアルデザイン":
+      "Editorial Design",
+    "デモを見る":
+      "Live Demo",
+    "ソースコード":
+      "Source Code",
+    "UI / UXデザイナー / コーディング":
+      "UI / UX Designer / Coding",
+    "ページ構成":
+      "Page Structure",
+    "自己紹介":
+      "About Me",
+    "好きなもの":
+      "Favorites",
+    "思い出のマップ":
+      "My Memory Map",
+    "動画編集 / サムネイルデザイン":
+      "Video Editor & Thumbnail Designer",
+    "// プロセス":
+      "// process",
+    "制作プロセス":
+      "Process",
+    "完成サムネイル":
+      "Final Thumbnail",
+    "// ブランド":
+      "// brands",
+    "アプローチと構成":
+      "Approach & Structure",
+    "最新ニュース・イベント":
+      "Latest News & Events",
+    "// パレット":
+      "// palette",
+    "ディープネイビー":
+      "Deep Navy",
+    "オーシャンブルー":
+      "Ocean Blue",
+    "バブルシアン":
+      "Bubble Cyan",
+    "カードホワイト":
+      "Card White",
+    "// タイポグラフィ":
+      "// typography",
+    "タイポグラフィ":
+      "Typography",
+    "完成デザイン":
+      "Final Design",
+    "★ 選出作品":
+      "★ Selected Work",
+    "エディトリアルデザイナー":
+      "Editorial Designer",
+    "コンセプトと構成":
+      "Concept & Structure",
+    "全12ページ":
+      "All 12 Pages",
+    "// 注力点":
+      "// focus",
+    "キャラクターデザイナー / イラストレーター":
+      "Character Designer / Illustrator",
+    "シリーズのルール":
+      "Series Rules",
+    "// キャラクター":
+      "// characters",
+    "全12星座":
+      "All 12 Signs",
+    "// 商品":
+      "// product",
+    "商品展開 — パッケージ・ポスター":
+      "Product — Package & Poster",
+    "パッケージ · 表面":
+      "Package · Front",
+    "パッケージ · 裏面":
+      "Package · Back",
+    "作品一覧 — Thar Nyi Nyi":
+      "Work — Thar Nyi Nyi",
+    "// 作品":
+      "// portfolio",
+    "すべて":
+      "All",
+    "Webデザイン":
+      "Web Design",
+    "グラフィックデザイン":
+      "Graphic Design",
+    "事例を見る":
+      "View Case Study",
+    "ブランドサイト集":
+      "Brand Sites",
+    "ポートフォリオUI":
+      "Portfolio UI",
+    "説明会・体験入学":
+      "Open Campus",
+    "ようこそ缶バッジ":
+      "Welcome Badges",
+    "HAT神戸":
+      "HAT Kobe",
+    "チョコフェス":
+      "Choco Fes",
+    "香住の花火":
+      "Kasumi Fireworks",
+    "Webサイト · Figma":
+      "Website · Figma",
+    "5サイト · Figma":
+      "5 sites · Figma",
+    "自己紹介 · HTML / CSS":
+      "Self-intro · HTML / CSS",
+    "8ページ · Figma":
+      "8 pages · Figma",
+    "5コンセプト · Illustrator":
+      "5 concepts · Illustrator",
+    "広告4サイズ · Illustrator":
+      "4 ad formats · Illustrator",
+    "閉じる ×":
+      "Close ×",
+    "アイデンティティ · Illustrator":
+      "Identity · Illustrator",
+    "ZINE · 12ページ":
+      "ZINE · 12 pages",
+    "12キャラクター · Illustrator":
+      "12 characters · Illustrator",
+    "キャラクター · Illustrator":
+      "Character · Illustrator",
+    "缶バッジ2種 · Illustrator":
+      "2 badges · Illustrator",
+    "A4フライヤー · Illustrator":
+      "A4 flyer · Illustrator",
+    "B2ポスター · Photoshop":
+      "B2 poster · Photoshop",
+    "名刺 · Illustrator":
+      "Business card · Illustrator",
+    "< ポートフォリオ 2026":
+      "< Portfolio 2026",
+    "デザイン → コード":
+      "Design → Code",
+    "スクロール":
+      "Scroll",
+    "ライブ":
+      "Live",
+    "デザインの目を持つフロントエンド学生 — HTML / CSS / JavaScript":
+      "A front-end student with a designer's eye — HTML / CSS / JavaScript",
+    "フロントエンドのコーディングヒーロー":
+      "Front-end coding hero",
+    "オープニングをスキップ（Esc）":
+      "Skip intro (Esc)",
+    "スキップ":
+      "Skip",
+    "ポートフォリオ":
+      "Portfolio",
+    "ドラッグ":
+      "Drag",
+    "神戸北野水族館 — Webサイトデザイン":
+      "Kobe Kitano Aquarium — Website Design",
+    "神戸北野水族館 — Webサイトデザイン | Thar Nyi Nyi":
+      "Kobe Kitano Aquarium — Website Design | Thar Nyi Nyi",
+    "Webデザイン集 — 5つのブランドサイト":
+      "Web Design Collection — 5 Brand Sites",
+    "Webデザイン集 — 5つのブランドサイト | Thar Nyi Nyi":
+      "Web Design Collection — 5 Brand Sites | Thar Nyi Nyi",
+    "送信中…":
+      "Sending…",
+    "IDカード":
+      "ID card",
   };
 
   const KEY = "portfolio-lang";
@@ -972,7 +1427,7 @@
   if (lang === "en") {
     root.lang = "en";
     const JP = /[぀-ヿ㐀-鿿！-｠]/;
-    const ATTRS = ["alt", "aria-label", "placeholder", "title"];
+    const ATTRS = ["alt", "aria-label", "aria-roledescription", "placeholder", "title"];
     const text = (n) => {
       const v = n.nodeValue, e = JP.test(v) && en(v);
       if (e) n.nodeValue = v.match(/^\s*/)[0] + e + v.match(/\s*$/)[0];     // keep the spacing around it

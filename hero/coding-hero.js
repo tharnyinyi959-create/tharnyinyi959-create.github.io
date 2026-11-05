@@ -199,17 +199,17 @@
       '<span class="ch__mark ch__mark--tl"></span><span class="ch__mark ch__mark--tr"></span>' +
       '<span class="ch__mark ch__mark--bl"></span><span class="ch__mark ch__mark--br"></span>' +
       '<div class="ch__big" aria-hidden="true">&lt;/&gt;</div>' +
-      '<div class="ch__meta ch__meta--tl">< Portfolio 2026</div>' +
+      '<div class="ch__meta ch__meta--tl">< ポートフォリオ 2026</div>' +
       '<div class="ch__meta ch__meta--tr" aria-hidden="true">x <span data-x>0000</span> &nbsp; y <span data-y>0000</span></div>' +
-      '<div class="ch__meta ch__meta--bl">Thar Nyi Nyi <b>/</b> Design → Code</div>' +
-      '<div class="ch__meta ch__meta--br" aria-hidden="true">Scroll <i></i></div>' +
+      '<div class="ch__meta ch__meta--bl">Thar Nyi Nyi <b>/</b> デザイン → コード</div>' +
+      '<div class="ch__meta ch__meta--br" aria-hidden="true">スクロール <i></i></div>' +
       '<div class="ch__jp" aria-hidden="true">コードで、つくる。</div>' +
       '<div class="ch__cross" aria-hidden="true"></div>' +
       '<div class="ch__stage">' +
       '<div class="ch__rule"></div>' +
       '<div class="ch__tilt">' +
       '<span class="ch__tag ch__tag--html" style="--i:0" data-depth="1.6">&lt; HTML &gt;</span>' +
-      '<span class="ch__tag ch__tag--fe" style="--i:5" data-depth="1.1">Front-end</span>' +
+      '<span class="ch__tag ch__tag--fe" style="--i:5" data-depth="1.1">フロントエンド</span>' +
       '<span class="ch__tag ch__tag--css" style="--i:1" data-depth="1.9">CSS</span>' +
       '<span class="ch__tag ch__tag--js ch__tag--l" style="--i:2" data-depth="1.4">JavaScript</span>' +
       '<span class="ch__tag ch__tag--web ch__tag--r" style="--i:3" data-depth="1.8">Web</span>' +
@@ -222,14 +222,14 @@
       '<div class="ch__tabs" role="tablist">' +
       tabs +
       "</div>" +
-      '<div class="ch__status">Front-end</div>' +
+      '<div class="ch__status">フロントエンド</div>' +
       "</div>" +
       '<div class="ch__body">' +
       '<div class="ch__code">' +
       files +
       "</div>" +
       '<div class="ch__prev" aria-hidden="true">' +
-      '<div class="ch__url"><span>localhost:5500</span><span class="ch__live">Live</span></div>' +
+      '<div class="ch__url"><span>localhost:5500</span><span class="ch__live">ライブ</span></div>' +
       '<div class="ch__canvas">' +
       '<div class="pv-card"><h3 class="pv-h">Thar Nyi Nyi</h3><p class="pv-p">HTML · CSS · JavaScript</p><button class="pv-b" type="button" tabindex="-1">View work</button></div>' +
       "</div>" +
@@ -243,8 +243,8 @@
       (window.I18N && window.I18N.lang === "en" // EN / JP (js/i18n.js): the word order differs, so the whole line is swapped
         ? '<span class="ch__nb">With a designer\'s eye,</span> <span class="ch__nb">I write <em>code</em>.</span>'
         : '<span class="ch__nb">デザインの目で、</span><span class="ch__nb"><em>コード</em>を書く。</span>') +
-      "<small>A front-end student with a designer\'s eye — HTML / CSS / JavaScript</small></h1>" +
-      '<div class="cta-row"><a class="btn btn-primary" href="works.html">View My Work</a><a class="btn btn-outline" href="profile.html">About Me</a></div>' +
+      "<small>デザインの目を持つフロントエンド学生 — HTML / CSS / JavaScript</small></h1>" +
+      '<div class="cta-row"><a class="btn btn-primary" href="works.html">作品を見る</a><a class="btn btn-outline" href="profile.html">自己紹介</a></div>' +
       "</div>"
     );
   }
@@ -270,7 +270,7 @@
 
     hero = document.createElement("section");
     hero.className = "ch container ch--pre";
-    hero.setAttribute("aria-label", "Front-end coding hero");
+    hero.setAttribute("aria-label", "フロントエンドのコーディングヒーロー");
     hero.innerHTML = html();
     oldHero.parentNode.insertBefore(hero, oldHero);
     oldHero.classList.add("ch-replaced"); // hidden, not removed

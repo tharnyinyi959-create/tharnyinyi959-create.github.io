@@ -360,6 +360,9 @@ document.addEventListener("DOMContentLoaded", () => {
       s.classList.toggle("is-on", n === i);
       s.inert = n !== i;                                               // a stage that is wiped away can't be reached with Tab
     });
+    [i - 1, i, i + 1].forEach((n) => {                                 // load this picture and its neighbours before their wipe, not during it
+      if (items[n]) items[n].querySelectorAll('img[loading="lazy"]').forEach((img) => { img.loading = "eager"; });
+    });
   };
 
   const spy = () => {
@@ -448,7 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
   form.addEventListener("submit", async (e) => {
     e.preventDefault();                                               // the hidden _gotcha field is checked by Formspree, not here
     btn.disabled = true;
-    btn.textContent = "Sending…";
+    btn.textContent = t("送信中…");
     say("送信中です…");
     try {
       const res = await fetch(form.action, {
