@@ -3766,3 +3766,21 @@ h1, h2, h3,
 main:focus {
   outline: none;
 }
+
+/* phones: the call-to-action card keeps its Japanese heading in whole words */
+@media (max-width: 480px) {
+  .contact-cta {
+    padding-left: var(--sp-5);
+    padding-right: var(--sp-5);
+  }
+
+  .contact-cta .h2 {
+    font-size: 28px;
+  }
+}
+
+@media (max-width: 360px) {
+  .contact-cta .h2 {
+    font-size: 24px;
+  }
+}
