@@ -1,0 +1,381 @@
+/* =====================================================================
+   A Bite of Myanmar — the ZINE as a book (work-zine.html, js/zine-book.js).
+   Every class starts .zb, except the block itself (.zine-book). The size comes from one number, --pw (page width).
+   ===================================================================== */
+.zine-book {
+  padding: var(--sp-7) 0 var(--sp-5);
+}
+
+.zine-book__head {
+  max-width: 620px;
+  margin: 0 auto var(--sp-7);
+  text-align: center;
+}
+
+.zine-book__tag {
+  margin: var(--sp-2) 0 var(--sp-2);
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3vw, 32px);
+  line-height: 1.3;
+}
+
+.zine-book__head .zine-book__note {
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.zb-stage,
+.zb-foot,
+.zine-book .concept-gallery[hidden] {
+  display: none;
+}
+
+.zine-book.is-ready .zb-stage {
+  --end-pw: min(calc((100cqw - 128px) / 2), calc((100svh - 250px) * 800 / 1119));
+  container-type: inline-size;
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr) 52px;
+  gap: var(--sp-3);
+  align-items: center;
+}
+
+.zine-book.is-ready .zb-foot {
+  display: grid;
+  justify-items: center;
+  gap: var(--sp-3);
+  margin-top: var(--sp-6);
+}
+
+/* ---- the arrows: outside the book, never over the artwork ---- */
+.zb-nav {
+  width: 52px;
+  height: 52px;
+  display: grid;
+  place-items: center;
+  border: 1.5px solid var(--color-primary);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--color-primary);
+  cursor: pointer;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease), transform 0.3s var(--ease), opacity 0.3s ease;
+}
+
+.zb-nav--prev { grid-column: 1; grid-row: 1; }
+.zb-nav--next { grid-column: 3; grid-row: 1; }
+
+.zb-nav svg {
+  width: 20px;
+  height: 20px;
+}
+
+.zb-nav:hover:not(:disabled) {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+.zb-nav--prev:hover:not(:disabled) { transform: translateX(-3px); }
+.zb-nav--next:hover:not(:disabled) { transform: translateX(3px); }
+
+.zb-nav:disabled {
+  opacity: 0.25;
+  cursor: default;
+}
+
+.zb-nav:focus-visible,
+.zb-restart:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
+/* ---- the scene: perspective, and the size of the page ---- */
+.zb-scene {
+  --pw: min(calc((100cqw - 128px) / 2), calc((100svh - 250px) * 800 / 1119));
+  --ph: calc(var(--pw) * 1119 / 800);
+  grid-column: 2;
+  grid-row: 1;
+  position: relative;
+  height: calc(var(--ph) + 28px);
+  display: grid;
+  place-items: center;
+  perspective: 2600px;
+  perspective-origin: 50% 38%;
+  touch-action: pan-y;
+}
+
+.zb-floor {
+  position: absolute;
+  left: 50%;
+  bottom: -8px;
+  width: calc(var(--pw) * 2);
+  height: 36px;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(60, 38, 18, 0.34), transparent);
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.8s ease 0.2s;
+}
+
+.zine-book.is-in .zb-floor { opacity: 1; }
+
+/* ---- the book. Closed it moves half a page to stay in the middle of the scene ---- */
+.zb-book {
+  position: relative;
+  width: calc(var(--pw) * 2);
+  height: var(--ph);
+  transform-style: preserve-3d;
+  opacity: 0;
+  translate: 0 28px;
+  scale: 0.96;
+  transition: transform 0.95s cubic-bezier(0.45, 0.05, 0.3, 1), opacity 0.8s ease, translate 0.9s var(--ease), scale 0.9s var(--ease);
+}
+
+.zine-book.is-in .zb-book {
+  opacity: 1;
+  translate: 0 0;
+  scale: 1;
+}
+
+.zb-book[data-place="closed"] { transform: translateX(calc(var(--pw) * -0.5)); }
+.zb-book[data-place="back"] { transform: translateX(calc(var(--pw) * 0.5)); }
+
+/* the shadow on the table follows the width of what lies there */
+.zb-floor,
+.zb-book::after { pointer-events: none; }
+
+/* the paper edges of the pages under the top one */
+.zb-edge {
+  position: absolute;
+  top: 2px;
+  bottom: 2px;
+  background: repeating-linear-gradient(90deg, #f5ecdb 0 1px, #cdbfa6 1px 2px);
+  transform: translateZ(-3.2px);
+  transition: width 0.6s ease;
+}
+
+.zb-edge--l { right: 100%; width: var(--left, 0); }
+.zb-edge--r { left: 100%; width: var(--right, 0); }
+
+/* ---- a leaf of paper: a page on each side, turning on the spine ---- */
+.zb-leaf {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  transform-origin: left center;
+  transform-style: preserve-3d;
+}
+
+.zine-book.is-turning .zb-leaf { will-change: transform; }
+
+.zb-face {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  background: #ecdfcd;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.zb-face--front { transform: translateZ(0.2px); }
+.zb-face--back { transform: rotateY(180deg) translateZ(0.2px); }
+
+.zb-face img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* the page dips into the spine: soft shade on the inner edge, a little light on the outer one */
+.zb-face::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgba(40, 24, 10, 0.26), rgba(40, 24, 10, 0.05) 5%, transparent 13%, transparent 90%, rgba(255, 255, 255, 0.1));
+}
+
+.zb-face--back::after {
+  background: linear-gradient(270deg, rgba(40, 24, 10, 0.26), rgba(40, 24, 10, 0.05) 5%, transparent 13%, transparent 90%, rgba(255, 255, 255, 0.1));
+}
+
+.zb-shade {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: linear-gradient(90deg, rgba(30, 18, 8, 0.75), rgba(30, 18, 8, 0.15) 70%, rgba(255, 255, 255, 0.2));
+}
+
+/* the shadow that lifts the book off the page */
+.zb-leaf--cover .zb-face {
+  box-shadow: 0 14px 34px rgba(60, 38, 18, 0.28);
+}
+
+/* the shadow a turning page throws on the pages below it */
+.zb-cast {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateZ(0.3px);
+}
+
+.zb-cast--l { left: 0; background: linear-gradient(270deg, rgba(30, 18, 8, 0.5), transparent 70%); }
+.zb-cast--r { left: 50%; background: linear-gradient(90deg, rgba(30, 18, 8, 0.5), transparent 70%); }
+
+/* ---- under the book: where you are, how far you are, and the ending ---- */
+.zb-status {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 2px var(--sp-3);
+  margin: 0;
+  min-height: 1.7em;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.zb-status b {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.zb-progress {
+  width: min(320px, 70%);
+  height: 2px;
+  background: var(--primary-a16);
+  overflow: hidden;
+}
+
+.zb-progress i {
+  display: block;
+  height: 100%;
+  background: var(--color-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.7s var(--ease);
+}
+
+/* the ending stands next to the closed book, in the space it leaves free */
+.zb-end {
+  grid-column: 2;
+  grid-row: 1;
+  justify-self: end;
+  align-self: center;
+  z-index: 2;
+  width: calc((100cqw - 128px - var(--end-pw, 0px)) / 2 - 26px);
+  max-width: 230px;
+  display: grid;
+  justify-items: start;
+  gap: var(--sp-3);
+  visibility: hidden;                /* keeps its height, so the page does not jump when it appears */
+  opacity: 0;
+  translate: 0 8px;
+  transition: opacity 0.6s ease, translate 0.6s var(--ease), visibility 0.6s;
+}
+
+.zine-book.is-final .zb-end {
+  visibility: visible;
+  opacity: 1;
+  translate: 0 0;
+}
+
+.zb-end__text {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.zb-restart {
+  padding: 9px 22px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--r-full);
+  background: transparent;
+  color: var(--color-primary);
+  font-family: var(--font-alt);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.zb-restart:hover {
+  background: var(--color-primary);
+  color: var(--color-secondary);
+}
+
+/* ---- one page at a time on narrow screens: a stack of pages, the top one lifts away to the left ---- */
+@media (max-width: 760px) {
+  .zine-book.is-ready .zb-stage {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--sp-4) var(--sp-3);
+  }
+
+  .zb-scene {
+    --pw: min(100cqw - 22px, 440px, calc((100svh - 300px) * 800 / 1119));
+    grid-column: 1 / -1;
+    grid-row: 1;
+    perspective: 1500px;
+  }
+
+  .zb-nav {
+    grid-row: 2;
+    width: 56px;
+    height: 56px;
+  }
+
+  .zb-nav--prev { grid-column: 1; justify-self: end; }
+  .zb-nav--next { grid-column: 2; justify-self: start; }
+
+  .zb-floor { width: var(--pw); }
+
+  .zb-end {
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: center;
+    width: auto;
+    max-width: none;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .zb-book--single {
+    width: var(--pw);
+  }
+
+  .zb-sheet {
+    position: absolute;
+    inset: 0;
+    border-radius: 2px;
+    transform-origin: left center;
+    box-shadow: 0 10px 26px rgba(60, 38, 18, 0.24), 3px 0 0 #ddd0b8, 5px 0 0 #f1e7d4;
+  }
+
+  .zb-sheet .zb-face--front { transform: none; }
+
+  .zb-sheet .zb-face::after {
+    background: linear-gradient(90deg, rgba(40, 24, 10, 0.16), transparent 7%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zb-book,
+  .zb-floor,
+  .zb-edge,
+  .zb-end,
+  .zb-progress i,
+  .zb-nav {
+    transition: none;
+  }
+
+  .zb-book { translate: 0 0; scale: 1; opacity: 1; }
+}

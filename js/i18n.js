@@ -950,6 +950,17 @@
       "Your message couldn't be sent. Sorry for the trouble — please email me directly at tharnyinyi959@gmail.com.",
     "本文へスキップ":
       "Skip to content",
+    // ---- work-zine.html: the book
+    "ページをめくって、味に出会う。":
+      "Turn the Pages, Discover the Flavors.",
+    "前のページへ":
+      "Previous page",
+    "次のページへ":
+      "Next page",
+    "「ミャンマーの一口」をご覧いただき、ありがとうございました。":
+      "Thank you for exploring A Bite of Myanmar.",
+    "最初から読む":
+      "Restart Book",
     "メールアプリで送る":
       "Send with my email app",
     // hero/coding-hero.js, loading/loading.js — decorative lines

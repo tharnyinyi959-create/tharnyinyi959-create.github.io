@@ -27,6 +27,7 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/motion.css">
 <link rel="stylesheet" href="css/v2-motion.css">
+<link rel="stylesheet" href="css/zine-book.css">
 <script>document.documentElement.classList.add("js-motion")</script>
 <link rel="stylesheet" href="loading/page-loader.css">
 <script src="loading/page-loader.js"></script>
@@ -116,11 +117,13 @@
         </div>
       </div>
     </div>
-    <div class="detail-block" data-reveal="scale">
-      <span class="d-label">// ページ</span>
-      <div class="d-body">
-        <h3>全12ページ</h3>
-        <p>表紙から奥付までの全12ページです。</p>
+    <!-- The ZINE as a book: js/zine-book.js builds it from the images in the gallery below. Without JavaScript the gallery stays. -->
+    <div class="zine-book" data-zine-book>
+      <div class="zine-book__head">
+        <span class="d-label">// ページ</span>
+        <h3 class="zine-book__tag">ページをめくって、味に出会う。</h3>
+        <p class="zine-book__note">表紙から奥付までの全12ページです。</p>
+      </div>
         <div class="concept-gallery">
           <div class="concept-item"><img src="assets/works/zine/page-01.webp" alt="ZINE ミャンマーの一口 表紙" loading="lazy"><span class="concept-cap">表紙</span></div>
           <div class="concept-item"><img src="assets/works/zine/page-02.webp" alt="ZINE ミャンマーの一口 目次" loading="lazy"><span class="concept-cap">目次</span></div>
@@ -135,7 +138,6 @@
           <div class="concept-item"><img src="assets/works/zine/page-11.webp" alt="ZINE ミャンマーの一口 ミャンマー × 日本" loading="lazy"><span class="concept-cap">ミャンマー × 日本</span></div>
           <div class="concept-item"><img src="assets/works/zine/page-12.webp" alt="ZINE ミャンマーの一口 裏表紙・奥付" loading="lazy"><span class="concept-cap">裏表紙・奥付</span></div>
         </div>
-      </div>
     </div>
     <div class="detail-block" data-reveal="left">
       <span class="d-label">// デザイン</span>
@@ -247,5 +249,6 @@
 <script src="js/main.js"></script>
 <script src="js/motion.js"></script>
 <script src="js/v2-motion.js"></script>
+<script src="js/zine-book.js"></script>
 </body>
 </html>
