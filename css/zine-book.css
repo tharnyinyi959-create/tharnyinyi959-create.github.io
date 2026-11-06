@@ -313,7 +313,9 @@
   color: var(--color-secondary);
 }
 
-/* ---- one page at a time on narrow screens: a stack of pages, the top one lifts away to the left ---- */
+.zb-hint { display: none; }
+
+/* ---- one page at a time on narrow screens: a stack of pages, the top one slides away to the left ---- */
 @media (max-width: 760px) {
   .zine-book.is-ready .zb-stage {
     grid-template-columns: 1fr 1fr;
@@ -348,8 +350,10 @@
     text-align: center;
   }
 
+  /* flat: the pages stack by z-index alone, and each one carries its own perspective while it moves (js/zine-book.js) */
   .zb-book--single {
     width: var(--pw);
+    transform-style: flat;
   }
 
   .zb-sheet {
@@ -365,6 +369,24 @@
   .zb-sheet .zb-face::after {
     background: linear-gradient(90deg, rgba(40, 24, 10, 0.16), transparent 7%);
   }
+}
+
+/* ---- the swipe hint: touch phones only, while the cover is showing. It keeps its height, so nothing jumps when it goes ---- */
+@media (max-width: 760px) and (hover: none), (max-width: 760px) and (pointer: coarse) {
+  .zb-hint {
+    display: block;
+    grid-column: 1 / -1;
+    grid-row: 3;
+    justify-self: center;
+    margin: 0;
+    font-family: var(--font-alt);
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+
+  .zine-book:not(.is-first) .zb-hint { visibility: hidden; }
+
+  .zb-end { grid-row: 4; }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -5,10 +5,11 @@
    Without JavaScript the gallery simply stays as it is.
 
      wide screens    two-page spreads: each "leaf" of paper has a page on both sides and turns on the spine
-     narrow screens  one page at a time: the page lifts away to the left
+     narrow screens  one page at a time: the page slides away to the left, and Previous brings it back from there
 
-   The book opens by itself the first time it scrolls into view. After that a page turns every 1.5 s until the
-   last page, unless the pointer is on the book, the book is off screen or the visitor is on a touch screen.
+   On wide screens the book opens by itself the first time it scrolls into view. After that a page turns every 1.5 s
+   until the last page, unless the pointer is on the book, the book is off screen or the visitor is on a touch screen.
+   On narrow screens nothing turns by itself: the cover waits for the Next button or a swipe.
    ===================================================================== */
 (() => {
   const root = document.querySelector("[data-zine-book]");
@@ -19,6 +20,7 @@
 
   const AUTO_DELAY = 1500;   // ms the visitor gets to look at a page before the next automatic turn
   const TURN_MS = 1050;
+  const SLIDE_MS = 700;      // one page sliding away on a narrow screen
   const OPEN_DELAY = 500;    // ms between the closed book arriving and its cover opening
   const LEAVES = items.length / 2;
 
@@ -69,8 +71,10 @@
   restartBtn.type = "button";
   restartBtn.textContent = t("最初から読む");
   end.append(thanks, restartBtn);
+  const hint = el("p", "zb-hint");                                // shown on touch phones only, while the cover is showing (CSS)
+  hint.textContent = t("スワイプでめくる");
   foot.append(status, bar);
-  stage.append(prevBtn, scene, nextBtn, end);
+  stage.append(prevBtn, scene, nextBtn, hint, end);
 
   /* ------------------------------------------------------------- the book itself */
   let book, leaves, sheets, castL, castR;
@@ -137,6 +141,7 @@
     prevBtn.disabled = at === 0;
     nextBtn.disabled = atEnd();
     root.classList.toggle("is-final", atEnd());
+    root.classList.toggle("is-first", at === 0);
     pages.forEach((page, i) => {
       page.face.setAttribute("aria-hidden", String(!showing(i)));        // the visible pages are what a screen reader reads
     });
@@ -177,13 +182,18 @@
 
   const turnSheet = async (dir, ms) => {
     const sheet = sheets[dir > 0 ? at : at - 1];
+    at += dir;
+    refresh();                                                          // the page number changes as the turn starts
     sheet.style.zIndex = 50;
-    sheet.style.visibility = "visible";
-    const keyframes = [{ transform: "rotateY(0deg)", opacity: 1 }, { transform: "rotateY(-70deg)", opacity: 1, offset: 0.62 }, { transform: "rotateY(-112deg)", opacity: 0 }];
+    sheet.style.visibility = "visible";                                 // refresh() hides a page once it is no longer the current one
+    // the page stays face-on with a slight tilt and leaves the screen, so it never goes edge-on and vanishes
+    const keyframes = [
+      { transform: "perspective(1400px) translateX(0) rotateY(0deg) rotateZ(0deg)" },
+      { transform: "perspective(1400px) translateX(-48%) rotateY(-16deg) rotateZ(-2deg)", offset: 0.5 },
+      { transform: "perspective(1400px) translateX(-120vw) rotateY(-24deg) rotateZ(-4deg)" },
+    ];
     const motion = sheet.animate(keyframes, { duration: ms, easing: "cubic-bezier(.45,.05,.3,1)", fill: "both", direction: dir > 0 ? "normal" : "reverse" });
     sheet.querySelector(".zb-shade").animate(shadeKeyframes, { duration: ms, fill: "both" });
-    at += dir;
-    if (dir > 0) sheets[at].style.visibility = "visible";
     await motion.finished;
     motion.cancel();
     sheet.style.zIndex = pages.length - sheets.indexOf(sheet);
@@ -195,15 +205,14 @@
     busy = true;
     clearTimeout(timer);
     root.classList.add("is-turning");
-    const ms = reduced ? 1 : TURN_MS;
-    await (mode === "spread" ? turnLeaf(dir, ms) : turnSheet(dir, ms));
+    await (mode === "spread" ? turnLeaf(dir, reduced ? 1 : TURN_MS) : turnSheet(dir, reduced ? 1 : SLIDE_MS));
     root.classList.remove("is-turning");
     busy = false;
     schedule();
   };
 
   /* ------------------------------------------------------------- the 1.5-second timer: only ever one, and only when nobody is reading */
-  const mayAutoTurn = () => entered && !busy && !reduced && !touch.matches && !hovering && inView && !atEnd() && !document.hidden;
+  const mayAutoTurn = () => entered && mode === "spread" && !busy && !reduced && !touch.matches && !hovering && inView && !atEnd() && !document.hidden;
   const schedule = () => {
     clearTimeout(timer);
     if (mayAutoTurn()) timer = setTimeout(() => { if (mayAutoTurn()) turn(1); }, AUTO_DELAY);
@@ -217,7 +226,7 @@
   const open = async () => {
     await ready(3);
     root.classList.add("is-in");
-    if (reduced) { entered = true; return; }
+    if (reduced || mode === "single") { entered = true; return; }
     await sleep(OPEN_DELAY + 500);
     entered = true;
     await turn(1);
@@ -246,7 +255,7 @@
     }
     root.classList.remove("is-turning");
     busy = false;
-    if (reduced) { schedule(); return; }
+    if (reduced || mode === "single") { schedule(); return; }
     await turn(1);
   };
 
