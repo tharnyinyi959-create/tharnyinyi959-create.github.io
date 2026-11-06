@@ -73,8 +73,8 @@
   end.append(thanks, restartBtn);
   const hint = el("p", "zb-hint");                                // shown on touch phones only, while the cover is showing (CSS)
   hint.textContent = t("スワイプでめくる");
-  foot.append(status, bar);
-  stage.append(prevBtn, scene, nextBtn, hint, end);
+  foot.append(status, bar, hint);
+  stage.append(prevBtn, scene, nextBtn);
 
   /* ------------------------------------------------------------- the book itself */
   let book, leaves, sheets, castL, castR;
@@ -120,6 +120,7 @@
       });
     }
     scene.append(book);
+    (mode === "spread" ? stage : root).append(end);                     // the ending: beside the closed book, or under the page number
     refresh();
   };
 
