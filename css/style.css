@@ -27,7 +27,6 @@
   --secondary-a28: rgba(255, 244, 214, 0.28);
   --secondary-a55: rgba(255, 244, 214, 0.55);
   --secondary-a80: rgba(255, 244, 214, 0.80);
-  --secondary-a88: rgba(255, 244, 214, 0.88);
 
   /* Semantic roles — LIGHT surface (vanilla page). Dark surfaces re-map these
      (see "SURFACE SCOPES" below), which is how indigo sections, the footer and
@@ -364,9 +363,9 @@ code {
   justify-content: space-between;
   padding: 12px 24px;
   border-radius: var(--r-full);
-  background: var(--secondary-a88);
+  background: var(--color-secondary);   /* solid: text scrolling behind must not show through the logo and links */
   border: 1.5px solid var(--color-primary);
-  backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);          /* keep: it also makes this bar the box the phone menu (.nav-links, position: fixed) is placed in */
   -webkit-backdrop-filter: blur(12px);
 }
 
