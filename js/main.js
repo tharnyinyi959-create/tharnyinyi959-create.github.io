@@ -15,6 +15,27 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 /* =====================================================================
+   Email links on computers: mailto: does nothing when no mail app is set up,
+   so with a mouse they open Gmail's "new message" page in a new tab.
+   Phones and tablets keep mailto:, which opens their mail app.
+   ===================================================================== */
+document.addEventListener("click", (e) => {
+  const link = e.target.closest && e.target.closest('a[href^="mailto:"]');
+  if (!link || !matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+  e.preventDefault();
+  const mail = new URL(link.href);
+  const gmail = new URL("https://mail.google.com/mail/");
+  gmail.search = new URLSearchParams({
+    view: "cm",
+    fs: "1",
+    to: mail.pathname,
+    su: mail.searchParams.get("subject") || "",
+    body: mail.searchParams.get("body") || "",
+  });
+  window.open(gmail, "_blank", "noopener");
+});
+
+/* =====================================================================
    Reveal on scroll — robust: IntersectionObserver + timeout fallback
    so nothing can be left permanently invisible.
    ===================================================================== */
