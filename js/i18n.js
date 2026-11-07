@@ -157,8 +157,8 @@
     // ---- profile.html
     "Thar Nyi Nyiのプロフィール。経歴、これまでの歩み、スキルを紹介しています。":
       "Profile of Thar Nyi Nyi — background, journey and skills.",
-    "Webコーディングに情熱を持つ学生として、日々スキルを磨いています。現在は日本で学びながら毎日コードを書き、使いやすいWebサイトを自分の手で実装できるフロントエンド開発者を目指しています。":
-      "As a student passionate about web coding, I sharpen my skills every day. I'm studying in Japan and writing code daily, aiming to become a front-end developer who can build easy-to-use websites with my own hands.",
+    "Webコーディングに情熱を持つ学生として、日々スキルを磨いています。現在は日本で学びながらコードを書き、使いやすいWebサイトを自分の手で実装できるフロントエンド開発者を目指しています。":
+      "As a student passionate about web coding, I sharpen my skills every day. I'm studying in Japan and writing code, aiming to become a front-end developer who can build easy-to-use websites with my own hands.",
     "ミャンマーで育ち、子供の頃からコンピューターやテクノロジーに強い興味を持っていました。ミャンマーの大学では電気工学を3年間学びましたが、新型コロナウイルスの影響で状況が一変し、大学を続けないことを決意。新しい一歩として日本語を学び始め、日本へ来ました。":
       "I grew up in Myanmar and was strongly interested in computers and technology from childhood. I studied electrical engineering at a university in Myanmar for three years, but the COVID-19 pandemic changed everything and I decided not to continue. As a new step, I started learning Japanese and came to Japan.",
     "日本では神戸電子専門学校のグラフィックデザイン学科で学んでいますが、授業を通してデザインよりも「コードを書いて画面が実際に動く」ことに強く惹かれるようになりました。自分がつくったものがブラウザの中で実際に動き、反応する——そこに一番のやりがいを感じています。授業以外の時間は、少しずつJavaScriptに慣れながら、HTML・CSSでの実装を試しています。":
@@ -179,8 +179,8 @@
       "Began learning the foundations of design in Japan — composition, branding, from print to digital.",
     "ワイヤーフレームやプロトタイプ、使いやすさを意識したインターフェース設計を開始。":
       "Started designing wireframes, prototypes and interfaces with usability in mind.",
-    "HTML・CSS・JavaScriptを習得し、デザインをブラウザ上で実際に動く形にする。":
-      "Learned HTML, CSS and JavaScript to turn designs into something that actually works in the browser.",
+    "HTML・CSS・JavaScriptを学び、デザインをブラウザ上で実際に動く形にする。":
+      "Learning HTML, CSS and JavaScript to turn designs into something that actually works in the browser.",
     "丁寧に作り込まれたWebプロダクトを届けられるキャリアを目指して、日々努力中。":
       "Working every day toward a career delivering carefully crafted web products.",
     // ---- works.html
