@@ -66,7 +66,8 @@
   bar.setAttribute("aria-hidden", "true");
   const end = el("div", "zb-end");
   const thanks = el("p", "zb-end__text");
-  thanks.textContent = t("「ミャンマーの一口」をご覧いただき、ありがとうございました。");
+  // <wbr> marks where the Japanese may break, so a line never ends inside a word (word-break in the CSS). English has none of these.
+  thanks.innerHTML = t("「ミャンマーの一口」をご覧いただき、ありがとうございました。").replace(/(」を|、|ありがとう)/g, "$1<wbr>");
   const restartBtn = el("button", "zb-restart");
   restartBtn.type = "button";
   restartBtn.textContent = t("最初から読む");

@@ -294,6 +294,8 @@
   font-family: var(--font-display);
   font-size: 17px;
   line-height: 1.6;
+  word-break: keep-all;              /* Japanese breaks only at the <wbr> marks from js/zine-book.js */
+  overflow-wrap: anywhere;           /* unless a part is wider than the space it has */
 }
 
 .zb-restart {
