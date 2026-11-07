@@ -204,7 +204,7 @@
   })();
 
   var dead = false;       // set once the intro is finished or aborted
-  var spikePoly, armPoly, armStops, poster, parEls = [], overlay, fabric, light, disc, face, hint, markSvg;
+  var spikePoly, armPoly, armStops, poster, skipBtn, parEls = [], overlay, fabric, light, disc, face, hint, markSvg;
   var faceGroups = [], sideGroups = [], shadowGroups = [], haloGroups = [], halo2Groups = [], spikeHalo;
   var typeEl, extEls = [], ringMaskCircle;
   var discSize = 600;
@@ -294,7 +294,8 @@
     armStops = [].slice.call(overlay.querySelectorAll("#lvi-arm stop"));
     armPoly.setAttribute("points", PIECES[2].map(function (q) { return q[0] + "," + q[1]; }).join(" "));
     hint = overlay.querySelector(".lvi__hint");
-    overlay.querySelector(".lvi__skip").addEventListener("click", function () { skip(); });
+    skipBtn = overlay.querySelector(".lvi__skip");
+    skipBtn.addEventListener("click", function () { skip(); });
     poster = overlay.querySelector(".lvi__poster");
     parEls = [].slice.call(overlay.querySelectorAll("[data-depth]"));
     markSvg = overlay.querySelector(".lvi-disc__mark");
@@ -809,6 +810,9 @@
     PAR.k = 1 - sstep(0, 0.1, so);
     if (!typeEl) typeEl = poster.querySelector(".lvi__type");
     poster.style.opacity = (1 - sstep(0.04, 0.36, so)).toFixed(3);
+    var skipLeft = 1 - sstep(0.15, 0.32, so);                   // gone before the page and its header open (from .4)
+    skipBtn.style.opacity = skipLeft < 1 ? (0.8 * skipLeft).toFixed(3) : "";
+    skipBtn.style.pointerEvents = skipLeft === 0 ? "none" : "";
     poster.style.transform = "translate3d(" + shiftX.toFixed(1) + "px," + shiftY.toFixed(1) + "px,0)";   // grid + hairlines follow the logo
     typeEl.style.transform = "translate3d(" + (inOutCubic(clamp(so / 0.33)) * W * 0.55).toFixed(1) + "px,0,0)";
 
