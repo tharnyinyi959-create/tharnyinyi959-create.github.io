@@ -294,10 +294,15 @@ document.addEventListener("DOMContentLoaded", () => {
   prev.addEventListener("click", () => track.scrollBy({ left: -step(), behavior: "smooth" }));
   next.addEventListener("click", () => track.scrollBy({ left: step(), behavior: "smooth" }));
 
-  // the arrows show only when there is something to scroll to
-  new ResizeObserver(() => {
-    prev.hidden = next.hidden = track.scrollWidth <= track.clientWidth + 1;
-  }).observe(track);
+  // the arrows show only when there is something to scroll to, and fade at the first and last work
+  const updateArrows = () => {
+    const max = track.scrollWidth - track.clientWidth;
+    prev.hidden = next.hidden = max <= 1;
+    prev.disabled = track.scrollLeft <= 1;
+    next.disabled = track.scrollLeft >= max - 1;
+  };
+  track.addEventListener("scroll", updateArrows, { passive: true });
+  new ResizeObserver(updateArrows).observe(track);
 });
 
 /* =====================================================================

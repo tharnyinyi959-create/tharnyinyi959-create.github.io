@@ -2168,10 +2168,15 @@ code {
   display: none;
 }
 
-.related-arrow:hover {
+.related-arrow:hover:not(:disabled) {
   background: var(--color-primary);
   color: var(--color-secondary);
   border-color: var(--color-primary);
+}
+
+.related-arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
 }
 
 .related-arrow svg {
@@ -2272,9 +2277,16 @@ code {
   margin: 0;
 }
 
+/* phones: one whole work at a time; the arrows or a swipe bring the next one and it always stops on a card */
 @media (max-width: 640px) {
+  .related-track {
+    scroll-snap-type: x mandatory;
+  }
+
   .related-card {
-    flex-basis: 240px;
+    flex-basis: 100%;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
   }
 
   .related-title {
