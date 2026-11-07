@@ -94,8 +94,8 @@
       "Kobe Kitano Aquarium website design",
     "FORNO ROSSO ピザ店 Webサイトデザイン":
       "FORNO ROSSO pizzeria website design",
-    "自己紹介サイト — Webサイトデザイン":
-      "Self-Introduction Site — Hello, I'm Thar Nyi Nyi — Website Design",
+    "自己紹介サイト — Webサイト制作":
+      "Self-Introduction Site — Hello, I'm Thar Nyi Nyi — Website Development",
     "自己紹介サイト Webデザイン":
       "Self-introduction website design",
     "ポートフォリオサイト デザイン — Webサイトデザイン":
@@ -1041,6 +1041,8 @@
       "All 16 Works",
     "Webサイトデザイン":
       "Website Design",
+    "Webサイト制作":
+      "Website Development",
     "事例を読む":
       "Read Case Study",
     "神戸北野水族館サイト":
