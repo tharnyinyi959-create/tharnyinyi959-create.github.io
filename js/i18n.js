@@ -957,8 +957,10 @@
       "Previous page",
     "次のページへ":
       "Next page",
-    "スワイプでめくる":
-      "Swipe to turn the page",
+    "スワイプでめくる・タップで拡大":
+      "Swipe to turn · Tap to enlarge",
+    "閉じる":
+      "Close",
     "「ミャンマーの一口」をご覧いただき、ありがとうございました。":
       "Thank you for exploring A Bite of Myanmar.",
     "最初から読む":

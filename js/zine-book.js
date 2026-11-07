@@ -9,7 +9,8 @@
 
    On wide screens the book opens by itself the first time it scrolls into view. After that a page turns every 1.5 s
    until the last page, unless the pointer is on the book, the book is off screen or the visitor is on a touch screen.
-   On narrow screens nothing turns by itself: the cover waits for the Next button or a swipe.
+   On narrow screens nothing turns by itself: the cover waits for the Next button or a swipe,
+   and tapping a page shows it large, because the text is small in a two-page spread.
    ===================================================================== */
 (() => {
   const root = document.querySelector("[data-zine-book]");
@@ -70,7 +71,7 @@
   restartBtn.textContent = t("最初から読む");
   end.append(thanks, restartBtn);
   const hint = el("p", "zb-hint");                                // shown on touch phones only, while the cover is showing (CSS)
-  hint.textContent = t("スワイプでめくる");
+  hint.textContent = t("スワイプでめくる・タップで拡大");
   foot.append(status, bar, hint);
   stage.append(prevBtn, scene, nextBtn);
 
@@ -249,6 +250,24 @@
     const dx = e.changedTouches[0].clientX - startX, dy = e.changedTouches[0].clientY - startY;
     if (Math.abs(dx) > 48 && Math.abs(dx) > Math.abs(dy) * 1.5) turn(dx < 0 ? 1 : -1);
   }, { passive: true });
+
+  // narrow screens: tap a page to see it large (<dialog> brings Esc and focus handling with it)
+  const viewer = el("dialog", "zb-viewer", '<button class="zb-viewer__close" type="button"></button><img alt="">');
+  const viewerImg = viewer.querySelector("img");
+  viewer.firstChild.textContent = t("閉じる");
+  viewer.firstChild.addEventListener("click", () => viewer.close());
+  viewer.addEventListener("click", (e) => { if (e.target === viewer) viewer.close(); });     // the dark area around the page
+  root.append(viewer);
+  scene.addEventListener("click", (e) => {
+    if (!narrow.matches || busy || zooming) return;
+    const face = e.target.closest(".zb-face");
+    const page = face && pages.find((p) => p.face === face);
+    if (!page) return;
+    viewerImg.src = page.img.currentSrc || page.img.src;
+    viewerImg.alt = page.img.alt;
+    viewer.showModal();
+    viewer.scrollTop = 0;
+  });
 
   document.addEventListener("visibilitychange", schedule);
   touch.addEventListener("change", schedule);

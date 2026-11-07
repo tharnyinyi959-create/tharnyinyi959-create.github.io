@@ -353,6 +353,76 @@
     justify-items: center;
     text-align: center;
   }
+
+  /* below the book the ending takes no room until the last page; it fades in as it arrives */
+  .zine-book:not(.is-final) .zb-end { display: none; }
+
+  @starting-style {
+    .zine-book.is-final .zb-end {
+      opacity: 0;
+      translate: 0 8px;
+    }
+  }
+
+  /* the leaves lie a little behind the book's own box in 3D, so the box must let taps through to the pages */
+  .zb-book { pointer-events: none; }
+
+  .zb-face {
+    pointer-events: auto;
+    cursor: zoom-in;
+  }
+}
+
+/* ---- one page, large (js/zine-book.js): as wide as the screen, scrolling down if it is taller ---- */
+.zb-viewer {
+  width: 100vw;
+  max-width: none;
+  height: 100dvh;
+  max-height: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: rgba(16, 24, 80, 0.94);
+  overflow: auto;
+  overscroll-behavior: contain;
+}
+
+.zb-viewer[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: safe center;
+}
+
+.zb-viewer::backdrop { background: rgba(16, 24, 80, 0.94); }
+
+body:has(.zb-viewer[open]) { overflow: hidden; }
+
+.zb-viewer img {
+  display: block;
+  flex: none;
+  width: min(100%, 760px);
+  height: auto;
+}
+
+.zb-viewer__close {
+  position: fixed;
+  top: var(--sp-3);
+  right: var(--sp-3);
+  z-index: 1;
+  padding: 10px 20px;
+  border: 1.5px solid var(--color-primary);
+  border-radius: var(--r-full);
+  background: var(--color-secondary);
+  color: var(--color-primary);
+  font-family: var(--font-alt);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.zb-viewer__close:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
 }
 
 /* ---- the swipe hint: touch phones only, while the cover is showing. It keeps its height, so nothing jumps when it goes ---- */
