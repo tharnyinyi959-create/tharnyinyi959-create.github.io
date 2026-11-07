@@ -44,7 +44,7 @@
      CONFIG — all times in ms, divided by `speed` (2 = twice as fast).
      ------------------------------------------------------------------- */
   var CFG = {
-    speed: 1.15,
+    speed: 2.2,           // the whole opening takes about 4 s when nobody scrolls
     lines: 550,           // 0  thin lines draw in on black
     hline: 450,           // 1  horizon line draws across
     load: 1100,           // 2  bars appear, then turn in sync
@@ -52,7 +52,7 @@
     sweep: 1000,          // 3b the right-hand stroke is filled indigo
     reveal: 950,          // 4  poster text + details arrive; then everything stops
     scrollDistance: 650,  // px of wheel travel for the whole opening (turn + shatter + reveal)
-    autoPlay: 2600,       // when the poster is up and nobody scrolls for this long, the opening plays on by itself (0 = wait for a scroll)
+    autoPlay: 1500,       // when the poster is up and nobody scrolls for this long, the opening plays on by itself (0 = wait for a scroll)
     autoDuration: 2800,   // how long that self-play takes (ring turn + shatter + page reveal)
     maxWaitForLoad: 4000  // never wait longer than this for window "load"
   };
