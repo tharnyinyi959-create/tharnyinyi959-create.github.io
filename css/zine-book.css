@@ -99,7 +99,7 @@
   place-items: center;
   perspective: 2600px;
   perspective-origin: 50% 38%;
-  touch-action: pan-y;
+  touch-action: pan-y pinch-zoom;
 }
 
 .zb-floor {
@@ -317,15 +317,19 @@
 
 .zb-hint { display: none; }
 
-/* ---- one page at a time on narrow screens: a stack of pages, the top one slides away to the left ---- */
+/* ---- narrow screens: the stage goes from edge to edge so the two-page book can be as large as possible.
+   overflow-x: clip keeps the empty half of the book from widening the page when it moves ---- */
 @media (max-width: 760px) {
   .zine-book.is-ready .zb-stage {
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
+    overflow-x: clip;
     grid-template-columns: 1fr 1fr;
     gap: var(--sp-4) var(--sp-3);
   }
 
   .zb-scene {
-    --pw: min(100cqw - 22px, 440px, calc((100svh - 300px) * 800 / 1119));
+    --pw: min(calc((100cqw - 16px) / 2), calc((100svh - 300px) * 800 / 1119));
     grid-column: 1 / -1;
     grid-row: 1;
     perspective: 1500px;
@@ -340,8 +344,6 @@
   .zb-nav--prev { grid-column: 1; justify-self: end; }
   .zb-nav--next { grid-column: 2; justify-self: start; }
 
-  .zb-floor { width: var(--pw); }
-
   .zine-book.is-ready .zb-foot { margin-top: var(--sp-4); }
 
   .zb-end {
@@ -350,26 +352,6 @@
     margin-top: var(--sp-4);
     justify-items: center;
     text-align: center;
-  }
-
-  /* flat: the pages stack by z-index alone, and each one carries its own perspective while it moves (js/zine-book.js) */
-  .zb-book--single {
-    width: var(--pw);
-    transform-style: flat;
-  }
-
-  .zb-sheet {
-    position: absolute;
-    inset: 0;
-    border-radius: 2px;
-    transform-origin: left center;
-    box-shadow: 0 10px 26px rgba(60, 38, 18, 0.24), 3px 0 0 #ddd0b8, 5px 0 0 #f1e7d4;
-  }
-
-  .zb-sheet .zb-face--front { transform: none; }
-
-  .zb-sheet .zb-face::after {
-    background: linear-gradient(90deg, rgba(40, 24, 10, 0.16), transparent 7%);
   }
 }
 
