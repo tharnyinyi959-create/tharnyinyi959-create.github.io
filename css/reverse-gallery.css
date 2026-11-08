@@ -23,7 +23,8 @@
     align-items: start;
     max-width: 1080px;
     margin: 0 auto;
-    padding: 0 var(--sp-4);
+    padding: 12px var(--sp-4) 24px;
+    overflow: hidden;      /* the columns move past this edge, so they are cut here and never cover the category buttons */
   }
 
   /* Start the gallery right under the category buttons */
