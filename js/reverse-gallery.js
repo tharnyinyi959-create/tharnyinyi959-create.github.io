@@ -18,6 +18,9 @@
 
   const rows = [...list.querySelectorAll(".proj-row")];
 
+  // Category names, the same as on the filter buttons
+  const CATEGORY = { web: "Webデザイン", graphic: "グラフィックデザイン", video: "動画編集" };
+
   // The gallery: three columns inside one box
   const gallery = document.createElement("div");
   gallery.className = "rev-gallery";
@@ -60,12 +63,21 @@
     img.loading = "lazy";
     img.decoding = "async";
 
+    // Bottom row of the card: title on the left, category tag on the right
+    const foot = document.createElement("span");
+    foot.className = "rev-card__foot";
+
     const caption = document.createElement("span");
     caption.className = "rev-card__title";
     const title = row.querySelector(".proj-row__title");
     caption.textContent = title ? title.textContent : "";
 
-    link.append(img, caption);
+    const tag = document.createElement("span");
+    tag.className = "rev-card__tag";
+    tag.textContent = CATEGORY[row.parentElement.dataset.category] || "";   // i18n.js turns it into English in EN mode
+
+    foot.append(caption, tag);
+    link.append(img, foot);
 
     // Each card goes in the column that is shortest so far, so the three columns end at about the same height
     const col = shortest();

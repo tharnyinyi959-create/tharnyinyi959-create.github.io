@@ -75,9 +75,31 @@
   object-position: top center;
 }
 
+/* Bottom row of the card: title on the left, category tag on the right */
+.rev-card__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+/* Category tag: indigo with vanilla text, fully round ends */
+.rev-card__tag {
+  flex-shrink: 0;          /* the tag keeps its size; a long title wraps instead */
+  padding: 4px 12px;
+  border-radius: var(--r-full);
+  background: var(--color-primary);
+  color: var(--color-secondary);
+  font-family: var(--font-alt);
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
 .rev-card__title {
   display: block;
-  margin-top: 12px;
   font-family: var(--font-alt);
   font-size: 15px;
   font-weight: 500;
