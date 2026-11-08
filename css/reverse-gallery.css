@@ -23,7 +23,7 @@
     align-items: start;
     max-width: 1080px;
     margin: 0 auto;
-    padding: 12px var(--sp-4) 24px;
+    padding: 48px var(--sp-4) 24px;   /* space between the category buttons and the first card */
     /* Cut the columns at this edge so they never cover the category buttons.
        "clip" does this without making the box a scroll container, which would
        stop the scroll effect. "hidden" is only the fallback for old browsers. */
@@ -66,7 +66,7 @@
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: contain;     /* show the whole picture, with empty space around it if needed */
-  object-position: center;
+  object-position: top center;   /* picture starts at the top of the card */
   background: var(--white);
   border-radius: var(--r-md);
 }
