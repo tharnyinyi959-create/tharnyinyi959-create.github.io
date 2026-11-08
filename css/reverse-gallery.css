@@ -1,0 +1,93 @@
+/* =====================================================================
+   Reverse-scroll gallery (works.html, "すべて" tab, desktop only)
+   Left column moves up, right column moves down, as you scroll.
+   Built by js/reverse-gallery.js. On phones and on the other tabs the
+   list stays as it was.
+   ===================================================================== */
+
+/* Hidden by default (phones, other tabs) */
+.rev-gallery {
+  display: none;
+}
+
+/* Desktop, "すべて" tab: hide the list, show the gallery */
+@media (min-width: 1000px) {
+  .works-showcase.is-all .showcase__body {
+    display: none;
+  }
+
+  .works-showcase.is-all .rev-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    align-items: start;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 0 var(--sp-4);
+  }
+}
+
+.rev-col {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  will-change: transform;
+}
+
+.rev-card {
+  display: block;
+  padding: 10px;
+  border-radius: var(--r-lg);
+  background: var(--color-secondary);
+  border: 1.5px solid var(--text);
+  color: var(--text);
+  transition: transform 0.3s var(--ease);
+}
+
+.rev-card:hover {
+  transform: translateY(-4px);
+}
+
+.rev-card img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top;
+  border-radius: var(--r-md);
+}
+
+.rev-card__title {
+  display: block;
+  margin-top: 12px;
+  font-family: var(--font-alt);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+/* The scroll effect: the two columns move in opposite directions.
+   Only in browsers that support scroll-driven animations, and not when
+   the visitor asks for reduced motion. Other browsers show a still gallery. */
+@keyframes rev-up {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-25%); }
+}
+
+@keyframes rev-down {
+  from { transform: translateY(-25%); }
+  to   { transform: translateY(0); }
+}
+
+@supports (animation-timeline: view()) {
+  @media (min-width: 1000px) and (prefers-reduced-motion: no-preference) {
+    .rev-col--up {
+      animation: rev-up linear both;
+      animation-timeline: view();
+    }
+
+    .rev-col--down {
+      animation: rev-down linear both;
+      animation-timeline: view();
+    }
+  }
+}
