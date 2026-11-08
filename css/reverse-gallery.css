@@ -1,6 +1,7 @@
 /* =====================================================================
    Reverse-scroll gallery (works.html, "すべて" tab, desktop only)
-   Left and right columns move up, the middle column moves down, as you scroll.
+   The middle column scrolls normally; the two outer columns move the other way.
+   Idea from https://scroll-driven-animations.style/demos/reverse-scroll/css/
    Built by js/reverse-gallery.js. On phones and on the other tabs the
    list stays as it was.
    ===================================================================== */
@@ -22,15 +23,13 @@
     gap: 28px;
     align-items: start;
     max-width: 1080px;
-    margin: 32px auto 0;   /* empty space between the category buttons and the gallery (outside the cut edge) */
-    padding: 40px var(--sp-4) 24px;   /* 40px of space above the first cards, also when the gallery reaches the top of the screen */
+    margin: 72px auto 0;   /* empty space between the category buttons and the cards (outside the cut edge, so it always stays empty) */
+    padding: 0 var(--sp-4) 24px;
     /* Cut the columns at this edge so they never cover the category buttons.
        "clip" does this without making the box a scroll container, which would
        stop the scroll effect. "hidden" is only the fallback for old browsers. */
     overflow: hidden;
     overflow: clip;
-
-    --rev-shift: 400px;    /* how far the columns travel */
 
     /* A timeline that follows this box through the screen. The columns use it,
        so they start moving only when the gallery's top reaches the top of the screen. */
@@ -90,35 +89,22 @@
   line-height: 1.5;
 }
 
-/* The scroll effect: the columns move in opposite directions.
-   "contain 0%" = the gallery's top has reached the top of the screen,
-   "contain 100%" = the gallery's bottom has reached the bottom of the screen.
-   Before that nothing moves, so every first card shows its top edge.
-   Only in browsers that support scroll-driven animations, and not when
-   the visitor asks for reduced motion. Other browsers show a still gallery. */
-@keyframes rev-up {
-  from { transform: translateY(0); }
-  to   { transform: translateY(calc(-1 * var(--rev-shift))); }
-}
-
-@keyframes rev-down {
-  from { transform: translateY(calc(-1 * var(--rev-shift))); }
-  to   { transform: translateY(0); }
+/* The scroll effect (only in browsers that support scroll-driven animations,
+   and not when the visitor asks for reduced motion; others show a still gallery).
+   The outer columns are stacked bottom-to-top (column-reverse) and move DOWN from
+   --rev-from to --rev-to. js/reverse-gallery.js works out those two numbers.
+   "contain 0%"   = the gallery's top has reached the top of the screen,
+   "contain 100%" = the gallery's bottom has reached the bottom of the screen. */
+@keyframes rev-reverse {
+  from { transform: translateY(var(--rev-from, 0px)); }
+  to   { transform: translateY(var(--rev-to, 0px)); }
 }
 
 @supports (animation-timeline: view()) {
   @media (min-width: 1000px) and (prefers-reduced-motion: no-preference) {
-    .rev-col--up {
-      animation: rev-up linear both;
-      animation-timeline: --rev-gallery;
-      animation-range: contain 0% contain 100%;
-    }
-
-    /* The middle column starts moved up by --rev-shift. The same amount of
-       space on top puts its first card level with the other columns. */
-    .rev-col--down {
-      padding-top: var(--rev-shift);
-      animation: rev-down linear both;
+    .rev-col--reverse {
+      flex-direction: column-reverse;
+      animation: rev-reverse linear both;
       animation-timeline: --rev-gallery;
       animation-range: contain 0% contain 100%;
     }
