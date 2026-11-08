@@ -75,24 +75,32 @@
 
   section.append(gallery);
 
-  /* Where the outer columns start and stop.
+  /* Where the outer columns start and stop (in px, as --rev-from / --rev-to).
      Start: a card's top edge lines up with the first card of the middle column,
             and the column's first work (at the bottom, because of column-reverse) is near the bottom of the screen.
-     Stop:  the column has moved down twice the scroll distance, so on screen it has
-            moved down exactly as far as the page moved up — the "reverse" scroll. */
+     Stop:  the column's last work (at its top) has just come into view, and a card's bottom edge
+            lines up with the bottom of the gallery.
+     In between, the column moves down while the page moves up — the "reverse" scroll.
+     Because both ends are worked out from the column's own height, the column never
+     runs out of cards on screen, even when it is shorter than the middle one. */
   const measure = () => {
     if (!section.classList.contains("is-all")) return;
     const screen = window.innerHeight;
-    const galleryHeight = gallery.getBoundingClientRect().height;
-    const scrollDistance = Math.max(0, galleryHeight - screen);    // how far the page scrolls while the gallery fills the screen
-    const padTop = cols[1].offsetTop - gallery.offsetTop;           // space above the first cards
+    const cardsBottom = Math.max(...cols.map((col) => col.offsetTop + col.offsetHeight)) - cols[1].offsetTop;  // height of the card area
 
     outerCols.forEach((col) => {
-      const tops = [...col.children].map((card) => card.offsetTop - col.offsetTop);
-      const wanted = col.offsetHeight - (screen - padTop);          // shift that puts the column's bottom at the screen bottom
-      const snapped = Math.max(0, ...tops.filter((t) => t <= wanted));
-      col.style.setProperty("--rev-from", `${-snapped}px`);
-      col.style.setProperty("--rev-to", `${-snapped + 2 * scrollDistance}px`);
+      const cards = [...col.children].map((card) => ({
+        top: card.offsetTop - col.offsetTop,
+        bottom: card.offsetTop - col.offsetTop + card.offsetHeight,
+      }));
+      // Start: the highest card top that still keeps the column's bottom at or below the screen bottom
+      const startLimit = col.offsetHeight - screen;
+      const from = -Math.max(0, ...cards.map((c) => c.top).filter((top) => top <= startLimit));
+      // Stop: the lowest card bottom that still keeps the column's top at or above the screen top
+      const bottoms = cards.map((c) => c.bottom).filter((bottom) => bottom >= screen);
+      const to = cardsBottom - (bottoms.length ? Math.min(...bottoms) : col.offsetHeight);
+      col.style.setProperty("--rev-from", `${from}px`);
+      col.style.setProperty("--rev-to", `${Math.max(from, to)}px`);
     });
   };
 
