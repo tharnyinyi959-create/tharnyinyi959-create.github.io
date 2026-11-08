@@ -8,7 +8,7 @@
    The choice is kept in localStorage ("portfolio-lang"), so it follows the visitor across pages.
    Loaded on every page just before js/main.js: the page is already English before
    motion.js / v2-motion.js split headings and paragraphs into letters.
-   455 entries.
+   800 entries.
    ===================================================================== */
 (() => {
   "use strict";
@@ -689,29 +689,15 @@
       "Myanmar food video thumbnail — detail",
     "静止画のデザインと違い、動画編集は「時間」という軸をデザインする作業だと実感しました。テンポの良し悪しだけで、同じ映像でも伝わりやすさが大きく変わることを学びました。サムネイルは動画の「顔」として、静止画デザインのスキルがそのまま活きる部分でもあり、グラフィックデザインと動画編集をつなぐ良い経験になりました。":
       "Unlike still design, I realised that video editing is about designing along the axis of \"time\". I learned that the pace alone can greatly change how well the same footage communicates. The thumbnail, as the \"face\" of the video, is where still-design skills apply directly — a good experience connecting graphic design and video editing.",
-    // ---- work-web-collection.html
-    "制作事例：Thar Nyi Nyiが手がけた「Webデザイン集 — 5つのブランドサイト」。ピザ店・カフェ・和の茶房・ジム・タピオカ専門店。業種もトーンも異なる5つの架空ブランドのWebサイトを、それぞれの世界観に合わせてデザインしました。":
-      "Case study: \"Web Design Collection — 5 Brand Sites\" by Thar Nyi Nyi. A pizzeria, a café, a Japanese tea house, a gym and a tapioca shop — websites for five fictional brands with different industries and tones, each designed to fit its own world.",
-    "WebサイトUIデザイン × 5（トップページ）":
-      "Website UI Design × 5 (top pages)",
-    "業種ごとに異なる「らしさ」を、配色・写真・タイポグラフィで描き分ける":
-      "Expressing what makes each industry distinct through colour, photography and typography",
+    // ---- brand-site pages: shared lines (were on work-web-collection.html)
     "FORNO ROSSO ピザ店 Webサイトデザイン フルページ":
       "FORNO ROSSO pizzeria website design — full page",
-    "業種もターゲットも異なる5つの架空ブランドについて、トップページのWebデザインを制作しました。同じ「トップページ」という枠組みでも、ブランドの性格によって配色・写真の使い方・文字組み・余白の取り方がどれだけ変わるのかを意識しながら、1サイトずつ世界観を作り分けています。":
-      "I designed top pages for five fictional brands with different industries and target audiences. Within the same \"top page\" framework, I paid attention to how much the colours, use of photos, typesetting and whitespace change with the brand's personality, building a distinct world for each site.",
-    "5つのブランド":
-      "Five brands",
     "FORNO ROSSO — ピザ店":
       "FORNO ROSSO — Pizzeria",
     "「ピザで見つかる、おいしい時間。」赤とオレンジの暖色で、焼きたての熱気とシズル感を前面に。おすすめメニューをカードで並べました。":
       "\"Delicious moments, found in pizza.\" Warm reds and oranges bring out the heat and sizzle of freshly baked pizza, with recommended menu items laid out as cards.",
-    "fiibi coffee — カフェ":
-      "fiibi coffee — Café",
     "「一杯ぶんの、深呼吸。」ピーチベージュとブラウンの落ち着いた配色で、ハンドドリップの静かな時間を表現。":
       "\"A deep breath, one cup at a time.\" A calm palette of peach beige and brown expresses the quiet time of hand-drip coffee.",
-    "一服 — 和の茶房":
-      "Ippuku — Japanese tea house",
     "縦組みの見出しと余白を活かした和のレイアウト。茶・和菓子・季節（春夏秋冬）を写真で丁寧に見せています。":
       "A Japanese layout that makes use of vertical headings and whitespace, carefully showing tea, Japanese sweets and the four seasons through photos.",
     "FORGE — 24時間ジム":
@@ -724,12 +710,8 @@
       "Lavender and cloud motifs create a soft, cute world, with popular menu items and a 3-step ordering guide organised clearly.",
     "ハンドドリップのコーヒーショップ。写真の色味とUIの配色をそろえ、ページ全体を一杯のコーヒーのような温かいトーンでまとめました。":
       "A hand-drip coffee shop. The tones of the photos and the UI colours match, wrapping the whole page in a warm tone like a cup of coffee.",
-    "fiibi coffee カフェ Webサイトデザイン フルページ":
-      "fiibi coffee café website design — full page",
     "縦書きの見出し、和紙のような背景色、たっぷりとった余白で「ひと休み」の空気感を表現。季節ごとの和菓子を4つのタイルで紹介しています。":
       "Vertical headings, a washi-paper-like background and generous whitespace express the feeling of \"taking a break\". Seasonal Japanese sweets are introduced in four tiles.",
-    "一服 和の茶房 Webサイトデザイン フルページ":
-      "Ippuku Japanese tea house website design — full page",
     "黒ベースにネオンイエローを効かせ、流れる英字のテープや巨大な見出しで勢いを演出。プログラム紹介から料金プランまで、入会を後押しする構成にしました。":
       "Neon yellow on a black base, flowing tapes of English text and huge headings create momentum. From the programme overview to the price plans, the structure encourages visitors to sign up.",
     "FORGE 24時間ジム Webサイトデザイン フルページ":
@@ -738,6 +720,235 @@
       "A lavender × navy palette and cloud silhouettes turn the brand name \"kumo\" (cloud) straight into visuals. Menu cards and step indicators are unified with rounded shapes.",
     "kumo boba タピオカドリンク専門店 Webサイトデザイン フルページ":
       "kumo boba tapioca drink shop website design — full page",
+    // ---- brand-site pages (work-forno-rosso / hibi-coffee / ichiyoan / forge / kumo-boba)
+    "焼きたての熱気を、赤とオレンジの暖色で伝えるピザ店のトップページ":
+      "A pizzeria top page that conveys the heat of fresh-baked pizza in warm reds and oranges",
+    "架空のピザ店「FORNO ROSSO」のトップページを、Figmaでデザインしました。「ピザで見つかる、おいしい時間。」赤とオレンジの暖色で、焼きたての熱気とシズル感を前面に。おすすめメニューをカードで並べました。":
+      "A top page for the fictional pizzeria \"FORNO ROSSO\", designed in Figma. \"Delicious moments, found in pizza.\" Warm reds and oranges bring out the heat and sizzle of freshly baked pizza, with recommended menu items laid out as cards.",
+    "背景は赤一色で、ヒーローの上部にオレンジのグラデーション。キャッチコピーの「おいしい時間。」をイエローで目立たせ、こだわりのセクションだけクリームの背景にしています。":
+      "The background is solid red, with an orange gradient at the top of the hero. The headline's \"delicious moments\" stands out in yellow, and only the craft section has a cream background.",
+    "ヒーロー — ピザで見つかる、おいしい時間。":
+      "Hero — Delicious moments, found in pizza.",
+    "ピザの写真の横に、キャッチコピーと「メニューを見る」「テイクアウト注文」の2つのボタンを配置。":
+      "Next to a pizza photo: the headline and two buttons, \"See the menu\" and \"Order takeout\".",
+    "おすすめメニュー":
+      "Recommended menu",
+    "ビアンカ・フンギ、ガンベレッティ、ディアボラ、オルトラーナの4種類を、写真・説明・価格のカードで紹介。":
+      "Four pizzas — Bianca Funghi, Gamberetti, Diavola and Ortolana — shown as cards with a photo, a short description and the price.",
+    "こだわり（OUR CRAFT）":
+      "Our craft",
+    "「薪窯で、90秒」「素材は、毎朝」「気軽に、ゆっくり」の3つを、写真付きで紹介。":
+      "Three points with photos: \"90 seconds in a wood-fired oven\", \"Fresh ingredients every morning\" and \"Casual and relaxed\".",
+    "ニュース・フッター":
+      "News and footer",
+    "日付とカテゴリー付きのお知らせ一覧と、住所・営業時間・リンクをまとめたフッター。":
+      "A news list with dates and categories, and a footer with the address, opening hours and links.",
+    "レッド":
+      "Red",
+    "ダークレッド":
+      "Dark red",
+    "オレンジ":
+      "Orange",
+    "イエロー":
+      "Yellow",
+    "ダークブラウン":
+      "Dark brown",
+    "クリーム":
+      "Cream",
+    "ロゴ「FORNO ROSSO」と価格":
+      "The \"FORNO ROSSO\" logo and prices",
+    "見出しと本文":
+      "Headings and body text",
+    "制作事例：Thar Nyi Nyiがデザインした「FORNO ROSSO — ピザ店」のWebサイト（トップページ）。":
+      "Case study: the website (top page) for \"FORNO ROSSO — Pizzeria\" designed by Thar Nyi Nyi.",
+    "hibi coffee — カフェ":
+      "hibi coffee — Café",
+    "ハンドドリップの静かな時間を、落ち着いた配色で伝えるカフェのトップページ":
+      "A café top page that conveys the quiet time of hand-drip coffee in a calm palette",
+    "架空のカフェ「hibi coffee」のトップページを、Figmaでデザインしました。ハンドドリップのコーヒーショップ。写真の色味とUIの配色をそろえ、ページ全体を一杯のコーヒーのような温かいトーンでまとめました。":
+      "A top page for the fictional café \"hibi coffee\", designed in Figma. A hand-drip coffee shop. The tones of the photos and the UI colours match, wrapping the whole page in a warm tone like a cup of coffee.",
+    "hibi coffee カフェ Webサイトデザイン フルページ":
+      "hibi coffee café website design — full page",
+    "ページの背景はピーチベージュ。見出しとAbout usの背景はダークブラウン、英語の小見出しとボタンはテラコッタで、コーヒーの色に近い配色にしています。":
+      "The page background is peach beige. Headings and the About us background are dark brown, and the small English headings and the button are terracotta — colours close to those of coffee.",
+    "ヒーロー — 一杯ぶんの、深呼吸。":
+      "Hero — A deep breath, one cup at a time.",
+    "コーヒーの写真の横に、明朝体の大きなキャッチコピーと「メニューを見る」「お店への行き方」を配置。":
+      "Next to a coffee photo: a large serif headline, \"See the menu\" and \"How to get here\".",
+    "流れる英字の帯":
+      "A band of flowing English text",
+    "hand drip · café latte · seasonal blend · baked sweets の文字が並ぶ、ダークブラウンの帯。":
+      "A dark-brown band with the words hand drip · café latte · seasonal blend · baked sweets.",
+    "今日の一杯":
+      "Today's cup",
+    "ハンドドリップ・カフェラテ・カヌレの3品を、写真・英語名・価格・ひとことで紹介。":
+      "Three items — hand drip, café latte and canelé — each with a photo, an English name, the price and a short line.",
+    "About us・お店のこと":
+      "About us and visit",
+    "焙煎の写真と「毎朝、少しずつ焙煎しています。」の紹介、営業時間・住所・席数の店舗情報。":
+      "A roasting photo with \"We roast a little every morning\", then shop information: hours, address and seats.",
+    "ピーチベージュ":
+      "Peach beige",
+    "テラコッタ":
+      "Terracotta",
+    "ミルクブラウン":
+      "Milk brown",
+    "ロゴ「hibi coffee」、英語の小見出し、価格":
+      "The \"hibi coffee\" logo, small English headings and prices",
+    "日本語の見出し":
+      "Japanese headings",
+    "本文とボタン":
+      "Body text and buttons",
+    "制作事例：Thar Nyi Nyiがデザインした「hibi coffee — カフェ」のWebサイト（トップページ）。":
+      "Case study: the website (top page) for \"hibi coffee — Café\" designed by Thar Nyi Nyi.",
+    "hibi coffee Webサイトデザイン":
+      "hibi coffee website design",
+    "一葉庵 — 和の茶房":
+      "Ichiyoan — Japanese tea house",
+    "縦書きの見出しと余白で「ひと休み」の空気感を伝える、日本茶と和菓子の茶寮のトップページ":
+      "A top page for a Japanese tea and sweets house that conveys the feeling of taking a break through vertical headings and whitespace",
+    "神戸・北野坂の日本茶と和菓子の茶寮という設定で、架空のお店「一葉庵」のトップページを、Figmaでデザインしました。縦書きの見出し、和紙のような背景色、たっぷりとった余白で「ひと休み」の空気感を表現。季節ごとの和菓子を4つのタイルで紹介しています。":
+      "A top page for \"Ichiyoan\", a fictional Japanese tea and sweets house on Kitano-zaka in Kobe, designed in Figma. Vertical headings, a washi-paper-like background and generous whitespace express the feeling of \"taking a break\". Seasonal Japanese sweets are introduced in four tiles.",
+    "一葉庵 和の茶房 Webサイトデザイン フルページ":
+      "Ichiyoan Japanese tea house website design — full page",
+    "文字はほぼすべて墨色で、背景は和紙のような明るい色。セージと深緑を少しだけ使い、写真の茶や和菓子の色が引き立つようにしています。":
+      "Almost all text is ink-coloured on a light, washi-paper-like background. Sage and deep green are used only a little, so the colours of the tea and sweets in the photos stand out.",
+    "ヒーロー・私たちの想い":
+      "Hero and our thoughts",
+    "「一服のあいだ、ただ静かに。」の言葉と、お店の紹介。見出しは縦書きにしています。":
+      "The words \"For the length of a cup of tea, just quiet.\" and an introduction to the shop. The headings are set vertically.",
+    "茶・和菓子":
+      "Tea and sweets",
+    "玉露・ほうじ茶・抹茶と、上生菓子・栗きんとん・羊羹・わらび餅を写真で紹介。":
+      "Gyokuro, hojicha and matcha, and four Japanese sweets — jo-namagashi, kuri-kinton, yokan and warabi-mochi — shown with photos.",
+    "こだわり・季節":
+      "Our care and the seasons",
+    "「一杯のお茶と、ひとつの菓子に、想いを込めて。」の紹介と、春・夏・秋・冬（HARU・NATSU・AKI・FUYU）の季節のおすすめ。":
+      "\"Our feelings, in one cup of tea and one sweet.\" and the seasonal picks for spring, summer, autumn and winter (HARU, NATSU, AKI, FUYU).",
+    "店舗・ご予約":
+      "Shop and reservations",
+    "住所・営業時間・定休日・お席の情報と地図、ご予約・お問い合わせへのボタン。":
+      "Address, opening hours, closing day, seats and a map, with buttons for reservations and contact.",
+    "墨色":
+      "Ink",
+    "グレージュ":
+      "Greige",
+    "和紙色":
+      "Washi paper",
+    "セージ":
+      "Sage",
+    "深緑":
+      "Deep green",
+    "店名と見出し（縦書き）":
+      "The shop name and the (vertical) headings",
+    "本文とメニュー":
+      "Body text and menus",
+    "制作事例：Thar Nyi Nyiがデザインした「一葉庵 — 和の茶房」のWebサイト（トップページ）。":
+      "Case study: the website (top page) for \"Ichiyoan — Japanese tea house\" designed by Thar Nyi Nyi.",
+    "一葉庵 Webサイトデザイン":
+      "Ichiyoan website design",
+    "力強さとスピード感を、黒×ネオンイエローと大きな欧文で伝えるジムのトップページ":
+      "A gym top page that conveys power and speed with black × neon yellow and large Latin type",
+    "架空の24時間ジム「FORGE」のトップページを、Figmaでデザインしました。黒ベースにネオンイエローを効かせ、流れる英字のテープや巨大な見出しで勢いを演出。プログラム紹介から料金プランまで、入会を後押しする構成にしました。":
+      "A top page for \"FORGE\", a fictional 24-hour gym, designed in Figma. Neon yellow on a black base, flowing tapes of English text and huge headings create momentum. From the programme overview to the price plans, the structure encourages visitors to sign up.",
+    "黒の背景にネオンイエローを1色だけ合わせ、強いコントラストでエネルギーを表現。料金のセクションだけ背景をネオンイエローに反転させ、目に留まるようにしています。":
+      "A single neon yellow on a black background, with strong contrast to express energy. Only the membership section flips to a neon-yellow background, so it catches the eye.",
+    "ヒーロー — 昨日の自分を、超えていけ":
+      "Hero — Go beyond who you were yesterday",
+    "斜めに傾けた見出しと、「24H」「1,200㎡」「30+」の3つの数字で、ジムの特徴を紹介。":
+      "A slanted headline and three numbers — 24H, 1,200 m² and 30+ — that show what the gym offers.",
+    "傾いた英字の帯":
+      "A tilted band of English text",
+    "NO EXCUSES ✕ BUILD STRENGTH ✕ KEEP MOVING の言葉を並べたネオンイエローの帯を、少し傾けて配置。":
+      "A neon-yellow band reading NO EXCUSES ✕ BUILD STRENGTH ✕ KEEP MOVING, set at a slight angle.",
+    "PROGRAMS":
+      "PROGRAMS",
+    "STRENGTH・CONDITIONING・FUNCTIONAL の3つのトレーニングを、写真付きのカードで紹介。":
+      "Three kinds of training — STRENGTH, CONDITIONING and FUNCTIONAL — shown as cards with photos.",
+    "料金（MEMBERSHIP）・フッター":
+      "Membership and footer",
+    "「始めるなら、今月。」の見出しと月額¥7,980を大きく見せ、無料体験の予約ボタンへつなげる構成。":
+      "The headline \"Start this month.\" and the monthly price of ¥7,980 shown large, leading to the free-trial booking button.",
+    "ブラック":
+      "Black",
+    "ネオンイエロー":
+      "Neon yellow",
+    "ホワイト":
+      "White",
+    "グレー":
+      "Grey",
+    "英字の大見出し（PROGRAMS、START、FORGE）と数字":
+      "Large Latin headings (PROGRAMS, START, FORGE) and numbers",
+    "日本語の見出しと本文":
+      "Japanese headings and body text",
+    "制作事例：Thar Nyi Nyiがデザインした「FORGE — 24時間ジム」のWebサイト（トップページ）。":
+      "Case study: the website (top page) for \"FORGE — 24-hour gym\" designed by Thar Nyi Nyi.",
+    "FORGE Webサイトデザイン":
+      "FORGE website design",
+    "ブランド名の「雲」を、ラベンダーと丸い形で表現したタピオカ専門店のトップページ":
+      "A tapioca shop top page that expresses the brand name \"cloud\" with lavender and rounded shapes",
+    "架空のタピオカドリンク専門店「kumo boba」のトップページを、Figmaでデザインしました。ラベンダー × ネイビーの配色と雲のシルエットで、ブランド名「kumo（雲）」をそのままビジュアルに。メニューカードやステップ表示も丸みのある形で統一しています。":
+      "A top page for \"kumo boba\", a fictional tapioca drink shop, designed in Figma. A lavender × navy palette and cloud silhouettes turn the brand name \"kumo\" (cloud) straight into visuals. Menu cards and step indicators are unified with rounded shapes.",
+    "背景は淡いラベンダーブルーで、文字とボタンはネイビー。ロゴの「boba」とキャッチコピーの「しあわせ」をパープルにし、おうちキットのセクションはラベンダーの背景にしています。":
+      "The background is a pale lavender blue, with navy text and buttons. \"boba\" in the logo and \"happy\" in the headline are purple, and the home-kit section has a lavender background.",
+    "ヒーロー — もちっと、ひんやり、しあわせ":
+      "Hero — Chewy, chilled, happy",
+    "秋の新作「黒糖ほうじ茶ミルク」を、丸い写真と雲・タピオカのモチーフで紹介。":
+      "The new autumn drink, brown-sugar hojicha milk, shown in a round photo with cloud and tapioca-pearl motifs.",
+    "人気メニュー":
+      "Popular menu",
+    "すべて・ミルクティー・フルーツティー・おうちキットの絞り込みボタンと、4種類のドリンクカード。":
+      "Filter buttons — all, milk tea, fruit tea and home kit — and four drink cards.",
+    "じぶん好みに、3ステップ":
+      "Your way, in 3 steps",
+    "ドリンク・甘さと氷・トッピングを選ぶ流れを、番号付きの3枚のカードで説明。":
+      "Choosing a drink, the sweetness and ice, and toppings, explained in three numbered cards.",
+    "おうちキット・フッター":
+      "Home kit and footer",
+    "自宅で作れるタピオカキットの紹介と、上の端が雲の形になったフッター。":
+      "The tapioca kit for making drinks at home, and a footer whose top edge is shaped like clouds.",
+    "ラベンダーブルー":
+      "Lavender blue",
+    "ネイビー":
+      "Navy",
+    "パープル":
+      "Purple",
+    "ラベンダー":
+      "Lavender",
+    "大きな見出し（もちっと、ひんやり、しあわせ など）":
+      "Large headings (such as the hero headline)",
+    "ロゴ「kumo boba」、価格、ステップの数字":
+      "The \"kumo boba\" logo, prices and step numbers",
+    "制作事例：Thar Nyi Nyiがデザインした「kumo boba — タピオカドリンク専門店」のWebサイト（トップページ）。":
+      "Case study: the website (top page) for \"kumo boba — Tapioca drink shop\" designed by Thar Nyi Nyi.",
+    "kumo boba Webサイトデザイン":
+      "kumo boba website design",
+    "WebサイトUIデザイン（トップページ）":
+      "Website UI Design (top page)",
+    "デザインサイズ":
+      "Design size",
+    "Figmaのデザインで使ったフォントです。":
+      "The fonts used in the Figma design.",
+    "hibi coffee カフェ Webサイトデザイン":
+      "hibi coffee café website design",
+    "一葉庵 和の茶房 Webサイトデザイン":
+      "Ichiyoan Japanese tea house website design",
+    "FORGE 24時間ジム Webサイトデザイン":
+      "FORGE 24-hour gym website design",
+    "kumo boba タピオカドリンク専門店 Webサイトデザイン":
+      "kumo boba tapioca drink shop website design",
+    "一葉庵":
+      "Ichiyoan",
+    "FORNO ROSSO — ピザ店 | Thar Nyi Nyi":
+      "FORNO ROSSO — Pizzeria | Thar Nyi Nyi",
+    "hibi coffee — カフェ | Thar Nyi Nyi":
+      "hibi coffee — Café | Thar Nyi Nyi",
+    "一葉庵 — 和の茶房 | Thar Nyi Nyi":
+      "Ichiyoan — Japanese tea house | Thar Nyi Nyi",
+    "FORGE — 24時間ジム | Thar Nyi Nyi":
+      "FORGE — 24-hour gym | Thar Nyi Nyi",
+    "kumo boba — タピオカドリンク専門店 | Thar Nyi Nyi":
+      "kumo boba — Tapioca drink shop | Thar Nyi Nyi",
     // ---- work-website.html
     "制作事例：Thar Nyi Nyiがデザインした水族館サイト「神戸北野水族館」のWebデザイン。":
       "Case study: web design for the aquarium site \"Kobe Kitano Aquarium\" by Thar Nyi Nyi.",
@@ -1039,8 +1250,8 @@
       "// showcase",
     "作品・課題":
       "Projects & Assignments",
-    "全16作品を見る":
-      "All 16 Works",
+    "全20作品を見る":
+      "All 20 Works",
     "Webサイトデザイン":
       "Website Design",
     "Webサイト制作":
