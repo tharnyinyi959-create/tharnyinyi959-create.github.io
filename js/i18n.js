@@ -8,7 +8,7 @@
    The choice is kept in localStorage ("portfolio-lang"), so it follows the visitor across pages.
    Loaded on every page just before js/main.js: the page is already English before
    motion.js / v2-motion.js split headings and paragraphs into letters.
-   838 entries.
+   840 entries.
    ===================================================================== */
 (() => {
   "use strict";
@@ -962,18 +962,22 @@
       "Claude Code (AI) · VS Code · Git / GitHub",
     "Webサイト（全25ページ・日本語 / 英語）":
       "Website (25 pages, Japanese / English)",
-    "確認と修正の指示 ／ Git・GitHubでの管理と公開":
-      "Checking and asking for fixes / managing and publishing with Git and GitHub",
+    "作品の制作 ／ 確認と修正の指示 ／ Git・GitHubでの管理と公開":
+      "Making the works / checking and asking for fixes / managing and publishing with Git and GitHub",
     "AIと一緒に、ポートフォリオサイトを作って公開する":
       "Building and publishing a portfolio site together with AI",
     "ポートフォリオサイト トップページ フルページ":
       "Portfolio site top page — full page",
-    "このポートフォリオサイトは、AIのコーディングツール「Claude Code」と一緒に作りました。HTML・CSS・JavaScriptのコードの多くはAIが書いています。私は、変更をブラウザで1つずつ確認して修正を指示することと、Git / GitHubでの管理・公開を担当しました。":
-      "I built this portfolio site together with the AI coding tool Claude Code. Most of the HTML, CSS and JavaScript was written by the AI. My part was checking every change in the browser and asking for fixes, and managing and publishing the site with Git and GitHub.",
+    "このポートフォリオサイトは、AIのコーディングツール「Claude Code」と一緒に作りました。HTML・CSS・JavaScriptのコードの多くはAIが書いています。私は、サイトで紹介している作品の制作と、変更をブラウザで1つずつ確認して修正を指示すること、Git / GitHubでの管理・公開を担当しました。":
+      "I built this portfolio site together with the AI coding tool Claude Code. Most of the HTML, CSS and JavaScript was written by the AI. My part was making the works shown on the site, checking every change in the browser and asking for fixes, and managing and publishing the site with Git and GitHub.",
     "// 役割分担":
       "// Roles",
     "役割分担":
       "Who did what",
+    "私 — 作品をつくる":
+      "Me — making the works",
+    "サイトで紹介しているポスター・ZINE・Figmaでのデザインなどの作品を制作する。":
+      "Makes the works shown on the site, such as the posters, the zine and the Figma designs.",
     "AI（Claude Code） — コードを書く":
       "AI (Claude Code) — writes the code",
     "依頼に合わせて、HTML・CSS・JavaScriptのコードを書き、修正する。":
@@ -1018,8 +1022,8 @@
       "The work where I wrote the code myself is the Self-Introduction Site: I designed it in Figma and coded it in HTML / CSS.",
     "自己紹介サイトを見る":
       "See the Self-Introduction Site",
-    "AIのコーディングツール「Claude Code」と一緒に作ったポートフォリオサイト。コードはAIが書き、私は確認と修正の指示、Git / GitHubでの管理・公開を担当しました。":
-      "A portfolio site built together with the AI coding tool Claude Code. The AI wrote the code; I checked it and asked for fixes, and managed and published it with Git and GitHub.",
+    "AIのコーディングツール「Claude Code」と一緒に作ったポートフォリオサイト。コードはAIが書き、私は作品の制作、確認と修正の指示、Git / GitHubでの管理・公開を担当しました。":
+      "A portfolio site built together with the AI coding tool Claude Code. The AI wrote the code; I made the works, checked every change and asked for fixes, and managed and published it with Git and GitHub.",
     "Claude Code · HTML / CSS / JavaScript":
       "Claude Code · HTML / CSS / JavaScript",
     "Webサイト · Claude Code":
