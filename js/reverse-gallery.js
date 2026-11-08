@@ -25,6 +25,17 @@
     return col;
   });
 
+  // Rough height of a card, counted in card widths (1 = as tall as the card is wide)
+  const cardHeight = (link, img) => {
+    const picture = link.classList.contains("rev-card--page") ? 5 / 4 : (img.height / img.width || 1);
+    return picture + 0.3;                                      // + title and gap
+  };
+  // The middle column starts with extra space on top (see --rev-shift in the CSS)
+  cols[1].dataset.h = 1.2;
+  const shortest = () => cols.reduce((a, b) => (Number(a.dataset.h) <= Number(b.dataset.h) ? a : b));
+  cols[0].dataset.h = 0;
+  cols[2].dataset.h = 0;
+
   // One card per work row
   rows.forEach((row, n) => {
     const link = document.createElement("a");
@@ -54,8 +65,12 @@
 
     link.append(img, caption);
 
-    // Works 1, 4, 7… go in the left column; 2, 5, 8… in the middle; 3, 6, 9… on the right
-    cols[n % 3].append(link);
+    // Works 1, 4, 7… go in the left column; 2, 5, 8… in the middle; 3, 6, 9… on the right.
+    // The last work goes in the shortest column instead, so the bottoms end more evenly.
+    const isLast = n === rows.length - 1;
+    const col = isLast ? shortest() : cols[n % 3];
+    col.append(link);
+    col.dataset.h = Number(col.dataset.h || 0) + cardHeight(link, img);
   });
 
   section.append(gallery);

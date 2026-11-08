@@ -30,7 +30,11 @@
     overflow: hidden;
     overflow: clip;
 
-    --rev-shift: 400px;    /* how far the columns travel over the whole page scroll */
+    --rev-shift: 400px;    /* how far the columns travel */
+
+    /* A timeline that follows this box through the screen. The columns use it,
+       so they start moving only when the gallery's top reaches the top of the screen. */
+    view-timeline: --rev-gallery block;
   }
 
   /* Start the gallery right under the category buttons */
@@ -87,8 +91,9 @@
 }
 
 /* The scroll effect: the columns move in opposite directions.
-   The timeline is the page scroll: 0% at the top of the page, 100% at the bottom.
-   So at the top of the page nothing has moved yet and every card shows its top edge.
+   "contain 0%" = the gallery's top has reached the top of the screen,
+   "contain 100%" = the gallery's bottom has reached the bottom of the screen.
+   Before that nothing moves, so every first card shows its top edge.
    Only in browsers that support scroll-driven animations, and not when
    the visitor asks for reduced motion. Other browsers show a still gallery. */
 @keyframes rev-up {
@@ -101,11 +106,12 @@
   to   { transform: translateY(0); }
 }
 
-@supports (animation-timeline: scroll()) {
+@supports (animation-timeline: view()) {
   @media (min-width: 1000px) and (prefers-reduced-motion: no-preference) {
     .rev-col--up {
       animation: rev-up linear both;
-      animation-timeline: scroll(root);
+      animation-timeline: --rev-gallery;
+      animation-range: contain 0% contain 100%;
     }
 
     /* The middle column starts moved up by --rev-shift. The same amount of
@@ -113,7 +119,8 @@
     .rev-col--down {
       padding-top: var(--rev-shift);
       animation: rev-down linear both;
-      animation-timeline: scroll(root);
+      animation-timeline: --rev-gallery;
+      animation-range: contain 0% contain 100%;
     }
   }
 }
