@@ -2,7 +2,7 @@
    Reverse-scroll gallery (works.html, "すべて" tab, desktop only)
 
    1. Reads the 16 work rows that already exist in the list.
-   2. Builds a gallery from them: two columns, odd rows left, even rows right.
+   2. Builds a gallery from them: three columns, rows dealt out 1-2-3-1-2-3…
    3. Shows the gallery only on the "すべて" tab (adds class .is-all to the section).
    The CSS (css/reverse-gallery.css) does the moving.
    ===================================================================== */
@@ -14,15 +14,16 @@
 
   const rows = [...list.querySelectorAll(".proj-row")];
 
-  // The gallery: two columns inside one box
+  // The gallery: three columns inside one box. Left and right move up, middle moves down.
   const gallery = document.createElement("div");
   gallery.className = "rev-gallery";
 
-  const colUp = document.createElement("div");
-  colUp.className = "rev-col rev-col--up";
-  const colDown = document.createElement("div");
-  colDown.className = "rev-col rev-col--down";
-  gallery.append(colUp, colDown);
+  const cols = [0, 1, 2].map((i) => {
+    const col = document.createElement("div");
+    col.className = i === 1 ? "rev-col rev-col--down" : "rev-col rev-col--up";
+    gallery.append(col);
+    return col;
+  });
 
   // One card per work row
   rows.forEach((row, n) => {
@@ -46,8 +47,8 @@
 
     link.append(img, caption);
 
-    // Row 1, 3, 5… go left; row 2, 4, 6… go right (reading order stays zig-zag)
-    (n % 2 === 0 ? colUp : colDown).append(link);
+    // Works 1, 4, 7… go in the left column; 2, 5, 8… in the middle; 3, 6, 9… on the right
+    cols[n % 3].append(link);
   });
 
   section.append(gallery);

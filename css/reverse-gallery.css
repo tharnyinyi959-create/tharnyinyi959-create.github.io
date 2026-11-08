@@ -18,19 +18,28 @@
 
   .works-showcase.is-all .rev-gallery {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 32px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
     align-items: start;
-    max-width: 960px;
+    max-width: 1080px;
     margin: 0 auto;
     padding: 0 var(--sp-4);
+  }
+
+  /* Start the gallery right under the category buttons */
+  .works-showcase.is-all {
+    padding-top: 0;
+  }
+
+  body:has(.works-showcase.is-all) .filter-tabs {
+    margin-bottom: 0;
   }
 }
 
 .rev-col {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 28px;
   will-change: transform;
 }
 
