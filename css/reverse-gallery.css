@@ -24,7 +24,11 @@
     max-width: 1080px;
     margin: 0 auto;
     padding: 12px var(--sp-4) 24px;
-    overflow: hidden;      /* the columns move past this edge, so they are cut here and never cover the category buttons */
+    /* Cut the columns at this edge so they never cover the category buttons.
+       "clip" does this without making the box a scroll container, which would
+       stop the scroll effect. "hidden" is only the fallback for old browsers. */
+    overflow: hidden;
+    overflow: clip;
   }
 
   /* Start the gallery right under the category buttons */
@@ -61,8 +65,9 @@
 .rev-card img {
   width: 100%;
   aspect-ratio: 4 / 5;
-  object-fit: cover;
-  object-position: top;
+  object-fit: contain;     /* show the whole picture, with empty space around it if needed */
+  object-position: center;
+  background: var(--white);
   border-radius: var(--r-md);
 }
 
