@@ -22,8 +22,8 @@
     gap: 28px;
     align-items: start;
     max-width: 1080px;
-    margin: 48px auto 0;   /* empty space between the category buttons and the gallery (outside the cut edge) */
-    padding: 0 var(--sp-4) 24px;
+    margin: 32px auto 0;   /* empty space between the category buttons and the gallery (outside the cut edge) */
+    padding: 40px var(--sp-4) 24px;   /* 40px of space above the first cards, also when the gallery reaches the top of the screen */
     /* Cut the columns at this edge so they never cover the category buttons.
        "clip" does this without making the box a scroll container, which would
        stop the scroll effect. "hidden" is only the fallback for old browsers. */
