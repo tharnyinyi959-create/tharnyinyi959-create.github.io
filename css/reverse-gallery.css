@@ -23,7 +23,7 @@
     gap: 28px;
     align-items: start;
     max-width: 1080px;
-    margin: 72px auto 0;   /* empty space between the category buttons and the cards (outside the cut edge, so it always stays empty) */
+    margin: 0 auto;
     padding: 0 var(--sp-4) 24px;
     /* Cut the columns at this edge so they never cover the category buttons.
        "clip" does this without making the box a scroll container, which would
@@ -36,14 +36,9 @@
     view-timeline: --rev-gallery block;
   }
 
-  /* Start the gallery right under the category buttons */
-  .works-showcase.is-all {
-    padding-top: 0;
-  }
-
-  body:has(.works-showcase.is-all) .filter-tabs {
-    margin-bottom: 0;
-  }
+  /* The space above the cards is the section's own top padding (as on the other tabs).
+     It is inside the section, so it stays there when the section slides up over the
+     category buttons, and it is outside the gallery's cut edge, so it is always empty. */
 }
 
 .rev-col {

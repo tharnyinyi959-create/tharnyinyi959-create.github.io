@@ -89,9 +89,12 @@
     const cardsBottom = Math.max(...cols.map((col) => col.offsetTop + col.offsetHeight)) - cols[1].offsetTop;  // height of the card area
 
     outerCols.forEach((col) => {
+      // A card's top inside its column. (The column has will-change: transform, so in some
+      // browsers the card's offsetTop is already counted from the column, in others from further up.)
+      const topIn = (card) => (card.offsetParent === col ? card.offsetTop : card.offsetTop - col.offsetTop);
       const cards = [...col.children].map((card) => ({
-        top: card.offsetTop - col.offsetTop,
-        bottom: card.offsetTop - col.offsetTop + card.offsetHeight,
+        top: topIn(card),
+        bottom: topIn(card) + card.offsetHeight,
       }));
       // Start: the highest card top that still keeps the column's bottom at or below the screen bottom
       const startLimit = col.offsetHeight - screen;
