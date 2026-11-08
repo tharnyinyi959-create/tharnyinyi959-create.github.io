@@ -36,6 +36,13 @@
     if (source) {
       img.src = source.getAttribute("src");
       img.alt = source.getAttribute("alt") || "";
+      img.width = Number(source.getAttribute("width"));     // so the card has the right height before the picture loads
+      img.height = Number(source.getAttribute("height"));
+    }
+
+    // Website screenshots are long pages: the CSS shows only their top part
+    if (row.parentElement.dataset.category === "web") {
+      link.classList.add("rev-card--page");
     }
     img.loading = "lazy";
     img.decoding = "async";

@@ -1,6 +1,6 @@
 /* =====================================================================
    Reverse-scroll gallery (works.html, "すべて" tab, desktop only)
-   Left column moves up, right column moves down, as you scroll.
+   Left and right columns move up, the middle column moves down, as you scroll.
    Built by js/reverse-gallery.js. On phones and on the other tabs the
    list stays as it was.
    ===================================================================== */
@@ -29,6 +29,8 @@
        stop the scroll effect. "hidden" is only the fallback for old browsers. */
     overflow: hidden;
     overflow: clip;
+
+    --rev-shift: 400px;    /* how far the columns travel over the whole page scroll */
   }
 
   /* Start the gallery right under the category buttons */
@@ -64,11 +66,15 @@
 
 .rev-card img {
   width: 100%;
-  aspect-ratio: 4 / 5;
-  object-fit: contain;     /* show the whole picture, with empty space around it if needed */
-  object-position: top center;   /* picture starts at the top of the card */
-  background: var(--white);
+  height: auto;            /* keep the picture's own shape: nothing cut, no empty space */
   border-radius: var(--r-md);
+}
+
+/* Website screenshots are very long pages, so show only the top part of the page */
+.rev-card--page img {
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: top center;
 }
 
 .rev-card__title {
@@ -80,29 +86,34 @@
   line-height: 1.5;
 }
 
-/* The scroll effect: the two columns move in opposite directions.
+/* The scroll effect: the columns move in opposite directions.
+   The timeline is the page scroll: 0% at the top of the page, 100% at the bottom.
+   So at the top of the page nothing has moved yet and every card shows its top edge.
    Only in browsers that support scroll-driven animations, and not when
    the visitor asks for reduced motion. Other browsers show a still gallery. */
 @keyframes rev-up {
   from { transform: translateY(0); }
-  to   { transform: translateY(-25%); }
+  to   { transform: translateY(calc(-1 * var(--rev-shift))); }
 }
 
 @keyframes rev-down {
-  from { transform: translateY(-25%); }
+  from { transform: translateY(calc(-1 * var(--rev-shift))); }
   to   { transform: translateY(0); }
 }
 
-@supports (animation-timeline: view()) {
+@supports (animation-timeline: scroll()) {
   @media (min-width: 1000px) and (prefers-reduced-motion: no-preference) {
     .rev-col--up {
       animation: rev-up linear both;
-      animation-timeline: view();
+      animation-timeline: scroll(root);
     }
 
+    /* The middle column starts moved up by --rev-shift. The same amount of
+       space on top puts its first card level with the other columns. */
     .rev-col--down {
+      padding-top: var(--rev-shift);
       animation: rev-down linear both;
-      animation-timeline: view();
+      animation-timeline: scroll(root);
     }
   }
 }
