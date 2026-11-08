@@ -8,7 +8,7 @@
    The choice is kept in localStorage ("portfolio-lang"), so it follows the visitor across pages.
    Loaded on every page just before js/main.js: the page is already English before
    motion.js / v2-motion.js split headings and paragraphs into letters.
-   800 entries.
+   838 entries.
    ===================================================================== */
 (() => {
   "use strict";
@@ -949,6 +949,83 @@
       "FORGE — 24-hour gym | Thar Nyi Nyi",
     "kumo boba — タピオカドリンク専門店 | Thar Nyi Nyi":
       "kumo boba — Tapioca drink shop | Thar Nyi Nyi",
+    // ---- work-this-site.html (this portfolio, built with AI)
+    "このポートフォリオサイト":
+      "This Portfolio Site",
+    "このポートフォリオサイト | Thar Nyi Nyi":
+      "This Portfolio Site | Thar Nyi Nyi",
+    "制作事例：AIのコーディングツール「Claude Code」と一緒に作った、このポートフォリオサイト。":
+      "Case study: this portfolio site, built together with the AI coding tool Claude Code.",
+    "トップページへ":
+      "Go to the top page",
+    "Claude Code（AI） · VS Code · Git / GitHub":
+      "Claude Code (AI) · VS Code · Git / GitHub",
+    "Webサイト（全25ページ・日本語 / 英語）":
+      "Website (25 pages, Japanese / English)",
+    "確認と修正の指示 ／ Git・GitHubでの管理と公開":
+      "Checking and asking for fixes / managing and publishing with Git and GitHub",
+    "AIと一緒に、ポートフォリオサイトを作って公開する":
+      "Building and publishing a portfolio site together with AI",
+    "ポートフォリオサイト トップページ フルページ":
+      "Portfolio site top page — full page",
+    "このポートフォリオサイトは、AIのコーディングツール「Claude Code」と一緒に作りました。HTML・CSS・JavaScriptのコードの多くはAIが書いています。私は、変更をブラウザで1つずつ確認して修正を指示することと、Git / GitHubでの管理・公開を担当しました。":
+      "I built this portfolio site together with the AI coding tool Claude Code. Most of the HTML, CSS and JavaScript was written by the AI. My part was checking every change in the browser and asking for fixes, and managing and publishing the site with Git and GitHub.",
+    "// 役割分担":
+      "// Roles",
+    "役割分担":
+      "Who did what",
+    "AI（Claude Code） — コードを書く":
+      "AI (Claude Code) — writes the code",
+    "依頼に合わせて、HTML・CSS・JavaScriptのコードを書き、修正する。":
+      "Writes and fixes the HTML, CSS and JavaScript as requested.",
+    "私 — 確認と修正の指示":
+      "Me — checking and asking for fixes",
+    "変更をブラウザで確認し、気になるところはスクリーンショットを送って、直るまで修正を指示する。":
+      "Checks each change in the browser, sends screenshots of anything that looks wrong, and asks for fixes until it is right.",
+    "私 — Git / GitHubで管理・公開":
+      "Me — managing and publishing with Git / GitHub",
+    "変更をGitHubに同期し、GitHub Pagesでサイトを公開する。":
+      "Syncs the changes to GitHub and publishes the site with GitHub Pages.",
+    "// 主な機能":
+      "// Features",
+    "主な機能":
+      "Main features",
+    "日本語 / 英語の切り替え":
+      "Japanese / English switch",
+    "ヘッダーの「EN / JP」で、サイト全体の言語を切り替えられます。":
+      "\"EN / JP\" in the header switches the language of the whole site.",
+    "最初の1回だけのオープニング":
+      "An opening shown only once",
+    "サイトに入ったときだけ、ロゴのアニメーションが流れます。":
+      "A logo animation plays only when you first enter the site.",
+    "逆向きに動くスクロールギャラリー":
+      "A reverse-scroll gallery",
+    "作品一覧の「すべて」では、まん中の列と左右の列が逆向きに動きます（PCのみ）。":
+      "On the Works page's \"All\" tab, the middle column and the outer columns move in opposite directions (desktop only).",
+    "めくれる3DのZINE":
+      "A 3D zine you can flip through",
+    "ZINEの作品ページでは、本のようにページをめくって読めます。":
+      "On the zine's work page, you can turn the pages like a book.",
+    "お問い合わせフォーム":
+      "Contact form",
+    "フォームから送ったメッセージが、メールで届きます（Formspree）。":
+      "Messages sent from the form arrive by email (Formspree).",
+    "// 自分で書いたコード":
+      "// Code I wrote myself",
+    "自分で書いたコード":
+      "Code I wrote myself",
+    "自分でコードを書いた作品は「自己紹介サイト」です。Figmaで自分でデザインし、HTML / CSSでコーディングしました。":
+      "The work where I wrote the code myself is the Self-Introduction Site: I designed it in Figma and coded it in HTML / CSS.",
+    "自己紹介サイトを見る":
+      "See the Self-Introduction Site",
+    "AIのコーディングツール「Claude Code」と一緒に作ったポートフォリオサイト。コードはAIが書き、私は確認と修正の指示、Git / GitHubでの管理・公開を担当しました。":
+      "A portfolio site built together with the AI coding tool Claude Code. The AI wrote the code; I checked it and asked for fixes, and managed and published it with Git and GitHub.",
+    "Claude Code · HTML / CSS / JavaScript":
+      "Claude Code · HTML / CSS / JavaScript",
+    "Webサイト · Claude Code":
+      "Website · Claude Code",
+    "ポートフォリオサイト トップページ":
+      "Portfolio site top page",
     // ---- work-website.html
     "制作事例：Thar Nyi Nyiがデザインした水族館サイト「神戸北野水族館」のWebデザイン。":
       "Case study: web design for the aquarium site \"Kobe Kitano Aquarium\" by Thar Nyi Nyi.",
@@ -1250,8 +1327,8 @@
       "// showcase",
     "作品・課題":
       "Projects & Assignments",
-    "全20作品を見る":
-      "All 20 Works",
+    "全21作品を見る":
+      "All 21 Works",
     "Webサイトデザイン":
       "Website Design",
     "Webサイト制作":
