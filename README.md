@@ -5,9 +5,9 @@
 ![Thar Nyi Nyi — Portfolio 2026](assets/og-image.png)
 
 Portfolio of **Thar Nyi Nyi**, a front-end development student in Kobe, Japan (Graphic Design Department, Kobe Denshi College).
-It presents 16 school projects — web design, graphic design, character design and video — each with its own case-study page.
+It presents 21 school projects — web design, graphic design, character design and video — each with its own case-study page.
 
-> 神戸で学ぶフロントエンド開発学生のポートフォリオサイトです。Web・グラフィック・キャラクターデザイン・動画など16作品を、作品ごとの詳細ページで紹介しています。日本語 / English 切り替え対応。
+> 神戸で学ぶフロントエンド開発学生のポートフォリオサイトです。Web・グラフィック・キャラクターデザイン・動画など21作品を、作品ごとの詳細ページで紹介しています。日本語 / English 切り替え対応。
 
 ---
 
@@ -39,7 +39,7 @@ Colours: Nordic Indigo `#263BAA` × Vanilla Mist `#FFF4D6` (design tokens at the
 |---|---|
 | `index.html` | Home — hero, about (ID card), tools, project deck, contact |
 | `profile.html` | Background and journey (Myanmar → Japan) |
-| `works.html` | All 16 projects, filterable (Web / Graphic / Video) |
+| `works.html` | All 21 projects, filterable (Web / Graphic / Video) |
 | `work-*.html` | One case study per project |
 | `contact.html` | Contact form (sent through Formspree) |
 

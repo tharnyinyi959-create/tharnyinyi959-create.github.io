@@ -3795,3 +3795,8 @@ main:focus {
     font-size: 24px;
   }
 }
+
+/* skills that link to the work that proves them */
+a.tag--proof { text-decoration: none; transition: border-color .2s, color .2s, transform .2s; }
+a.tag--proof::after { content: "\2197"; margin-left: 6px; opacity: .55; }
+a.tag--proof:hover, a.tag--proof:focus-visible { border-color: var(--color-primary); color: var(--color-primary); transform: translateY(-2px); }

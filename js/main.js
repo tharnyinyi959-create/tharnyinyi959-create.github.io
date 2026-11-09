@@ -265,6 +265,11 @@ document.addEventListener("DOMContentLoaded", () => {
       applyFilter(tab.dataset.filter);
     });
   });
+
+  /* Deep link from the home / profile skill tags: works.html?category=web opens with that filter already on */
+  const wanted = new URLSearchParams(location.search).get("category");
+  const wantedTab = wanted && Array.from(tabs).find((t) => t.dataset.filter === wanted);
+  if (wantedTab) wantedTab.click();   // right away (not after the pictures load), so the stage never starts on the wrong work
 });
 
 /* =====================================================================
